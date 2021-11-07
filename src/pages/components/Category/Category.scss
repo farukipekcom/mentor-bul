@@ -1,0 +1,73 @@
+@import "../../../sass/main.scss";
+
+.category {
+  width: 100%;
+  height: 48px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  @extend %flex;
+  &-list {
+    margin: 0 auto;
+    @extend %flex;
+    &-item {
+      margin-left: 24px;
+      @extend %tagtext;
+      cursor: pointer;
+    }
+  }
+}
+
+.border-animation {
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.border-animation::before,
+.border-animation::after {
+  position: absolute;
+  width: 100%;
+  height: 0.5px;
+  background: currentColor;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.border-animation::before {
+  content: "";
+}
+
+.menu-border::before,
+.menu-border::after {
+  opacity: 0;
+  transform-origin: 50% 0%;
+  transform: translate3d(0, 3px, 0);
+  transition-property: transform, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.menu-border:hover::before,
+.menu-border:hover::after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition-timing-function: cubic-bezier(0.2, 0, 0.3, 1);
+}
+
+.menu-border::after {
+  content: "";
+  top: calc(100% + 4px);
+  width: 70%;
+  left: 15%;
+}
+
+.menu-border::before,
+.menu-border:hover::after {
+  transition-delay: 0.1s;
+}
+
+.menu-border:hover::before {
+  transition-delay: 0s;
+}
