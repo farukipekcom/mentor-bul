@@ -1,0 +1,138 @@
+@import "../../sass/main.scss";
+.reviewsCard {
+  background-color: #fff;
+  padding: 24px;
+  width: 820px;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  &-heading {
+    @extend %subtitle;
+  }
+  &-summary {
+    margin-top: 24px;
+    &-boxes {
+      @extend %flex;
+      gap: 16px;
+      &-box {
+        border: 1px solid $bordergray;
+        @extend %flexvertical;
+        align-items: flex-start;
+        height: 145px;
+        flex: 1;
+        border-radius: $radius;
+        padding: 16px;
+        &:nth-child(1) {
+          background-color: $soft_purple;
+        }
+        &:nth-child(2) {
+          background-color: $soft_yellow;
+        }
+        &:nth-child(3) {
+          background-color: $soft_green;
+        }
+        &:nth-child(4) {
+          background-color: $soft_blue;
+          @extend %flexcenter;
+        }
+        &-icon {
+          width: 48px;
+          height: 48px;
+          background-color: #fff;
+          @extend %flexcenter;
+          border-radius: 16px;
+          box-shadow: 0px 5px 5px 0px rgba(#000000, 0.1);
+          svg {
+            width: 32px;
+            height: 32px;
+            color: $gray;
+          }
+        }
+        &-title {
+          margin-top: 16px;
+          @extend %icontext;
+          color: $gray;
+        }
+        &-rating {
+          margin-top: 8px;
+        }
+        &-text {
+          width: 100%;
+          text-align: center;
+          font-weight: 400;
+          @extend %icontext;
+          span {
+            text-align: center;
+            @extend %buttontext;
+          }
+        }
+        &-sum {
+          width: 100%;
+          font-size: 30px;
+          font-weight: 700;
+          margin-top: 8px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &-list {
+    &-item {
+      @extend %flex;
+      align-items: flex-start;
+      margin-top: 24px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      border-top: 1px solid $bordergray;
+      &:last-child {
+        padding-bottom: 0px;
+      }
+      &-left {
+        @extend %flex;
+        align-items: flex-start;
+        flex: 1;
+        img {
+          width: 48px;
+          height: 48px;
+          border-radius: $radius;
+        }
+        &-profile {
+          margin-left: 12px;
+          &-name {
+            @extend %buttontext;
+            color: $primary;
+          }
+          &-location {
+            @extend %tagtext;
+            color: $gray;
+          }
+        }
+      }
+      &-right {
+        @extend %flexvertical;
+        align-items: flex-start;
+
+        flex: 2;
+        &-info {
+          @extend %flex;
+          width: 100%;
+          justify-content: space-between;
+          &-date {
+            @extend %subtext1;
+            color: $gray;
+          }
+        }
+        &-text {
+          margin-top: 16px;
+          @extend %tagtext;
+        }
+        &-category {
+          @extend %icontext;
+          background-color: $soft_purple;
+          padding: 8px 12px;
+          border-radius: $radius;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
