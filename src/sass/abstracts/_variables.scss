@@ -1,0 +1,98 @@
+// ------------------------------
+// - FLEX
+
+%flexvertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+%flex {
+  display: flex;
+  align-items: center;
+}
+%flexcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ------------------------------
+// - TEXT
+%title {
+  font-size: 1.75em;
+  font-weight: 600;
+}
+%subtitle {
+  font-size: 1.25em;
+  font-weight: 500;
+}
+%sidebar {
+  font-size: 1.15em;
+  font-weight: 600;
+}
+%text {
+  font-size: 1em;
+  font-weight: 400;
+}
+%buttontext {
+  font-size: 1em;
+  font-weight: 600;
+}
+%tagtext {
+  font-size: 0.875em;
+  font-weight: 400;
+}
+%icontext {
+  font-size: 0.875em;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+%category {
+  font-size: 0.875em;
+  font-weight: 600;
+}
+%subtext1 {
+  font-size: 0.75em;
+  font-weight: 500;
+}
+%subtext2 {
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
+// ------------------------------
+// - TEXT COLOR
+$primary: #6853cb;
+$primary_dark: #5e48c0;
+$primary_soft: rgba(#c8bcff, 0.2);
+$secondary: #26ca9a;
+$secondary_soft: rgba(#26ca9a, 0.1);
+$dark: #171e2c;
+$gray: #666;
+$white: #fff;
+$orange: #e77c40;
+$red: #ca2626;
+$red_soft: #ffefef;
+$footer: #ededed; //Footer
+$soft_purple: #faf3ff;
+$soft_yellow: #fffde9;
+$soft_green: #f3fff9;
+$soft_blue: #cdd8ff;
+$softgray: #f3f3f3;
+
+// ------------------------------
+// - BORDER COLOR
+$bordergray: #dddddd;
+
+// ------------------------------
+// - HOVER COLOR
+$hover1: #f0f0f0;
+
+// ------------------------------
+// - RADIUS
+$radius: 8px;
+$radius_small: 4px;
+
+// ------------------------------
+// - SHADOW
+$boxshadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
