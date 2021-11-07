@@ -1,0 +1,35 @@
+@import "../../sass/main.scss";
+
+.verificationCard {
+  width: 100%;
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  &-heading {
+    @extend %sidebar;
+  }
+  &-list {
+    margin-top: 24px;
+    &-item {
+      @extend %flex;
+      margin-top: 16px;
+      svg {
+        color: $gray;
+        width: 20px;
+        height: 20px;
+      }
+      &-title {
+        @extend %tagtext;
+        margin-left: 12px;
+        color: $gray;
+      }
+      &-control {
+        margin-left: auto;
+        svg {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
