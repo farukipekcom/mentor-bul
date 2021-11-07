@@ -1,0 +1,31 @@
+@import "../../sass/main.scss";
+
+.professionCard {
+  width: 100%;
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  &-heading {
+    @extend %sidebar;
+  }
+  &-list {
+    @extend %flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    margin-left: -4px;
+    gap: 12px;
+    &-item {
+      @extend %subtext1;
+      border: 1px solid $bordergray;
+      border-radius: $radius;
+      padding: 4px 12px;
+      color: $gray;
+      background-color: #fff;
+      cursor: pointer;
+      &:hover {
+        background-color: $hover1;
+      }
+    }
+  }
+}
