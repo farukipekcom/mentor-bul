@@ -1,0 +1,17 @@
+@import "../../sass/main.scss";
+.star {
+}
+
+svg {
+  width: 16px;
+  height: 16px;
+}
+.react__star__rating__lite__stars {
+  display: flex;
+  span {
+    display: flex;
+    align-items: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
