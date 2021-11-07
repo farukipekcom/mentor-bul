@@ -1,0 +1,5 @@
+@import "../../../sass/main.scss";
+.sidebar {
+  @extend %flexvertical;
+  gap: 30px;
+}
