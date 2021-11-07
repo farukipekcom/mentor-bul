@@ -1,0 +1,52 @@
+@import "../../sass/main.scss";
+
+.profileCard {
+  @extend %flexvertical;
+  width: 100%;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  &-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px 5px rgba($primary, 0.2);
+  }
+  &-username {
+    @extend %sidebar;
+    margin-top: 16px;
+  }
+  &-location {
+    @extend %subtext1;
+    color: $gray;
+    margin-top: 12px;
+  }
+  &-rating {
+    @extend %flex;
+    @extend %icontext;
+    margin-top: 20px;
+    svg {
+      color: $orange !important;
+    }
+    &-count {
+      color: $gray;
+      margin-left: 8px;
+      @extend %icontext;
+      padding-top: 3px;
+    }
+  }
+  &-button {
+    @extend %icontext;
+    margin-top: 20px;
+    background-color: $primary;
+    color: $white;
+    padding: 12px 36px;
+    border-radius: $radius;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary_dark;
+      color: #fff;
+    }
+  }
+}
