@@ -1,0 +1,31 @@
+@import "../../sass/main.scss";
+.priceCard {
+  width: 350px;
+  background-color: rgba(#ffffff, 0.5);
+  border: 2px dashed $secondary;
+  padding: 24px;
+  @extend %flexvertical;
+  &-heading {
+    @extend %buttontext;
+  }
+  &-price {
+    font-size: 36px;
+    font-weight: 600;
+    color: $secondary;
+    margin-top: 12px;
+  }
+  &-button {
+    cursor: pointer;
+    background-color: $secondary;
+    @extend %buttontext;
+    @extend %flexcenter;
+    padding: 12px 36px;
+    color: $white;
+    border-radius: $radius;
+    margin-top: 12px;
+    width: 80%;
+    &:hover {
+      background-color: $secondary_dark;
+    }
+  }
+}
