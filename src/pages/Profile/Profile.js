@@ -1,5 +1,10 @@
 import "./Profile.scss";
-import { ReviewsCard, ProjectSquareCard, ProjectCard } from "../../components";
+import {
+  ReviewsCard,
+  ProjectSquareCard,
+  ProjectCard,
+  Offer,
+} from "../../components";
 import { Header, Category, Sidebar, Footer } from "../components";
 import SimilarProject from "../../components/SimilarProject/SimilarProject";
 
@@ -11,6 +16,7 @@ function Profile() {
       <div className="profile">
         <Sidebar />
         <div className="profileContent">
+          <Offer />
           <ProjectCard />
           <div className="profileContent-container">
             <div className="profileContent-container-heading">

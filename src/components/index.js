@@ -11,6 +11,8 @@ import PriceCard from "./PriceCard/PriceCard";
 import MessageButtonFixed from "./MessageButtonFixed/MessageButtonFixed";
 import ProjectProfileCard from "./ProjectProfileCard/ProjectProfileCard";
 import ProjectCard from "./ProjectCard/ProjectCard";
+import Offer from "./Offer/Offer";
+import OfferStatics from "./OfferStatics/OfferStatics";
 
 export {
   AboutCard,
@@ -26,4 +28,6 @@ export {
   MessageButtonFixed,
   ProjectProfileCard,
   ProjectCard,
+  Offer,
+  OfferStatics,
 };
