@@ -1,6 +1,7 @@
 import "./Profile.scss";
 import { ReviewsCard, ProjectSquareCard, ProjectCard } from "../../components";
 import { Header, Category, Sidebar, Footer } from "../components";
+import SimilarProject from "../../components/SimilarProject/SimilarProject";
 
 function Profile() {
   return (
@@ -24,6 +25,7 @@ function Profile() {
           <ReviewsCard />
         </div>
       </div>
+      <SimilarProject />
       <Footer />
     </>
   );

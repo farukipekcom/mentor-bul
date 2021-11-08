@@ -1,0 +1,27 @@
+@import "../../sass/main.scss";
+
+.similarProject {
+  .background {
+    position: absolute;
+    width: 1920px;
+    height: auto;
+    z-index: -1;
+    svg {
+      width: 1920px;
+      height: 100%;
+    }
+  }
+  .container {
+    width: 1610px;
+    margin: 0 auto;
+    margin-top: 48px;
+  }
+  &-list {
+    margin-top: 30px;
+    @extend %flex;
+    gap: 30px;
+    &-heading {
+      @extend %title;
+    }
+  }
+}
