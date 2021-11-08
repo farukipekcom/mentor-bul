@@ -1,0 +1,47 @@
+@import "../../sass/main.scss";
+
+.offer {
+  background-color: #fff;
+  padding: 24px;
+  width: 100%;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  &-header {
+    @extend %flex;
+    width: 100%;
+    &-photo {
+      width: 64px;
+      height: 64px;
+      border-radius: $radius;
+    }
+    &-profile {
+      margin-left: 12px;
+      &-username {
+        @extend %category;
+      }
+      &-rating {
+        @extend %category;
+        @extend %flex;
+        color: $gray;
+        margin-top: 4px;
+        span {
+          @extend %icontext;
+          margin-left: 8px;
+        }
+        svg {
+          color: $orange;
+          margin-right: 8px;
+        }
+      }
+    }
+    &-price {
+      font-size: 36px;
+      font-weight: 600;
+      margin-left: auto;
+    }
+  }
+  &-detail {
+    @extend %text;
+    margin-top: 24px;
+  }
+}
