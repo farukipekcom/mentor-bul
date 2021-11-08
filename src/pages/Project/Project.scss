@@ -1,0 +1,18 @@
+@import "../../sass/main.scss";
+.tabs {
+  @extend %flex;
+  &-item {
+    padding: 8px 12px;
+    @extend %icontext;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      background-color: $hover1;
+      border-bottom: 2px solid $hover1;
+    }
+  }
+
+  .active {
+    border-bottom: 2px solid black;
+  }
+}

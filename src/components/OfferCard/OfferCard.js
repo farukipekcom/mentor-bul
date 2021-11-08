@@ -1,4 +1,4 @@
-import "./Offer.scss";
+import "./OfferCard.scss";
 import { Star } from "../../icons";
 import { user1 } from "../../images";
 function Offer() {

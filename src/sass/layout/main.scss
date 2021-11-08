@@ -9,11 +9,13 @@
   .content {
     width: 820px;
     @extend %flexvertical;
+    align-items: flex-start;
     gap: 30px;
   }
   .sidebar {
     width: 350px;
     @extend %flexvertical;
+    align-items: flex-start;
     gap: 30px;
   }
 }

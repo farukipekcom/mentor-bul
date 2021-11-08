@@ -11,10 +11,11 @@ import PriceCard from "./PriceCard/PriceCard";
 import MessageButtonFixed from "./MessageButtonFixed/MessageButtonFixed";
 import ProjectProfileCard from "./ProjectProfileCard/ProjectProfileCard";
 import ProjectCard from "./ProjectCard/ProjectCard";
-import Offer from "./Offer/Offer";
+import Offer from "./OfferCard/OfferCard";
 import OfferStatics from "./OfferStatics/OfferStatics";
 import SimilarProject from "./SimilarProject/SimilarProject";
 import UserProjectList from "./UserProjectList/UserProjectList";
+import OfferCard from "./OfferCard/OfferCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -33,4 +34,5 @@ export {
   OfferStatics,
   SimilarProject,
   UserProjectList,
+  OfferCard,
 };

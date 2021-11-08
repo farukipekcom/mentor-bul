@@ -14,6 +14,12 @@ function Project() {
       <Category />
       <div className="container">
         <div className="content">
+          <div className="tabs">
+            <div className="tabs-item active">Proje</div>
+            <div className="tabs-item">
+              <a href="/offer">Teklifler</a>
+            </div>
+          </div>
           <ProjectCard />
           <ReviewsCard />
         </div>
