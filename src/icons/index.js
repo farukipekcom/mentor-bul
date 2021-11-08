@@ -24,6 +24,7 @@ import { ReactComponent as Appstore } from "./appstore.svg";
 import { ReactComponent as Time } from "./time.svg";
 import { ReactComponent as RatingHeart } from "./ratingheart.svg";
 import { ReactComponent as Location } from "./location.svg";
+import { ReactComponent as TimeFilled } from "./time-filled.svg";
 export {
   Star,
   Cancel,
@@ -51,4 +52,5 @@ export {
   Time,
   RatingHeart,
   Location,
+  TimeFilled,
 };

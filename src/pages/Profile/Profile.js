@@ -1,5 +1,5 @@
 import "./Profile.scss";
-import { ReviewsCard, ProjectSquareCard } from "../../components";
+import { ReviewsCard, ProjectSquareCard, ProjectCard } from "../../components";
 import { Header, Category, Sidebar, Footer } from "../components";
 
 function Profile() {
@@ -10,6 +10,7 @@ function Profile() {
       <div className="profile">
         <Sidebar />
         <div className="profileContent">
+          <ProjectCard />
           <div className="profileContent-container">
             <div className="profileContent-container-heading">
               Aktif İlanlar

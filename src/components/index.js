@@ -10,6 +10,7 @@ import VerificationCard from "./VerificationCard/VerificationCard";
 import PriceCard from "./PriceCard/PriceCard";
 import MessageButtonFixed from "./MessageButtonFixed/MessageButtonFixed";
 import ProjectProfileCard from "./ProjectProfileCard/ProjectProfileCard";
+import ProjectCard from "./ProjectCard/ProjectCard";
 
 export {
   AboutCard,
@@ -24,4 +25,5 @@ export {
   PriceCard,
   MessageButtonFixed,
   ProjectProfileCard,
+  ProjectCard,
 };
