@@ -1,0 +1,37 @@
+@import "../../sass/main.scss";
+
+.messageButtonFixed {
+  padding: 16px;
+  border-radius: $radius_small;
+  box-shadow: $boxshadow;
+  width: 200px;
+  height: 50px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #fff;
+  cursor: pointer;
+  @extend %flex;
+  &:hover {
+    background-color: $primary;
+    color: #fff;
+    svg {
+      color: #fff;
+    }
+  }
+  &-icon {
+    color: $primary;
+    width: 22px;
+    height: 20px;
+    margin-top: 3px;
+    svg {
+      width: 22px;
+      height: 20px;
+    }
+  }
+  &-text {
+    margin-left: 12px;
+    font-weight: 500;
+    @extend %icontext;
+  }
+}

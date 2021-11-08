@@ -1,5 +1,6 @@
 import "./Footer.scss";
 import { Appstore, GooglePlay, FacebookFilled, Twitter } from "../../../icons";
+import MessageButtonFixed from "../../../components/MessageButtonFixed/MessageButtonFixed";
 function Footer() {
   return (
     <div className="footer">
@@ -89,6 +90,7 @@ function Footer() {
         </div>
         <div className="footer-bottom-right">Mentörbul © 2021</div>
       </div>
+      <MessageButtonFixed />
     </div>
   );
 }
