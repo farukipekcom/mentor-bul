@@ -89,14 +89,17 @@
       }
     }
     &-profile {
-      padding: 8px;
-      border-radius: $radius;
-      cursor: pointer;
-      &:hover {
-        background-color: $primary_soft;
+      a {
+        padding: 8px;
+        border-radius: $radius;
+        cursor: pointer;
+        &:hover {
+          background-color: $primary_soft;
+        }
+        @extend %flex;
+        margin-left: 16px;
       }
-      @extend %flex;
-      margin-left: 16px;
+
       &-photo {
         width: 48px;
         height: 48px;

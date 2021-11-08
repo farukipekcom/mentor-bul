@@ -10,7 +10,9 @@ function ProjectProfileCard() {
       <span className="projectProfileCard-location">İstanbul, Türkiye</span>
       <div className="projectProfileCard-buttons">
         <div className="projectProfileCard-buttons-message">Mesaj Gönder</div>
-        <div className="projectProfileCard-buttons-profile">Profil</div>
+        <div className="projectProfileCard-buttons-profile">
+          <a href="/profile">Profil</a>
+        </div>
       </div>
 
       <div className="projectProfileCard-summary">
@@ -18,7 +20,9 @@ function ProjectProfileCard() {
           <div className="projectProfileCard-summary-item-icon">
             <Location />
           </div>
-          <div className="projectProfileCard-summary-item-details">Türkiye</div>
+          <div className="projectProfileCard-summary-item-details">
+            Antalya, Türkiye
+          </div>
         </div>
         <div className="projectProfileCard-summary-item item-rating">
           <div className="projectProfileCard-summary-item-icon">

@@ -24,20 +24,22 @@ function Header() {
           <span className="header-right-addproject-text">İlan Oluştur</span>
         </div>
         <div className="header-right-profile">
-          <img
-            src={profilePhoto}
-            alt=""
-            className="header-right-profile-photo"
-          />
-          <div className="header-right-profile-details">
-            <div className="header-right-profile-details-fullname">
-              Faruk İpek
+          <a href="/profile">
+            <img
+              src={profilePhoto}
+              alt=""
+              className="header-right-profile-photo"
+            />
+            <div className="header-right-profile-details">
+              <div className="header-right-profile-details-fullname">
+                Faruk İpek
+              </div>
+              <div className="header-right-profile-details-profession">
+                Front-end Developer
+              </div>
             </div>
-            <div className="header-right-profile-details-profession">
-              Front-end Developer
-            </div>
-          </div>
-          <ArrowBottom />
+            <ArrowBottom />
+          </a>
         </div>
       </div>
     </div>

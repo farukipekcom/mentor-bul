@@ -42,6 +42,9 @@
       }
     }
     &-profile {
+      a {
+        color: #fff;
+      }
       @extend %icontext;
       height: 44px;
       background-color: $primary;
