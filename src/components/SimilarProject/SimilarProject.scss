@@ -1,6 +1,7 @@
 @import "../../sass/main.scss";
 
 .similarProject {
+  margin-top: 48px;
   .background {
     position: absolute;
     width: 100%;
@@ -13,11 +14,9 @@
   }
   .container {
     width: 1610px;
-    margin: 0 auto;
-    margin-top: 48px;
+    @extend %flexvertical;
   }
   &-list {
-    margin-top: 30px;
     @extend %flex;
     gap: 30px;
     &-heading {

@@ -4,6 +4,7 @@ import {
   ReviewsCard,
   PriceCard,
   ProjectProfileCard,
+  SimilarProject,
 } from "../../components";
 import { Header, Category, Footer } from "../../pages/components";
 function Project() {
@@ -21,6 +22,7 @@ function Project() {
           <ProjectProfileCard />
         </div>
       </div>
+      <SimilarProject />
       <Footer />
     </div>
   );

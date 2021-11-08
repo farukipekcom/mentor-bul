@@ -13,6 +13,7 @@ import ProjectProfileCard from "./ProjectProfileCard/ProjectProfileCard";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import Offer from "./Offer/Offer";
 import OfferStatics from "./OfferStatics/OfferStatics";
+import SimilarProject from "./SimilarProject/SimilarProject";
 
 export {
   AboutCard,
@@ -30,4 +31,5 @@ export {
   ProjectCard,
   Offer,
   OfferStatics,
+  SimilarProject,
 };

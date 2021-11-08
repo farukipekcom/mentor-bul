@@ -14,7 +14,6 @@ function SimilarProject() {
           <ProjectSquareCard />
           <ProjectSquareCard />
           <ProjectSquareCard />
-          <ProjectSquareCard />
         </div>
       </div>
     </div>
