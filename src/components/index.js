@@ -7,6 +7,8 @@ import ShareCard from "./ShareCard/ShareCard";
 import Stars from "./Stars/Stars";
 import StaticsCard from "./StaticsCard/StaticsCard";
 import VerificationCard from "./VerificationCard/VerificationCard";
+import PriceCard from "./PriceCard/PriceCard";
+import MessageButtonFixed from "./MessageButtonFixed/MessageButtonFixed";
 
 export {
   AboutCard,
@@ -18,4 +20,6 @@ export {
   Stars,
   StaticsCard,
   VerificationCard,
+  PriceCard,
+  MessageButtonFixed,
 };
