@@ -21,6 +21,9 @@ import { ReactComponent as Plus } from "./plus.svg";
 import { ReactComponent as Message } from "./message.svg";
 import { ReactComponent as GooglePlay } from "./googleplay.svg";
 import { ReactComponent as Appstore } from "./appstore.svg";
+import { ReactComponent as Time } from "./time.svg";
+import { ReactComponent as RatingHeart } from "./ratingheart.svg";
+import { ReactComponent as Location } from "./location.svg";
 export {
   Star,
   Cancel,
@@ -45,4 +48,7 @@ export {
   Message,
   Appstore,
   GooglePlay,
+  Time,
+  RatingHeart,
+  Location,
 };

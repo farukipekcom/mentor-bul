@@ -9,6 +9,7 @@ import StaticsCard from "./StaticsCard/StaticsCard";
 import VerificationCard from "./VerificationCard/VerificationCard";
 import PriceCard from "./PriceCard/PriceCard";
 import MessageButtonFixed from "./MessageButtonFixed/MessageButtonFixed";
+import ProjectProfileCard from "./ProjectProfileCard/ProjectProfileCard";
 
 export {
   AboutCard,
@@ -22,4 +23,5 @@ export {
   VerificationCard,
   PriceCard,
   MessageButtonFixed,
+  ProjectProfileCard,
 };

@@ -1,0 +1,93 @@
+@import "../../sass/main.scss";
+
+.projectProfileCard {
+  @extend %flexvertical;
+  background-color: #fff;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  width: 350px;
+  padding: 24px;
+  &-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+  }
+  &-username {
+    @extend %sidebar;
+    margin-top: 16px;
+  }
+  &-location {
+    @extend %subtext1;
+    color: $gray;
+    margin-top: 12px;
+  }
+  &-buttons {
+    margin-top: 24px;
+    @extend %flex;
+    gap: 16px;
+    width: 100%;
+    &-message {
+      @extend %icontext;
+      height: 44px;
+      border: 1px solid $primary;
+      color: #000;
+      @extend %flexcenter;
+      flex: 1;
+      padding: 8px 0px;
+      border-radius: $radius;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+    &-profile {
+      @extend %icontext;
+      height: 44px;
+      background-color: $primary;
+      color: #fff;
+      @extend %flexcenter;
+      flex: 1;
+      padding: 8px 0px;
+      border-radius: $radius;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary_dark;
+      }
+    }
+  }
+  &-summary {
+    margin-top: 24px;
+    width: 100%;
+    @extend %flexvertical;
+    align-items: flex-start;
+    gap: 8px;
+    .item-rating {
+      background-color: $primary_soft;
+    }
+    &-item {
+      @extend %flex;
+      width: 100%;
+      border-radius: $radius;
+      padding: 5px 8px;
+      &-icon {
+        width: 22px;
+        height: 22px;
+        svg {
+          width: 22px;
+          height: 22px;
+          color: #000;
+        }
+      }
+      &-details {
+        @extend %icontext;
+        @extend %flex;
+        margin-left: 12px;
+        .count {
+          margin-left: 8px;
+          @extend %tagtext;
+        }
+      }
+    }
+  }
+}
