@@ -14,7 +14,7 @@ import ProjectCard from "./ProjectCard/ProjectCard";
 import Offer from "./Offer/Offer";
 import OfferStatics from "./OfferStatics/OfferStatics";
 import SimilarProject from "./SimilarProject/SimilarProject";
-
+import UserProjectList from "./UserProjectList/UserProjectList";
 export {
   AboutCard,
   ProfessionCard,
@@ -32,4 +32,5 @@ export {
   Offer,
   OfferStatics,
   SimilarProject,
+  UserProjectList,
 };

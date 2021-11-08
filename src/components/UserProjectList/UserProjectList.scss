@@ -1,0 +1,18 @@
+@import "../../sass/main.scss";
+.userProjectList {
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  &-heading {
+    @extend %subtitle;
+  }
+  &-list {
+    margin-top: 36px;
+    @extend %flex;
+    gap: 12px;
+    .projectSquareCard {
+      border: 1px solid $bordergray;
+    }
+  }
+}

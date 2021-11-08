@@ -1,11 +1,12 @@
 import "./Header.scss";
 import { profilePhoto } from "../../../images";
 import { ArrowBottom, Message, Plus, Search } from "../../../icons";
+
 function Header() {
   return (
     <div className="header">
       <div className="header-logo">
-        <a href="index.html">MENTÖRBUL</a>
+        <a href="/">MENTÖRBUL</a>
       </div>
       <div className="header-search">
         <Search />

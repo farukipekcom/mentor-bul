@@ -7,8 +7,10 @@ import {
   ProfessionCard,
   VerificationCard,
   ShareCard,
+  ProjectSquareCard,
   ProjectCard,
   ReviewsCard,
+  UserProjectList,
 } from "../../components";
 function Profile() {
   return (
@@ -25,7 +27,7 @@ function Profile() {
           <ShareCard />
         </div>
         <div className="content">
-          <ProjectCard />
+          <UserProjectList />
           <ReviewsCard />
         </div>
       </div>
