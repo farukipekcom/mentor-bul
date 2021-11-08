@@ -1,0 +1,25 @@
+@import "../../sass/main.scss";
+
+.offerStatics {
+  padding: 24px;
+  background-color: #fff;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  width: 100%;
+  @extend %flexvertical;
+  align-items: flex-start;
+  gap: 24px;
+
+  &-item {
+    @extend %flexvertical;
+    align-items: flex-start;
+    &-title {
+      @extend %category;
+      color: $gray;
+    }
+    &-desc {
+      @extend %sidebar;
+      margin-top: 8px;
+    }
+  }
+}
