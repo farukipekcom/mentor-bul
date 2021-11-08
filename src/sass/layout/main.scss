@@ -1,0 +1,19 @@
+.rightSidebar {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+    @extend %flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .content {
+    width: 820px;
+    @extend %flexvertical;
+    gap: 30px;
+  }
+  .sidebar {
+    width: 350px;
+    @extend %flexvertical;
+    gap: 30px;
+  }
+}

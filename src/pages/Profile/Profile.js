@@ -1,39 +1,36 @@
 import "./Profile.scss";
+import { Header, Category, Footer } from "../components";
 import {
-  ReviewsCard,
-  ProjectSquareCard,
+  ProfileCard,
+  StaticsCard,
+  AboutCard,
+  ProfessionCard,
+  VerificationCard,
+  ShareCard,
   ProjectCard,
-  Offer,
+  ReviewsCard,
 } from "../../components";
-import { Header, Category, Sidebar, Footer } from "../components";
-import SimilarProject from "../../components/SimilarProject/SimilarProject";
-
 function Profile() {
   return (
-    <>
+    <div className="rightSidebar">
       <Header />
       <Category />
-      <div className="profile">
-        <Sidebar />
-        <div className="profileContent">
-          <Offer />
+      <div className="container">
+        <div className="sidebar">
+          <ProfileCard />
+          <StaticsCard />
+          <AboutCard />
+          <ProfessionCard />
+          <VerificationCard />
+          <ShareCard />
+        </div>
+        <div className="content">
           <ProjectCard />
-          <div className="profileContent-container">
-            <div className="profileContent-container-heading">
-              Aktif İlanlar
-            </div>
-            <div className="profileContent-container-list">
-              <ProjectSquareCard />
-              <ProjectSquareCard />
-            </div>
-          </div>
-
           <ReviewsCard />
         </div>
       </div>
-      <SimilarProject />
       <Footer />
-    </>
+    </div>
   );
 }
 
