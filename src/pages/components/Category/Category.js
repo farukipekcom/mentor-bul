@@ -16,16 +16,16 @@ function Category() {
           <a href="/category">Video & Animasyon</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          <a href="/category">Müzik</a>
+          <a href="/sub-category">Müzik</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          <a href="/category">Eğlence</a>
+          <a href="/sub-category">Eğlence</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          <a href="/category">Yazılım & Teknoloji</a>
+          <a href="/sub-category">Yazılım & Teknoloji</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          <a href="/category">İş & Yönetim</a>
+          <a href="/sub-category">İş & Yönetim</a>
         </div>
       </div>
     </div>

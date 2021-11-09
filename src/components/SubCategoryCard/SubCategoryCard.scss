@@ -1,0 +1,31 @@
+@import "../../sass/main.scss";
+
+.subCategoryCard {
+  padding: 36px;
+  @extend %flexvertical;
+  background-color: #fff;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  &-title {
+    @extend %subtitle;
+  }
+  &-footer {
+    width: 100%;
+    margin-top: 48px;
+
+    @extend %flex;
+    justify-content: flex-end;
+    &-count {
+      @extend %sidebar;
+    }
+    &-icon {
+      margin-left: 8px;
+      width: 17px;
+      height: 18px;
+      svg {
+        width: 17px;
+        height: 18px;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import Project from "./pages/Project/Project";
 import Profile from "./pages/Profile/Profile";
 import Offer from "./pages/Offer/Offer";
 import Category from "./pages/Category/Category";
+import SubCategory from "./pages/SubCategory/SubCategory";
 function App() {
   return (
     <>
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/category">
             <Category />
+          </Route>
+          <Route path="/sub-category">
+            <SubCategory />
           </Route>
         </Switch>
       </Router>

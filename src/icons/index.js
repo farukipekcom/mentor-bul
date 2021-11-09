@@ -30,6 +30,7 @@ import { ReactComponent as Timev2 } from "./timev2.svg";
 import { ReactComponent as Sale } from "./sale.svg";
 import { ReactComponent as Users } from "./users.svg";
 import { ReactComponent as Loading } from "./loading.svg";
+import { ReactComponent as ArrowRight } from "./arrow-right.svg";
 export {
   Star,
   Cancel,
@@ -63,4 +64,5 @@ export {
   Sale,
   Users,
   Loading,
+  ArrowRight,
 };
