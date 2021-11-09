@@ -6,6 +6,7 @@ import Offer from "./pages/Offer/Offer";
 import Category from "./pages/Category/Category";
 import SubCategory from "./pages/SubCategory/SubCategory";
 import Search from "./pages/Search/Search";
+import AddProject from "./pages/AddProject/AddProject";
 function App() {
   return (
     <>
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/search">
             <Search />
+          </Route>
+          <Route path="/addproject">
+            <AddProject />
           </Route>
         </Switch>
       </Router>

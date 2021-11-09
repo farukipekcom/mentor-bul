@@ -31,6 +31,13 @@ import { ReactComponent as Sale } from "./sale.svg";
 import { ReactComponent as Users } from "./users.svg";
 import { ReactComponent as Loading } from "./loading.svg";
 import { ReactComponent as ArrowRight } from "./arrow-right.svg";
+import { ReactComponent as Cart } from "./cart.svg";
+import { ReactComponent as Tl } from "./tl.svg";
+import { ReactComponent as Cartv2 } from "./cartv2.svg";
+import { ReactComponent as Home } from "./home.svg";
+import { ReactComponent as List } from "./list.svg";
+import { ReactComponent as Profile } from "./profile.svg";
+import { ReactComponent as Settings } from "./settings.svg";
 export {
   Star,
   Cancel,
@@ -65,4 +72,11 @@ export {
   Users,
   Loading,
   ArrowRight,
+  Cart,
+  Cartv2,
+  Home,
+  List,
+  Profile,
+  Settings,
+  Tl,
 };
