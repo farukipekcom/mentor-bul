@@ -4,6 +4,7 @@ import {
   FilterCard,
   ProjectCardHorizontal,
   CategorySummaryCard,
+  ShowMoreCard,
 } from "../../components";
 function Category() {
   return (
@@ -21,6 +22,7 @@ function Category() {
           <ProjectCardHorizontal />
           <ProjectCardHorizontal />
           <ProjectCardHorizontal />
+          <ShowMoreCard />
         </div>
       </div>
       <Footer />

@@ -19,6 +19,7 @@ import OfferCard from "./OfferCard/OfferCard";
 import FilterCard from "./FilterCard/FilterCard";
 import ProjectCardHorizontal from "./ProjectCardHorizontal/ProjectCardHorizontal";
 import CategorySummaryCard from "./CategorySummaryCard/CategorySummaryCard";
+import ShowMoreCard from "./ShowMoreCard/ShowMoreCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -41,4 +42,5 @@ export {
   FilterCard,
   ProjectCardHorizontal,
   CategorySummaryCard,
+  ShowMoreCard,
 };

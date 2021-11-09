@@ -29,6 +29,7 @@ import { ReactComponent as Background } from "./similar-background.svg";
 import { ReactComponent as Timev2 } from "./timev2.svg";
 import { ReactComponent as Sale } from "./sale.svg";
 import { ReactComponent as Users } from "./users.svg";
+import { ReactComponent as Loading } from "./loading.svg";
 export {
   Star,
   Cancel,
@@ -61,4 +62,5 @@ export {
   Timev2,
   Sale,
   Users,
+  Loading,
 };

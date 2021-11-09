@@ -1,0 +1,43 @@
+@import "../../sass/main.scss";
+
+.showMore {
+  width: 100%;
+  height: 72px;
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  @extend %flex;
+  justify-content: space-between;
+
+  &-summary {
+    @extend %icontext;
+    color: $gray;
+    flex: 1;
+  }
+  &-button {
+    height: 42px;
+    border-radius: $radius;
+    background-color: #171e2c;
+    @extend %flexcenter;
+    cursor: pointer;
+    flex: 1;
+    &-text {
+      @extend %icontext;
+      color: #fff;
+    }
+    &-icon {
+      color: #fff;
+      margin-left: 12px;
+      width: 20px;
+      height: 20px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .empty {
+    flex: 1;
+  }
+}
