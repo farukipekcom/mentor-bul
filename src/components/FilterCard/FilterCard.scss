@@ -1,0 +1,198 @@
+@import "../../sass/main.scss";
+.filterCard {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  @extend %flexvertical;
+  padding: 24px;
+  align-items: flex-start;
+  &-heading {
+    @extend %title;
+  }
+  &-filteritem {
+    margin-top: 48px;
+    &:nth-child(2) {
+      margin-top: 0px;
+    }
+    &-heading {
+      @extend %sidebar;
+      margin-top: 8px;
+    }
+    &-price {
+      @extend %flex;
+      margin-top: 16px;
+      gap: 8px;
+      &-item {
+        @extend %flexvertical;
+        align-items: flex-start;
+        @extend %category;
+        &:nth-child(2) {
+        }
+        @extend %flex;
+        input {
+          border: 1px solid #e5e5e5;
+          background-color: #f9f9f9;
+          border-radius: $radius_small;
+          height: 32px;
+          margin-top: 12px;
+          padding-left: 12px;
+          &::placeholder {
+            @extend %text;
+            font-family: sans-serif;
+          }
+        }
+      }
+    }
+
+    .hizmetturu {
+      margin-top: 16px;
+      @extend %flexvertical;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .nopoint {
+      svg {
+        color: $footer !important;
+      }
+    }
+  }
+  &-button {
+    width: 100%;
+    background-color: $primary;
+    @extend %buttontext;
+    @extend %flexcenter;
+    border-radius: $radius;
+    margin-top: 48px;
+    cursor: pointer;
+    color: $white;
+    padding: 12px 0px;
+  }
+  .form-item {
+    @extend %flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+// ------------------------
+.custom_checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  @extend %flex;
+  @extend %tagtext;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  svg {
+    color: $orange;
+    margin-right: 8px;
+  }
+  .checkbox-text {
+    line-height: 1;
+    margin-top: 2px;
+  }
+}
+.custom_checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: $radius_small;
+  outline: 2px solid #ddd;
+}
+.custom_checkbox:hover input ~ .checkmark {
+  outline: 2px solid $primary;
+}
+.custom_checkbox input:checked ~ .checkmark {
+  background-color: $primary;
+  outline: 2px solid $primary;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.custom_checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.custom_checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+// ------------------------
+.radiobutton {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  @extend %flex;
+  @extend %tagtext;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radiobutton input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmarkradio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  outline: 2px solid #ddd;
+}
+.radiobutton:hover input ~ .checkmarkradio {
+  outline: 2px solid $primary;
+}
+.radiobutton input:checked ~ .checkmarkradio {
+  background-color: $primary;
+  outline: 2px solid $primary;
+}
+.checkmarkradio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radiobutton input:checked ~ .checkmarkradio:after {
+  display: block;
+}
+.radiobutton .checkmarkradio:after {
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+}

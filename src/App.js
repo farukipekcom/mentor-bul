@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Project from "./pages/Project/Project";
 import Profile from "./pages/Profile/Profile";
 import Offer from "./pages/Offer/Offer";
+import Category from "./pages/Category/Category";
 function App() {
   return (
     <>
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/offer">
             <Offer />
+          </Route>
+          <Route path="/category">
+            <Category />
           </Route>
         </Switch>
       </Router>
