@@ -7,6 +7,7 @@ import media1 from "./media1.jpg";
 import media2 from "./media2.jpg";
 import media3 from "./media3.jpg";
 import media4 from "./media4.jpg";
+import categoryImage from "./category-image.svg";
 export {
   profilePhoto,
   user1,
@@ -17,4 +18,5 @@ export {
   media2,
   media3,
   media4,
+  categoryImage,
 };

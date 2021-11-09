@@ -27,6 +27,8 @@ import { ReactComponent as Location } from "./location.svg";
 import { ReactComponent as TimeFilled } from "./time-filled.svg";
 import { ReactComponent as Background } from "./similar-background.svg";
 import { ReactComponent as Timev2 } from "./timev2.svg";
+import { ReactComponent as Sale } from "./sale.svg";
+import { ReactComponent as Users } from "./users.svg";
 export {
   Star,
   Cancel,
@@ -57,4 +59,6 @@ export {
   TimeFilled,
   Background,
   Timev2,
+  Sale,
+  Users,
 };

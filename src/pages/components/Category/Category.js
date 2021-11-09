@@ -4,28 +4,28 @@ function Category() {
     <div className="category">
       <div className="category-list">
         <div className="category-list-item border-animation menu-border">
-          Grafik & Tasarım
+          <a href="/category">Grafik & Tasarım</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          İnternet Reklamcılığı
+          <a href="/category">İnternet Reklamcılığı</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          Yazı & Çeviri
+          <a href="/category">Yazı & Çeviri</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          Video & Animasyon
+          <a href="/category">Video & Animasyon</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          Müzik
+          <a href="/category">Müzik</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          Eğlence
+          <a href="/category">Eğlence</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          Yazılım & Teknoloji
+          <a href="/category">Yazılım & Teknoloji</a>
         </div>
         <div className="category-list-item border-animation menu-border">
-          İş & Yönetim
+          <a href="/category">İş & Yönetim</a>
         </div>
       </div>
     </div>
