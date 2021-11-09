@@ -10,7 +10,9 @@ function Header() {
       </div>
       <div className="header-search">
         <Search />
-        <input type="text" placeholder="Arama Yap..." />
+        <a href="/search">
+          <input type="text" placeholder="Arama Yap..." />
+        </a>
       </div>
       <div className="header-right">
         <div className="header-right-message">

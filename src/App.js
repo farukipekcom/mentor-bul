@@ -5,6 +5,7 @@ import Profile from "./pages/Profile/Profile";
 import Offer from "./pages/Offer/Offer";
 import Category from "./pages/Category/Category";
 import SubCategory from "./pages/SubCategory/SubCategory";
+import Search from "./pages/Search/Search";
 function App() {
   return (
     <>
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/sub-category">
             <SubCategory />
+          </Route>
+          <Route path="/search">
+            <Search />
           </Route>
         </Switch>
       </Router>

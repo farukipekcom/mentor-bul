@@ -21,6 +21,7 @@ import ProjectCardHorizontal from "./ProjectCardHorizontal/ProjectCardHorizontal
 import CategorySummaryCard from "./CategorySummaryCard/CategorySummaryCard";
 import ShowMoreCard from "./ShowMoreCard/ShowMoreCard";
 import SubCategoryCard from "./SubCategoryCard/SubCategoryCard";
+import SearchCard from "./SearchCard/SearchCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -45,4 +46,5 @@ export {
   CategorySummaryCard,
   ShowMoreCard,
   SubCategoryCard,
+  SearchCard,
 };
