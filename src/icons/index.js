@@ -38,6 +38,7 @@ import { ReactComponent as Home } from "./home.svg";
 import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as Settings } from "./settings.svg";
+import { ReactComponent as IconBackground } from "./icon-background.svg";
 export {
   Star,
   Cancel,
@@ -79,4 +80,5 @@ export {
   Profile,
   Settings,
   Tl,
+  IconBackground,
 };

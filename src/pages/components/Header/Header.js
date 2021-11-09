@@ -18,13 +18,15 @@ function Header() {
         <div className="header-right-message">
           <Message />
         </div>
-        <div className="header-right-addproject">
-          <div className="header-right-addproject-icon">
-            <Plus />
-          </div>
+        <a href="/addproject">
+          <div className="header-right-addproject">
+            <div className="header-right-addproject-icon">
+              <Plus />
+            </div>
 
-          <span className="header-right-addproject-text">İlan Oluştur</span>
-        </div>
+            <span className="header-right-addproject-text">İlan Oluştur</span>
+          </div>
+        </a>
         <div className="header-right-profile">
           <a href="/profile">
             <img

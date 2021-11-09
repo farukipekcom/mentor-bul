@@ -1,6 +1,6 @@
 import "./AddProject.scss";
 import { Header, Category, Footer } from "../components";
-import { ProfileMenuCard } from "../../components";
+import { ProfileMenuCard, AddProjectAllPart } from "../../components";
 
 function AddProject() {
   return (
@@ -11,7 +11,9 @@ function AddProject() {
         <div className="sidebar">
           <ProfileMenuCard />
         </div>
-        <div className="content"></div>
+        <div className="content">
+          <AddProjectAllPart />
+        </div>
       </div>
       <Footer />
     </div>

@@ -23,6 +23,7 @@ import ShowMoreCard from "./ShowMoreCard/ShowMoreCard";
 import SubCategoryCard from "./SubCategoryCard/SubCategoryCard";
 import SearchCard from "./SearchCard/SearchCard";
 import ProfileMenuCard from "./ProfileMenuCard/ProfileMenuCard";
+import AddProjectAllPart from "./AddProjectAllPart/AddProjectAllPart";
 export {
   AboutCard,
   ProfessionCard,
@@ -49,4 +50,5 @@ export {
   SubCategoryCard,
   SearchCard,
   ProfileMenuCard,
+  AddProjectAllPart,
 };

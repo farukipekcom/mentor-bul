@@ -12,7 +12,8 @@ import {
   ReviewsCard,
   UserProjectList,
 } from "../../components";
-function Profile() {
+function Profile({ deneme }) {
+  console.log(deneme);
   return (
     <div className="rightSidebar">
       <Header />

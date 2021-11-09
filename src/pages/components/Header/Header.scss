@@ -66,9 +66,6 @@
       &:hover {
         background-color: $primary;
         color: #fff;
-        &-icon {
-          background-color: red;
-        }
       }
       @extend %flex;
       padding: 8px 16px;
