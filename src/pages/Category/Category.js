@@ -1,6 +1,6 @@
 import "./Category.scss";
 import { Header, Category as CategoryHeader, Footer } from "../components";
-import { FilterCard } from "../../components";
+import { FilterCard, ProjectCardHorizontal } from "../../components";
 function Category() {
   return (
     <div className="rightSidebar">
@@ -10,7 +10,13 @@ function Category() {
         <div className="sidebar">
           <FilterCard />
         </div>
-        <div className="content"></div>
+        <div className="content">
+          <ProjectCardHorizontal />
+          <ProjectCardHorizontal />
+          <ProjectCardHorizontal />
+          <ProjectCardHorizontal />
+          <ProjectCardHorizontal />
+        </div>
       </div>
       <Footer />
     </div>

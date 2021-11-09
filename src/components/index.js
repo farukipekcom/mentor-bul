@@ -17,6 +17,7 @@ import SimilarProject from "./SimilarProject/SimilarProject";
 import UserProjectList from "./UserProjectList/UserProjectList";
 import OfferCard from "./OfferCard/OfferCard";
 import FilterCard from "./FilterCard/FilterCard";
+import ProjectCardHorizontal from "./ProjectCardHorizontal/ProjectCardHorizontal";
 export {
   AboutCard,
   ProfessionCard,
@@ -37,4 +38,5 @@ export {
   UserProjectList,
   OfferCard,
   FilterCard,
+  ProjectCardHorizontal,
 };

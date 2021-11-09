@@ -26,6 +26,7 @@ import { ReactComponent as RatingHeart } from "./ratingheart.svg";
 import { ReactComponent as Location } from "./location.svg";
 import { ReactComponent as TimeFilled } from "./time-filled.svg";
 import { ReactComponent as Background } from "./similar-background.svg";
+import { ReactComponent as Timev2 } from "./timev2.svg";
 export {
   Star,
   Cancel,
@@ -55,4 +56,5 @@ export {
   Location,
   TimeFilled,
   Background,
+  Timev2,
 };
