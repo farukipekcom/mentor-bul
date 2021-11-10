@@ -1,0 +1,26 @@
+@import "../../sass/main.scss";
+.welcomeCard {
+  @extend %flex;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  &-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+  }
+  &-details {
+    margin-left: 16px;
+    @extend %flexvertical;
+    align-items: flex-start;
+    &-text {
+      @extend %text;
+      color: $gray;
+    }
+    &-username {
+      @extend %buttontext;
+      margin-top: 4px;
+    }
+  }
+}

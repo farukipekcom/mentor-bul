@@ -24,6 +24,8 @@ import SubCategoryCard from "./SubCategoryCard/SubCategoryCard";
 import SearchCard from "./SearchCard/SearchCard";
 import ProfileMenuCard from "./ProfileMenuCard/ProfileMenuCard";
 import AddProjectAllPart from "./AddProjectAllPart/AddProjectAllPart";
+import WelcomeCard from "./WelcomeCard/WelcomeCard";
+import MentorCard from "./MentorCard/MentorCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -51,4 +53,6 @@ export {
   SearchCard,
   ProfileMenuCard,
   AddProjectAllPart,
+  WelcomeCard,
+  MentorCard,
 };

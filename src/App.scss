@@ -22,3 +22,10 @@ body {
 .tl {
   font-family: "sans-serif";
 }
+
+a:link,
+a:active,
+a:visited,
+a:hover {
+  color: unset;
+}

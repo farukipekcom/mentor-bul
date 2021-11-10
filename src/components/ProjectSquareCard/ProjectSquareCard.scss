@@ -1,75 +1,74 @@
 @import "../../sass/main.scss";
-a {
+
+.projectSquareCard {
+  width: 100%;
   color: #000;
-  .projectSquareCard {
-    width: 100%;
-    padding: 24px;
-    background-color: #fff;
-    box-shadow: $boxshadow;
-    border-radius: $radius;
-    cursor: pointer;
-    &:hover {
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  &-subheading {
+    @extend %icontext;
+    color: $gray;
+  }
+  &-heading {
+    @extend %subtitle;
+    margin-top: 8px;
+  }
+  &-details {
+    margin-top: 8px;
+    @extend %tagtext;
+  }
+  &-info {
+    margin-top: 12px;
+    @extend %flex;
+    justify-content: space-between;
+    &-category {
+      @extend %subtext1;
+      background-color: $softgray;
+      padding: 8px 12px;
+      border-radius: $radius;
     }
-    &-subheading {
-      @extend %icontext;
-      color: $gray;
-    }
-    &-heading {
+    &-price {
       @extend %subtitle;
-      margin-top: 8px;
+      font-weight: 600;
+    }
+  }
+  &-seperator {
+    width: 100%;
+    height: 1px;
+    background-color: $bordergray;
+    margin-top: 16px;
+  }
+  &-profile {
+    @extend %flex;
+    margin-top: 16px;
+    &-photo {
+      width: 42px;
+      height: 42px;
+      border-radius: $radius;
     }
     &-details {
-      margin-top: 8px;
-      @extend %tagtext;
-    }
-    &-info {
-      margin-top: 12px;
-      @extend %flex;
-      justify-content: space-between;
-      &-category {
-        @extend %subtext1;
-        background-color: $softgray;
-        padding: 8px 12px;
-        border-radius: $radius;
+      margin-left: 12px;
+      &-username {
+        @extend %category;
       }
-      &-price {
-        @extend %subtitle;
-        font-weight: 600;
-      }
-    }
-    &-seperator {
-      width: 100%;
-      height: 1px;
-      background-color: $bordergray;
-      margin-top: 16px;
-    }
-    &-profile {
-      @extend %flex;
-      margin-top: 16px;
-      &-photo {
-        width: 42px;
-        height: 42px;
-        border-radius: $radius;
-      }
-      &-details {
-        margin-left: 12px;
-        &-username {
-          @extend %category;
+      &-ratings {
+        @extend %flex;
+        @extend %icontext;
+        color: $gray;
+        margin-top: 2px;
+        svg {
+          color: $orange;
+          margin-top: -3px;
         }
-        &-ratings {
-          @extend %flex;
-          @extend %icontext;
-          color: $gray;
-          margin-top: 2px;
-          svg {
-            color: $orange;
-            margin-top: -3px;
-          }
-          &-count {
-            line-height: 1.5;
-            margin-left: 4px;
-          }
+        &-count {
+          line-height: 1.5;
+          margin-left: 4px;
         }
       }
     }

@@ -7,13 +7,14 @@ import Category from "./pages/Category/Category";
 import SubCategory from "./pages/SubCategory/SubCategory";
 import Search from "./pages/Search/Search";
 import AddProject from "./pages/AddProject/AddProject";
+import Homepage from "./pages/Homepage/Homepage";
 function App() {
   return (
     <>
       <Router>
         <Switch>
           <Route path="/" exact>
-            <Profile />
+            <Homepage />
           </Route>
           <Route path="/profile">
             <Profile />

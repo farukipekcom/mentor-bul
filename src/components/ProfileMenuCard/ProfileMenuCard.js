@@ -5,7 +5,7 @@ function ProfileMenuCard() {
     <div className="profileMenuCard">
       <span className="profileMenuCard-title">Mentee</span>
       <div className="profileMenuCard-menu">
-        <a href="/profile">
+        <a href="/">
           <div className="profileMenuCard-menu-item active">
             <div className="profileMenuCard-menu-item-icon">
               <Home />

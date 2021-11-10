@@ -1,0 +1,40 @@
+@import "../../sass/main.scss";
+
+.mentorCard {
+  background-color: #fff;
+  @extend %flexvertical;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  padding: 24px;
+  color: #000;
+  border: 3px solid transparent;
+  transition: 0.5s border;
+  &:hover {
+    border: 3px solid $primary;
+    transition: 0.5s border;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  &-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+  }
+  &-username {
+    margin-top: 12px;
+    @extend %sidebar;
+  }
+  &-location {
+    margin-top: 8px;
+    @extend %subtext1;
+    color: $gray;
+  }
+  &-rating {
+    margin-top: 16px;
+    @extend %flexvertical;
+    &-count {
+      @extend %subtext1;
+      color: $gray;
+      margin-top: 12px;
+    }
+  }
+}
