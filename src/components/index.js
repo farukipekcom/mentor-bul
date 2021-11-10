@@ -26,6 +26,7 @@ import ProfileMenuCard from "./ProfileMenuCard/ProfileMenuCard";
 import AddProjectAllPart from "./AddProjectAllPart/AddProjectAllPart";
 import WelcomeCard from "./WelcomeCard/WelcomeCard";
 import MentorCard from "./MentorCard/MentorCard";
+import ProjectSummaryCard from "./ProjectSummaryCard/ProjectSummaryCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -55,4 +56,5 @@ export {
   AddProjectAllPart,
   WelcomeCard,
   MentorCard,
+  ProjectSummaryCard,
 };

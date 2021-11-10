@@ -8,6 +8,7 @@ import SubCategory from "./pages/SubCategory/SubCategory";
 import Search from "./pages/Search/Search";
 import AddProject from "./pages/AddProject/AddProject";
 import Homepage from "./pages/Homepage/Homepage";
+import BoughtProject from "./pages/BoughtProject/BoughtProject";
 function App() {
   return (
     <>
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/addproject">
             <AddProject />
+          </Route>
+          <Route path="/boughtProject">
+            <BoughtProject />
           </Route>
         </Switch>
       </Router>

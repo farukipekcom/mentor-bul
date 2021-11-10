@@ -13,7 +13,7 @@ function ProfileMenuCard() {
             <div className="profileMenuCard-menu-item-name">Anasayfa</div>
           </div>
         </a>
-        <a href="">
+        <a href="/boughtProject">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
               <Cart />
