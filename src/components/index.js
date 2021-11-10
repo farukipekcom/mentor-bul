@@ -27,6 +27,7 @@ import AddProjectAllPart from "./AddProjectAllPart/AddProjectAllPart";
 import WelcomeCard from "./WelcomeCard/WelcomeCard";
 import MentorCard from "./MentorCard/MentorCard";
 import ProjectSummaryCard from "./ProjectSummaryCard/ProjectSummaryCard";
+import FinanceCard from "./FinanceCard/FinanceCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -57,4 +58,5 @@ export {
   WelcomeCard,
   MentorCard,
   ProjectSummaryCard,
+  FinanceCard,
 };

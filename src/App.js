@@ -9,6 +9,7 @@ import Search from "./pages/Search/Search";
 import AddProject from "./pages/AddProject/AddProject";
 import Homepage from "./pages/Homepage/Homepage";
 import BoughtProject from "./pages/BoughtProject/BoughtProject";
+import MenteeFinance from "./pages/MenteeFinance/MenteeFinance";
 function App() {
   return (
     <>
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path="/boughtProject">
             <BoughtProject />
+          </Route>
+          <Route path="/menteeFinance">
+            <MenteeFinance />
           </Route>
         </Switch>
       </Router>

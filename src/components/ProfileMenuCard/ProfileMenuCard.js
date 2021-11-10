@@ -23,7 +23,7 @@ function ProfileMenuCard() {
             </div>
           </div>
         </a>
-        <a href="">
+        <a href="/menteeFinance">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
               <Tl />
