@@ -78,6 +78,23 @@
         font-size: tagtext;
       }
     }
+    &-inputcontainer {
+      width: 100%;
+      @extend %flex;
+      align-items: flex-end;
+    }
+    &-button {
+      background-color: $primary;
+      height: 48px;
+      width: 48px;
+      border-radius: $radius;
+      @extend %flexcenter;
+      margin-left: 16px;
+      cursor: pointer;
+      svg {
+        color: #fff;
+      }
+    }
     &-file {
       margin-top: 16px;
     }
@@ -90,4 +107,21 @@
       width: 50%;
     }
   }
+}
+
+.custom_select {
+  width: 50%;
+  position: relative;
+  .input {
+    appearance: none;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+  }
+}
+
+.deneme2 {
+  padding-right: 8px;
 }

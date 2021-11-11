@@ -1,6 +1,7 @@
 import "./AddProjectAllPart.scss";
 import AddProjectCategoryItem from "../AddProjectCategoryItem/AddProjectCategoryItem";
 import { useState } from "react";
+import { ArrowBottom, Plus } from "../../icons";
 
 function AddProjectPart1() {
   const [gizli1, setGizli1] = useState(1);
@@ -103,29 +104,37 @@ function AddProjectPart1() {
               className="addProjectPart3-items-input textarea"
             />
           </div>
-          <div className="addProjectPart3-items">
+          <div className="addProjectPart3-items ">
             <span className="addProjectPart3-items-title">
               Mentörün bilmesi gereken konular nedir?
             </span>
-            <input
-              type="text"
-              placeholder="İlgi alanı giriniz..."
-              className="addProjectPart3-items-input halfInput"
-            />
+            <div className="addProjectPart3-items-inputcontainer">
+              <input
+                type="text"
+                placeholder="İlgi alanı giriniz..."
+                className="addProjectPart3-items-input halfInput"
+              />
+              <div className="addProjectPart3-items-button">
+                <Plus />
+              </div>
+            </div>
           </div>
           <div className="addProjectPart3-items">
             <span className="addProjectPart3-items-title">
               Nasıl hizmet almak istersiniz?
             </span>
-            <select
-              name=""
-              id=""
-              className="addProjectPart3-items-input halfInput"
-            >
-              <option value="Görüntülü Görüşme">Görüntülü Görüşme</option>
-              <option value="Dosya Teslim">Dosya Teslim</option>
-              <option value="Chat">Chat</option>
-            </select>
+            <div className="custom_select">
+              <select
+                name=""
+                id=""
+                className="addProjectPart3-items-input input "
+              >
+                <option value="Görüntülü Görüşme">Görüntülü Görüşme</option>
+                <option value="Dosya Teslim">Dosya Teslim</option>
+                <option value="Chat">Chat</option>
+              </select>
+              <ArrowBottom />
+            </div>
           </div>
           <div className="addProjectPart3-items">
             <span className="addProjectPart3-items-title">
@@ -134,43 +143,46 @@ function AddProjectPart1() {
             <input
               type="datetime-local"
               placeholder="İlgi alanı giriniz..."
-              className="addProjectPart3-items-input halfInput"
+              className="addProjectPart3-items-input halfInput deneme2"
             />
           </div>
           <div className="addProjectPart3-items">
             <span className="addProjectPart3-items-title">
               Tahmini bütçeniz nedir?
             </span>
-            <select
-              name=""
-              id=""
-              className="addProjectPart3-items-input halfInput"
-            >
-              <option value="Mikro Proje (50-100 TL)">
-                Mikro Proje (50-100 TL)
-              </option>
-              <option value="Basit Proje (100-200 TL)">
-                Basit Proje (100-200 TL)
-              </option>
-              <option value="Çok Küçük Proje (200-300 TL)">
-                Çok Küçük Proje (200-300 TL)
-              </option>
-              <option value="Küçük Proje (300-500 TL)">
-                Küçük Proje (300-500 TL)
-              </option>
-              <option value="Orta Proje (500-1000 TL)">
-                Orta Proje (500-1000 TL)
-              </option>
-              <option value="Büyük Proje (1000-2000 TL)">
-                Büyük Proje (1000-2000 TL)
-              </option>
-              <option value="Çok Büyük Proje (2000-5000 TL)">
-                Çok Büyük Proje (2000-5000 TL)
-              </option>
-              <option value="Anahtar Teslim Proje (5000+ TL)">
-                Anahtar Teslim Proje (5000+ TL)
-              </option>
-            </select>
+            <div className="custom_select">
+              <select
+                name=""
+                id=""
+                className="addProjectPart3-items-input input"
+              >
+                <option value="Mikro Proje (50-100 TL)">
+                  Mikro Proje (50-100 TL)
+                </option>
+                <option value="Basit Proje (100-200 TL)">
+                  Basit Proje (100-200 TL)
+                </option>
+                <option value="Çok Küçük Proje (200-300 TL)">
+                  Çok Küçük Proje (200-300 TL)
+                </option>
+                <option value="Küçük Proje (300-500 TL)">
+                  Küçük Proje (300-500 TL)
+                </option>
+                <option value="Orta Proje (500-1000 TL)">
+                  Orta Proje (500-1000 TL)
+                </option>
+                <option value="Büyük Proje (1000-2000 TL)">
+                  Büyük Proje (1000-2000 TL)
+                </option>
+                <option value="Çok Büyük Proje (2000-5000 TL)">
+                  Çok Büyük Proje (2000-5000 TL)
+                </option>
+                <option value="Anahtar Teslim Proje (5000+ TL)">
+                  Anahtar Teslim Proje (5000+ TL)
+                </option>
+              </select>
+              <ArrowBottom />
+            </div>
           </div>
           <div className="addProjectPart3-items">
             <span className="addProjectPart3-items-title">
