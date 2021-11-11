@@ -12,6 +12,7 @@ import BoughtProject from "./pages/BoughtProject/BoughtProject";
 import MenteeFinance from "./pages/MenteeFinance/MenteeFinance";
 import SellProject from "./pages/SellProject/SellProject";
 import MentorFinance from "./pages/MentorFinance/MentorFinance";
+import SettingGeneral from "./pages/SettingGeneral/SettingGeneral";
 function App() {
   return (
     <>
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route path="/mentorFinance">
             <MentorFinance />
+          </Route>
+          <Route path="/settingsGeneral">
+            <SettingGeneral />
           </Route>
         </Switch>
       </Router>

@@ -40,6 +40,9 @@ import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as IconBackground } from "./icon-background.svg";
 import { ReactComponent as Calendar } from "./calendar.svg";
+import { ReactComponent as Education } from "./education.svg";
+import { ReactComponent as Securityv2 } from "./securityv2.svg";
+import { ReactComponent as Tool } from "./tool.svg";
 export {
   Star,
   Cancel,
@@ -83,4 +86,7 @@ export {
   Tl,
   IconBackground,
   Calendar,
+  Education,
+  Securityv2,
+  Tool,
 };

@@ -65,7 +65,7 @@ function ProfileMenuCard() {
 
       <div className="profileMenuCard-seperator"></div>
       <div className="profileMenuCard-menu">
-        <a href="">
+        <a href="/profile">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
               <Profile />
@@ -73,7 +73,7 @@ function ProfileMenuCard() {
             <div className="profileMenuCard-menu-item-name">Hesabım</div>
           </div>
         </a>
-        <a href="">
+        <a href="/SettingsGeneral">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
               <Settings />
