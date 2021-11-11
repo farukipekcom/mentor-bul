@@ -43,6 +43,8 @@ import { ReactComponent as Calendar } from "./calendar.svg";
 import { ReactComponent as Education } from "./education.svg";
 import { ReactComponent as Securityv2 } from "./securityv2.svg";
 import { ReactComponent as Tool } from "./tool.svg";
+import { ReactComponent as Edit } from "./edit.svg";
+
 export {
   Star,
   Cancel,
@@ -89,4 +91,5 @@ export {
   Education,
   Securityv2,
   Tool,
+  Edit,
 };

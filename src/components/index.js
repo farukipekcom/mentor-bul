@@ -29,6 +29,7 @@ import MentorCard from "./MentorCard/MentorCard";
 import ProjectSummaryCard from "./ProjectSummaryCard/ProjectSummaryCard";
 import FinanceCard from "./FinanceCard/FinanceCard";
 import SettingsMenuCard from "./SettingsMenuCard/SettingsMenuCard";
+import SettingsGeneralCard from "./SettingsGeneralCard/SettingsGeneralCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -61,4 +62,5 @@ export {
   ProjectSummaryCard,
   FinanceCard,
   SettingsMenuCard,
+  SettingsGeneralCard,
 };

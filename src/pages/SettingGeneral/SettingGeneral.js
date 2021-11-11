@@ -1,6 +1,6 @@
 import "./SettingGeneral.scss";
 import { Header, Category, Footer } from "../components";
-import { SettingsMenuCard } from "../../components";
+import { SettingsMenuCard, SettingsGeneralCard } from "../../components";
 
 function SettingGeneral() {
   return (
@@ -11,7 +11,10 @@ function SettingGeneral() {
         <div className="sidebar">
           <SettingsMenuCard />
         </div>
-        <div className="content"></div>
+        <div className="content">
+          <div className="title">Genel Ayarlar</div>
+          <SettingsGeneralCard />
+        </div>
       </div>
       <Footer />
     </div>

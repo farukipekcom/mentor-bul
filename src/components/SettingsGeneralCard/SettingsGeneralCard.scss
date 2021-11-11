@@ -1,0 +1,64 @@
+@import "../../sass/main.scss";
+.settingsGeneralCard {
+  @extend %flex;
+  align-items: flex-start;
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  width: 100%;
+  &-left {
+    &-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: $radius;
+    }
+  }
+  &-right {
+    @extend %flexvertical;
+    align-items: flex-start;
+    margin-left: 30px;
+    gap: 30px;
+    &-heading {
+      width: 100%;
+      @extend %flex;
+      justify-content: space-between;
+      &-username {
+        @extend %sidebar;
+      }
+      &-edit {
+        @extend %subtext1;
+        color: #000;
+        @extend %flex;
+        cursor: pointer;
+        background-color: $softgray;
+        padding: 8px 12px;
+        border-radius: $radius_small;
+        &:hover {
+          background-color: $bordergray;
+        }
+        svg {
+          margin-right: 8px;
+        }
+      }
+    }
+    &-fullname {
+      @extend %buttontext;
+    }
+    &-about {
+      @extend %text;
+    }
+    &-item {
+      @extend %flexvertical;
+      align-items: flex-start;
+      &-title {
+        @extend %category;
+        color: $gray;
+      }
+      &-text {
+        @extend %category;
+        margin-top: 8px;
+      }
+    }
+  }
+}
