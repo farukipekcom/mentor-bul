@@ -2,12 +2,12 @@ import "./FinanceCard.scss";
 
 import { profilePhoto } from "../../images";
 import { ArrowRight } from "../../icons";
-function FinanceCard() {
+function FinanceCard({ value }) {
   return (
     <a href="" className="financeCard">
       <img src={profilePhoto} alt="" className="financeCard-photo" />
       <div className="financeCard-info financeusername">
-        <span className="title">Mentör</span>
+        <span className="title">{value}</span>
         <span className="text">webhizmetleri</span>
       </div>
       <div className="financeCard-info financetitle">

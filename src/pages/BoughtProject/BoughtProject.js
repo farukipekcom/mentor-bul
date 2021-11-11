@@ -12,12 +12,12 @@ function BoughtProject() {
         </div>
         <div className="content">
           <span className="heading">Mentör’lerden almış olduğum hizmetler</span>
-          <ProjectSummaryCard />
-          <ProjectSummaryCard />
-          <ProjectSummaryCard />
-          <ProjectSummaryCard />
-          <ProjectSummaryCard />
-          <ProjectSummaryCard />
+          <ProjectSummaryCard value="Mentör" />
+          <ProjectSummaryCard value="Mentör" />
+          <ProjectSummaryCard value="Mentör" />
+          <ProjectSummaryCard value="Mentör" />
+          <ProjectSummaryCard value="Mentör" />
+          <ProjectSummaryCard value="Mentör" />
         </div>
       </div>
       <Footer />

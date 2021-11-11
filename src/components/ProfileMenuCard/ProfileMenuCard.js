@@ -35,7 +35,7 @@ function ProfileMenuCard() {
 
       <span className="profileMenuCard-title">Mentör</span>
       <div className="profileMenuCard-menu">
-        <a href="">
+        <a href="/sellProject">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
               <Cartv2 />
@@ -53,7 +53,7 @@ function ProfileMenuCard() {
             <div className="profileMenuCard-menu-item-name">İlanlarım</div>
           </div>
         </a>
-        <a href="">
+        <a href="/mentorFinance">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
               <Tl />

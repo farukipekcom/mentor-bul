@@ -1,0 +1,20 @@
+@import "../../sass/main.scss";
+
+.rightSidebar {
+  .container {
+    .content {
+      position: relative;
+      .totalmoney {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        @extend %subtitle;
+        font-weight: 600;
+        border: 2px dashed $secondary;
+        padding: 4px 16px;
+        color: $secondary;
+        background-color: #fff;
+      }
+    }
+  }
+}

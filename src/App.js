@@ -10,6 +10,8 @@ import AddProject from "./pages/AddProject/AddProject";
 import Homepage from "./pages/Homepage/Homepage";
 import BoughtProject from "./pages/BoughtProject/BoughtProject";
 import MenteeFinance from "./pages/MenteeFinance/MenteeFinance";
+import SellProject from "./pages/SellProject/SellProject";
+import MentorFinance from "./pages/MentorFinance/MentorFinance";
 function App() {
   return (
     <>
@@ -44,6 +46,12 @@ function App() {
           </Route>
           <Route path="/menteeFinance">
             <MenteeFinance />
+          </Route>
+          <Route path="/sellProject">
+            <SellProject />
+          </Route>
+          <Route path="/mentorFinance">
+            <MentorFinance />
           </Route>
         </Switch>
       </Router>

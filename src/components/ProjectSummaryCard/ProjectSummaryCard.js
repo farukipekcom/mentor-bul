@@ -1,12 +1,12 @@
 import "./ProjectSummaryCard.scss";
 import { profilePhoto } from "../../images";
 import { ArrowRight } from "../../icons";
-function ProjectSummaryCard() {
+function ProjectSummaryCard({ value }) {
   return (
     <a href="" className="projectSummaryCard">
       <img src={profilePhoto} alt="" className="projectSummaryCard-photo" />
       <div className="projectSummaryCard-info info">
-        <span className="title">Mentör</span>
+        <span className="title">{value}</span>
         <span className="text">webhizmetleri</span>
       </div>
       <div className="projectSummaryCard-info orderdate">

@@ -15,12 +15,12 @@ function MenteeFinance() {
           <span className="totalmoney">
             1520 <span className="tl">₺</span>
           </span>
-          <FinanceCard />
-          <FinanceCard />
-          <FinanceCard />
-          <FinanceCard />
-          <FinanceCard />
-          <FinanceCard />
+          <FinanceCard value="Mentör" />
+          <FinanceCard value="Mentör" />
+          <FinanceCard value="Mentör" />
+          <FinanceCard value="Mentör" />
+          <FinanceCard value="Mentör" />
+          <FinanceCard value="Mentör" />
         </div>
       </div>
       <Footer />
