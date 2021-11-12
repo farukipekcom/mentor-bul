@@ -57,6 +57,7 @@
       align-items: flex-start;
       &-title {
         @extend %category;
+        font-weight: 500;
         color: $gray;
       }
       &-text {

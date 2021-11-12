@@ -33,6 +33,10 @@ import SettingsGeneralCard from "./SettingsGeneralCard/SettingsGeneralCard";
 import SettingsPaymentCard from "./SettingsPaymentCard/SettingsPaymentCard";
 import SettingsEducationCard from "./SettingsEducationCard/SettingsEducationCard";
 import SettingsToolCard from "./SettingsToolCard/SettingsToolCard";
+import SettingsGeneralEditCard from "./SettingsGeneralEditCard/SettingsGeneralEditCard";
+import FormInputTextCard from "./FormInputTextCard/FormInputTextCard";
+import FormInputTextareaCard from "./FormInputTextareaCard/FormInputTextareaCard";
+import FormInputSelectCard from "./FormInputSelectCard/FormInputSelectCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -69,4 +73,8 @@ export {
   SettingsPaymentCard,
   SettingsEducationCard,
   SettingsToolCard,
+  SettingsGeneralEditCard,
+  FormInputTextCard,
+  FormInputTextareaCard,
+  FormInputSelectCard,
 };

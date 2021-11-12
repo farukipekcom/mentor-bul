@@ -1,0 +1,95 @@
+@import "../../sass/main.scss";
+.SettingsGeneralEditCard {
+  @extend %flex;
+  align-items: flex-start;
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  width: 100%;
+  position: relative;
+  &-left {
+    &-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: $radius;
+    }
+  }
+  &-right {
+    @extend %flexvertical;
+    align-items: flex-start;
+    margin-left: 30px;
+    gap: 30px;
+    width: 100%;
+    &-username {
+      @extend %sidebar;
+    }
+    &-item {
+      width: 100%;
+      @extend %flex;
+      gap: 30px;
+
+      &-fullwidth {
+        width: 100%;
+        &-title {
+          @extend %category;
+          font-weight: 500;
+        }
+        &-input {
+        }
+      }
+      &-left {
+        width: 50%;
+        &-title {
+          @extend %category;
+          font-weight: 500;
+        }
+        &-input {
+        }
+      }
+      &-right {
+        width: 50%;
+        &-title {
+          @extend %category;
+          font-weight: 500;
+        }
+        &-input {
+        }
+      }
+    }
+    &-buttons {
+      width: 100%;
+      justify-content: flex-end;
+      @extend %flex;
+      gap: 24px;
+      &-cancel {
+        border: 2px solid #000;
+        height: 50px;
+        width: 130px;
+        border-radius: $radius_small;
+        @extend %flexcenter;
+        cursor: pointer;
+        @extend %category;
+        &:hover {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+      &-save {
+        background-color: $secondary;
+        height: 50px;
+        width: 130px;
+        border-radius: $radius_small;
+        @extend %flexcenter;
+        cursor: pointer;
+        color: #fff;
+        &:hover {
+          background-color: $secondary_dark;
+        }
+      }
+    }
+  }
+}
+.halfinput {
+  width: calc(50% - 15px);
+}

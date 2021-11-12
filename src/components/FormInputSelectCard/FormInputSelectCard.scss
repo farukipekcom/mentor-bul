@@ -1,0 +1,12 @@
+@import "../../sass/main.scss";
+.custom_select {
+  position: relative;
+  select {
+    appearance: none;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+  }
+}

@@ -1,0 +1,10 @@
+@import "../../sass/main.scss";
+.rightSidebar {
+  .container {
+    .content {
+      .title {
+        @extend %subtitle;
+      }
+    }
+  }
+}
