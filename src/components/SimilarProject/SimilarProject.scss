@@ -2,8 +2,11 @@
 
 .similarProject {
   margin-top: 48px;
+  position: relative;
   .background {
     position: absolute;
+    bottom: -100px;
+    left: 0px;
     width: 100%;
     height: auto;
     z-index: -1;

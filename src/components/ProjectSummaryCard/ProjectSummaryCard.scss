@@ -25,11 +25,11 @@
     @extend %flexvertical;
     margin-left: 12px;
     align-items: flex-start;
-    .title {
+    &-title {
       @extend %subtext1;
       color: $gray;
     }
-    .text {
+    &-text {
       @extend %buttontext;
     }
   }
