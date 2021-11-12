@@ -14,6 +14,7 @@ import SellProject from "./pages/SellProject/SellProject";
 import MentorFinance from "./pages/MentorFinance/MentorFinance";
 import SettingGeneral from "./pages/SettingGeneral/SettingGeneral";
 import SettingPayment from "./pages/SettingPayment/SettingPayment";
+import SettingEducation from "./pages/SettingEducation/SettingEducation";
 function App() {
   return (
     <>
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route path="/settingsPayment">
             <SettingPayment />
+          </Route>
+          <Route path="/settingsEducation">
+            <SettingEducation />
           </Route>
         </Switch>
       </Router>

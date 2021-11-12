@@ -32,7 +32,7 @@ function SettingsMenuCard() {
           </div>
         </a>
 
-        <a href="">
+        <a href="/settingsEducation">
           <div className="settingsMenuCard-menu-item">
             <div className="settingsMenuCard-menu-item-icon">
               <Education />

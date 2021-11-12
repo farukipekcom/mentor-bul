@@ -31,6 +31,7 @@ import FinanceCard from "./FinanceCard/FinanceCard";
 import SettingsMenuCard from "./SettingsMenuCard/SettingsMenuCard";
 import SettingsGeneralCard from "./SettingsGeneralCard/SettingsGeneralCard";
 import SettingsPaymentCard from "./SettingsPaymentCard/SettingsPaymentCard";
+import SettingsEducationCard from "./SettingsEducationCard/SettingsEducationCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -65,4 +66,5 @@ export {
   SettingsMenuCard,
   SettingsGeneralCard,
   SettingsPaymentCard,
+  SettingsEducationCard,
 };
