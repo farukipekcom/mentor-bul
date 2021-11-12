@@ -3,12 +3,14 @@ import { Edit } from "../../icons";
 function SettingsPaymentCard() {
   return (
     <div className="settingsPaymentCard">
-      <div className="settingsPaymentCard-edit">
-        <div className="settingsPaymentCard-edit-icon">
-          <Edit />
+      <a href="/editSettingsPayment">
+        <div className="settingsPaymentCard-edit">
+          <div className="settingsPaymentCard-edit-icon">
+            <Edit />
+          </div>
+          <div className="settingsPaymentCard-edit-text">Düzenle</div>
         </div>
-        <div className="settingsPaymentCard-edit-text">Düzenle</div>
-      </div>
+      </a>
       <div className="settingsPaymentCard-fullwidth">
         <div className="settingsPaymentCard-fullwidth-item">
           <span className="settingsPaymentCard-fullwidth-item-title">

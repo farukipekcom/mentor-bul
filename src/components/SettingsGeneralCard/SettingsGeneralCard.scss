@@ -22,8 +22,8 @@
     &:hover {
       background-color: $bordergray;
     }
-    svg {
-      margin-right: 8px;
+    &-text {
+      margin-left: 8px;
     }
   }
   &-left {
@@ -38,6 +38,7 @@
     align-items: flex-start;
     margin-left: 30px;
     gap: 30px;
+    width: 100%;
     &-heading {
       width: 100%;
       @extend %flex;
@@ -48,13 +49,16 @@
     }
     &-fullname {
       @extend %buttontext;
+      width: 100%;
     }
     &-about {
       @extend %text;
+      width: 100%;
     }
     &-item {
       @extend %flexvertical;
       align-items: flex-start;
+      width: 100%;
       &-title {
         @extend %category;
         font-weight: 500;
@@ -62,7 +66,40 @@
       }
       &-text {
         @extend %category;
+        font-weight: 500;
         margin-top: 8px;
+        width: 100%;
+      }
+    }
+    &-buttons {
+      width: 100%;
+      justify-content: flex-end;
+      @extend %flex;
+      gap: 24px;
+      &-cancel {
+        border: 2px solid #000;
+        height: 50px;
+        width: 130px;
+        border-radius: $radius_small;
+        @extend %flexcenter;
+        cursor: pointer;
+        @extend %category;
+        &:hover {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+      &-save {
+        background-color: $secondary;
+        height: 50px;
+        width: 130px;
+        border-radius: $radius_small;
+        @extend %flexcenter;
+        cursor: pointer;
+        color: #fff;
+        &:hover {
+          background-color: $secondary_dark;
+        }
       }
     }
   }

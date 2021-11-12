@@ -17,6 +17,7 @@ import SettingPayment from "./pages/SettingPayment/SettingPayment";
 import SettingEducation from "./pages/SettingEducation/SettingEducation";
 import SettingTools from "./pages/SettingTools/SettingTools";
 import SettingGeneralEdit from "./pages/SettingGeneralEdit/SettingGeneralEdit";
+import SettingPaymentEdit from "./pages/SettingPaymentEdit/SettingPaymentEdit";
 function App() {
   return (
     <>
@@ -72,6 +73,9 @@ function App() {
           </Route>
           <Route path="/editSettingsGeneral">
             <SettingGeneralEdit />
+          </Route>
+          <Route path="/editSettingsPayment">
+            <SettingPaymentEdit />
           </Route>
         </Switch>
       </Router>
