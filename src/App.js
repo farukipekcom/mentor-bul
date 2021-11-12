@@ -15,6 +15,7 @@ import MentorFinance from "./pages/MentorFinance/MentorFinance";
 import SettingGeneral from "./pages/SettingGeneral/SettingGeneral";
 import SettingPayment from "./pages/SettingPayment/SettingPayment";
 import SettingEducation from "./pages/SettingEducation/SettingEducation";
+import SettingTools from "./pages/SettingTools/SettingTools";
 function App() {
   return (
     <>
@@ -64,6 +65,9 @@ function App() {
           </Route>
           <Route path="/settingsEducation">
             <SettingEducation />
+          </Route>
+          <Route path="/settinsTool">
+            <SettingTools />
           </Route>
         </Switch>
       </Router>

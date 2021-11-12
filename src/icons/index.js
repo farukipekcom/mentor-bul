@@ -44,6 +44,7 @@ import { ReactComponent as Education } from "./education.svg";
 import { ReactComponent as Securityv2 } from "./securityv2.svg";
 import { ReactComponent as Tool } from "./tool.svg";
 import { ReactComponent as Edit } from "./edit.svg";
+import { ReactComponent as Close } from "./close.svg";
 
 export {
   Star,
@@ -92,4 +93,5 @@ export {
   Securityv2,
   Tool,
   Edit,
+  Close,
 };
