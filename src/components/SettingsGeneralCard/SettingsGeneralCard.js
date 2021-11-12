@@ -4,6 +4,12 @@ import { Edit } from "../../icons";
 function SettingsGeneralCard() {
   return (
     <div className="settingsGeneralCard">
+      <div className="settingsGeneralCard-edit">
+        <div className="settingsGeneralCard-edit-icon">
+          <Edit />
+        </div>
+        <div className="settingsGeneralCard-edit-text">Düzenle</div>
+      </div>
       <div className="settingsGeneralCard-left">
         <img
           src={profilePhoto}
@@ -15,10 +21,6 @@ function SettingsGeneralCard() {
         <div className="settingsGeneralCard-right-heading">
           <span className="settingsGeneralCard-right-heading-username">
             farukipekcom
-          </span>
-          <span className="settingsGeneralCard-right-heading-edit">
-            <Edit />
-            Düzenle
           </span>
         </div>
         <span className="settingsGeneralCard-right-fullname">Faruk İpek</span>

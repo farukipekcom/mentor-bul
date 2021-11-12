@@ -1,6 +1,6 @@
 @import "../../sass/main.scss";
-.settingsGeneralCard {
-  @extend %flex;
+.settingsPaymentCard {
+  @extend %flexvertical;
   align-items: flex-start;
   background-color: #fff;
   box-shadow: $boxshadow;
@@ -8,6 +8,7 @@
   padding: 24px;
   width: 100%;
   position: relative;
+  gap: 30px;
   &-edit {
     position: absolute;
     top: 16px;
@@ -26,42 +27,31 @@
       margin-right: 8px;
     }
   }
-  &-left {
-    &-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: $radius;
-    }
-  }
-  &-right {
-    @extend %flexvertical;
-    align-items: flex-start;
-    margin-left: 30px;
-    gap: 30px;
-    &-heading {
-      width: 100%;
-      @extend %flex;
-      justify-content: space-between;
-      &-username {
-        @extend %sidebar;
-      }
-    }
-    &-fullname {
-      @extend %buttontext;
-    }
-    &-about {
-      @extend %text;
-    }
-    &-item {
+  &-fullwidth {
+    width: 100%;
+    @extend %flex;
+    &-one {
       @extend %flexvertical;
       align-items: flex-start;
+      flex: 1;
       &-title {
         @extend %category;
         color: $gray;
       }
       &-text {
         @extend %category;
-        margin-top: 8px;
+      }
+    }
+    &-item {
+      @extend %flexvertical;
+      align-items: flex-start;
+      flex: 1;
+      &-title {
+        @extend %category;
+        color: $gray;
+      }
+      &-text {
+        @extend %category;
       }
     }
   }

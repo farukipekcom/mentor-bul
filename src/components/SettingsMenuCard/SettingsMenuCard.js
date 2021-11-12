@@ -13,7 +13,7 @@ function SettingsMenuCard() {
     <div className="settingsMenuCard">
       <span className="settingsMenuCard-title">Ayarlar</span>
       <div className="settingsMenuCard-menu">
-        <a href="">
+        <a href="/settingsGeneral">
           <div className="settingsMenuCard-menu-item">
             <div className="settingsMenuCard-menu-item-icon">
               <Settings />
@@ -21,7 +21,7 @@ function SettingsMenuCard() {
             <div className="settingsMenuCard-menu-item-name">Genel Ayarlar</div>
           </div>
         </a>
-        <a href="">
+        <a href="/settingsPayment">
           <div className="settingsMenuCard-menu-item">
             <div className="settingsMenuCard-menu-item-icon">
               <Payment />
