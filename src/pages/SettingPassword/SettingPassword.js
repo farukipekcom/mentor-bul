@@ -1,7 +1,8 @@
-import "./SettingPaymentEdit.scss";
+import "./SettingPassword.scss";
 import { Header, Category, Footer } from "../components";
-import { SettingsMenuCard, SettingsPaymentEditCard } from "../../components";
-function SettingPaymentEdit() {
+import { SettingsMenuCard, SettingsPasswordCard } from "../../components";
+
+function SettingPassword() {
   return (
     <div className="rightSidebar">
       <Header />
@@ -11,8 +12,8 @@ function SettingPaymentEdit() {
           <SettingsMenuCard />
         </div>
         <div className="content">
-          <div className="title">Ödeme Bilgileri - Düzenle</div>
-          <SettingsPaymentEditCard />
+          <div className="title">Güvenlik Ayarları</div>
+          <SettingsPasswordCard />
         </div>
       </div>
       <Footer />
@@ -20,4 +21,4 @@ function SettingPaymentEdit() {
   );
 }
 
-export default SettingPaymentEdit;
+export default SettingPassword;

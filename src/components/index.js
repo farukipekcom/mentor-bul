@@ -38,6 +38,7 @@ import FormInputTextCard from "./FormInputTextCard/FormInputTextCard";
 import FormInputTextareaCard from "./FormInputTextareaCard/FormInputTextareaCard";
 import FormInputSelectCard from "./FormInputSelectCard/FormInputSelectCard";
 import SettingsPaymentEditCard from "./SettingsPaymentEditCard/SettingsPaymentEditCard";
+import SettingsPasswordCard from "./SettingsPasswordCard/SettingsPasswordCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -79,4 +80,5 @@ export {
   FormInputTextareaCard,
   FormInputSelectCard,
   SettingsPaymentEditCard,
+  SettingsPasswordCard,
 };

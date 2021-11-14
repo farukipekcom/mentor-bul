@@ -52,7 +52,7 @@ function SettingsMenuCard() {
             </div>
           </div>
         </a>
-        <a href="">
+        <a href="/settingsPassword">
           <div className="settingsMenuCard-menu-item">
             <div className="settingsMenuCard-menu-item-icon">
               <Securityv2 />

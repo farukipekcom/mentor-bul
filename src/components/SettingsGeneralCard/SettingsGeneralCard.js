@@ -46,7 +46,7 @@ function SettingsGeneralCard() {
           </span>
           <span className="settingsGeneralCard-right-item-text">
             {status == 1 ? (
-              <FormInputTextCard placeholder="farukipekcom" />
+              <FormInputTextCard data="farukipekcom" />
             ) : (
               "farukipekcom"
             )}
@@ -56,7 +56,7 @@ function SettingsGeneralCard() {
           <span className="settingsGeneralCard-right-item-title">Hakkımda</span>
           <span className="settingsGeneralCard-right-item-text">
             {status == 1 ? (
-              <FormInputTextareaCard placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem error amet sapiente exercitationem blanditiis vitae consectetur? Reiciendis ipsam aliquam temporibus minus rerum, quisquam cum, ea distinctio in omnis fugit sunt." />
+              <FormInputTextareaCard data="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem error amet sapiente exercitationem blanditiis vitae consectetur? Reiciendis ipsam aliquam temporibus minus rerum, quisquam cum, ea distinctio in omnis fugit sunt." />
             ) : (
               "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem error amet sapiente exercitationem blanditiis vitae consectetur? Reiciendis ipsam aliquam temporibus minus rerum, quisquam cum, ea distinctio in omnis fugit sunt."
             )}
@@ -68,7 +68,7 @@ function SettingsGeneralCard() {
           </span>
           <span className="settingsGeneralCard-right-item-text">
             {status == 1 ? (
-              <FormInputSelectCard placeholder="Frontend Developer" />
+              <FormInputSelectCard data="Frontend Developer" />
             ) : (
               "Frontend Developer"
             )}
@@ -80,7 +80,7 @@ function SettingsGeneralCard() {
           </span>
           <span className="settingsGeneralCard-right-item-text">
             {status == 1 ? (
-              <FormInputTextCard placeholder="farukipekweb@gmail.com" />
+              <FormInputTextCard data="farukipekweb@gmail.com" />
             ) : (
               "farukipekweb@gmail.com"
             )}
@@ -92,7 +92,7 @@ function SettingsGeneralCard() {
           </span>
           <span className="settingsGeneralCard-right-item-text">
             {status == 1 ? (
-              <FormInputTextCard placeholder="+90 553 113 1291" />
+              <FormInputTextCard data="+90 553 113 1291" />
             ) : (
               "+90 553 113 1291"
             )}
@@ -102,7 +102,7 @@ function SettingsGeneralCard() {
           <span className="settingsGeneralCard-right-item-title">Ülke</span>
           <span className="settingsGeneralCard-right-item-text">
             {status == 1 ? (
-              <FormInputSelectCard placeholder="Türkiye" />
+              <FormInputSelectCard data="Türkiye" />
             ) : (
               "Türkiye"
             )}
@@ -112,7 +112,7 @@ function SettingsGeneralCard() {
           <span className="settingsGeneralCard-right-item-title">Şehir</span>
           <span className="settingsGeneralCard-right-item-text">
             {status == 1 ? (
-              <FormInputSelectCard placeholder="Antalya" />
+              <FormInputSelectCard data="Antalya" />
             ) : (
               "Antalya"
             )}

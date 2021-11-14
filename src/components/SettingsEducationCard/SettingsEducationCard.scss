@@ -16,6 +16,7 @@
     @extend %subtext1;
     color: #000;
     @extend %flex;
+    gap: 8px;
     cursor: pointer;
     background-color: $softgray;
     padding: 8px 12px;
@@ -24,12 +25,14 @@
       background-color: $bordergray;
     }
     svg {
-      margin-right: 8px;
+      width: 12px;
+      height: 12px;
     }
   }
   &-fullwidth {
     width: 100%;
     @extend %flex;
+    gap: 30px;
     &-one {
       @extend %flexvertical;
       align-items: flex-start;
@@ -40,6 +43,7 @@
       }
       &-text {
         @extend %category;
+        width: 100%;
       }
     }
     &-item {
@@ -52,6 +56,7 @@
       }
       &-text {
         @extend %category;
+        width: 100%;
       }
     }
   }

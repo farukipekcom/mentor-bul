@@ -23,8 +23,8 @@
     &:hover {
       background-color: $bordergray;
     }
-    svg {
-      margin-right: 8px;
+    &-text {
+      margin-left: 8px;
     }
   }
   &-fullwidth {
