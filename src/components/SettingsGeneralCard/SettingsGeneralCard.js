@@ -14,19 +14,19 @@ function SettingsGeneralCard() {
   };
   return (
     <div className="settingsGeneralCard">
-      {status == 0 ? (
+      {status ? (
+        <a onClick={controlClick}>
+          <div className="settingsGeneralCard-edit">
+            <Close />
+          </div>
+        </a>
+      ) : (
         <a onClick={controlClick}>
           <div className="settingsGeneralCard-edit">
             <div className="settingsGeneralCard-edit-icon">
               <Edit />
             </div>
             <div className="settingsGeneralCard-edit-text">Düzenle</div>
-          </div>
-        </a>
-      ) : (
-        <a onClick={controlClick}>
-          <div className="settingsGeneralCard-edit">
-            <Close />
           </div>
         </a>
       )}
@@ -45,7 +45,7 @@ function SettingsGeneralCard() {
             Kullanıcı Adı
           </span>
           <span className="settingsGeneralCard-right-item-text">
-            {status == 1 ? (
+            {status ? (
               <FormInputTextCard data="farukipekcom" />
             ) : (
               "farukipekcom"
@@ -55,7 +55,7 @@ function SettingsGeneralCard() {
         <div className="settingsGeneralCard-right-item">
           <span className="settingsGeneralCard-right-item-title">Hakkımda</span>
           <span className="settingsGeneralCard-right-item-text">
-            {status == 1 ? (
+            {status ? (
               <FormInputTextareaCard data="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem error amet sapiente exercitationem blanditiis vitae consectetur? Reiciendis ipsam aliquam temporibus minus rerum, quisquam cum, ea distinctio in omnis fugit sunt." />
             ) : (
               "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem error amet sapiente exercitationem blanditiis vitae consectetur? Reiciendis ipsam aliquam temporibus minus rerum, quisquam cum, ea distinctio in omnis fugit sunt."
@@ -67,7 +67,7 @@ function SettingsGeneralCard() {
             Uzmanlık Alanı
           </span>
           <span className="settingsGeneralCard-right-item-text">
-            {status == 1 ? (
+            {status ? (
               <FormInputSelectCard data="Frontend Developer" />
             ) : (
               "Frontend Developer"
@@ -79,7 +79,7 @@ function SettingsGeneralCard() {
             E-posta Adresi
           </span>
           <span className="settingsGeneralCard-right-item-text">
-            {status == 1 ? (
+            {status ? (
               <FormInputTextCard data="farukipekweb@gmail.com" />
             ) : (
               "farukipekweb@gmail.com"
@@ -91,7 +91,7 @@ function SettingsGeneralCard() {
             Cep Telefonu
           </span>
           <span className="settingsGeneralCard-right-item-text">
-            {status == 1 ? (
+            {status ? (
               <FormInputTextCard data="+90 553 113 1291" />
             ) : (
               "+90 553 113 1291"
@@ -101,24 +101,16 @@ function SettingsGeneralCard() {
         <div className="settingsGeneralCard-right-item">
           <span className="settingsGeneralCard-right-item-title">Ülke</span>
           <span className="settingsGeneralCard-right-item-text">
-            {status == 1 ? (
-              <FormInputSelectCard data="Türkiye" />
-            ) : (
-              "Türkiye"
-            )}
+            {status ? <FormInputSelectCard data="Türkiye" /> : "Türkiye"}
           </span>
         </div>
         <div className="settingsGeneralCard-right-item">
           <span className="settingsGeneralCard-right-item-title">Şehir</span>
           <span className="settingsGeneralCard-right-item-text">
-            {status == 1 ? (
-              <FormInputSelectCard data="Antalya" />
-            ) : (
-              "Antalya"
-            )}
+            {status ? <FormInputSelectCard data="Antalya" /> : "Antalya"}
           </span>
         </div>
-        {status == 1 ? (
+        {status ? (
           <div className="settingsGeneralCard-right-buttons">
             <div className="settingsGeneralCard-right-buttons-cancel">
               İptal

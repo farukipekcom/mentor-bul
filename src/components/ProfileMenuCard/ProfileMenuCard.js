@@ -45,7 +45,7 @@ function ProfileMenuCard() {
             </div>
           </div>
         </a>
-        <a href="">
+        <a href="/">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
               <List />

@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Project from "./pages/Project/Project";
 import Profile from "./pages/Profile/Profile";
 import Offer from "./pages/Offer/Offer";

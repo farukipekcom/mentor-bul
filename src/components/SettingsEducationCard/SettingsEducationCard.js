@@ -2,6 +2,7 @@ import "./SettingsEducationCard.scss";
 import { Edit, Close } from "../../icons";
 import { useState } from "react";
 import FormInputTextCard from "../FormInputTextCard/FormInputTextCard";
+
 function SettingsEducationCard() {
   const [status, setStatus] = useState(0);
   const controlClick = () => {
@@ -9,16 +10,16 @@ function SettingsEducationCard() {
   };
   return (
     <div className="settingsEducationCard">
-      {status == 0 ? (
+      {status ? (
+        <a onClick={controlClick} className="settingsEducationCard-edit">
+          <Close />
+        </a>
+      ) : (
         <a onClick={controlClick} className="settingsEducationCard-edit">
           <div className="settingsEducationCard-edit-icon">
             <Edit />
           </div>
           <div className="settingsEducationCard-edit-text">Düzenle</div>
-        </a>
-      ) : (
-        <a onClick={controlClick} className="settingsEducationCard-edit">
-          <Close />
         </a>
       )}
       <div className="settingsEducationCard-fullwidth">
@@ -27,7 +28,7 @@ function SettingsEducationCard() {
             Okul Adı
           </span>
           <span className="settingsEducationCard-fullwidth-one-text">
-            {status == 1 ? (
+            {status ? (
               <FormInputTextCard data="Konya Teknik Üniversitesi" />
             ) : (
               "Konya Teknik Üniversitesi"
@@ -41,7 +42,7 @@ function SettingsEducationCard() {
             Bölüm Adı
           </span>
           <span className="settingsEducationCard-fullwidth-one-text">
-            {status == 1 ? (
+            {status ? (
               <FormInputTextCard data="Bilgisayar Mühendisliği" />
             ) : (
               "Bilgisayar Mühendisliği"
@@ -55,11 +56,11 @@ function SettingsEducationCard() {
             Mezuniyet Yılı
           </span>
           <span className="settingsEducationCard-fullwidth-one-text">
-            {status == 1 ? <FormInputTextCard data="2022" /> : "2022"}
+            {status ? <FormInputTextCard data="2022" /> : "2022"}
           </span>
         </div>
       </div>
-      {status == 1 ? (
+      {status ? (
         <div className="settingsGeneralCard-right-buttons">
           <div className="settingsGeneralCard-right-buttons-cancel">İptal</div>
           <div className="settingsGeneralCard-right-buttons-save">Kaydet</div>

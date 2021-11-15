@@ -1,17 +1,24 @@
 import "./FormInputSelectCard.scss";
 import { ArrowBottom } from "../../icons";
-function FormInputSelectCard({ placeholder }) {
+import { useState } from "react";
+function FormInputSelectCard({ placeholder, city }) {
+  console.log("FORM ICINDE", city);
+  // const [selectedCountry, setSelectedCountry] = useState();
+  // const [selectedState, setSelectedState] = useState();
+  // const [selectedCity, setSelectedCity] = useState();
+
+  // const availableState = city.countries.find((c) => c.name === selectedCountry);
+  // const availableCities = availableState?.states?.find(
+  //   (s) => s.name === selectedState
+  // );
   return (
     <div className="FormInputTextCard custom_select">
-      <select name="" id="" className="FormInputTextCard-input">
-        <option value="Seçiniz.." default>
-          Seçiniz..
-        </option>
-        <option value="Görüntülü Görüşme">Görüntülü Görüşme</option>
-        <option value="Dosya Teslim">Dosya Teslim</option>
-        <option value="Chat">Chat</option>
+      {/* <select name="" id="" className="FormInputTextCard-input">
+        {city.map((item) => {
+          return <option value={item.il}>{item.il}</option>;
+        })}
       </select>
-      <ArrowBottom />
+      <ArrowBottom /> */}
     </div>
   );
 }

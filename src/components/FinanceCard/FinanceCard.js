@@ -4,7 +4,7 @@ import { profilePhoto } from "../../images";
 import { ArrowRight } from "../../icons";
 function FinanceCard({ value }) {
   return (
-    <a href="" className="financeCard">
+    <a href="/" className="financeCard">
       <img src={profilePhoto} alt="" className="financeCard-photo" />
       <div className="financeCard-info financeusername">
         <span className="financeCard-info-title">{value}</span>

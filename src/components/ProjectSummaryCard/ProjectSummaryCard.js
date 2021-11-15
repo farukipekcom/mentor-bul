@@ -3,7 +3,7 @@ import { profilePhoto } from "../../images";
 import { ArrowRight } from "../../icons";
 function ProjectSummaryCard({ value }) {
   return (
-    <a href="" className="projectSummaryCard">
+    <a href="/" className="projectSummaryCard">
       <img src={profilePhoto} alt="" className="projectSummaryCard-photo" />
       <div className="projectSummaryCard-info info">
         <span className="projectSummaryCard-info-title">{value}</span>
