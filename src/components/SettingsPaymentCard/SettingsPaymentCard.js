@@ -1,66 +1,50 @@
 import "./SettingsPaymentCard.scss";
 import { Edit, Close } from "../../icons";
 import { useState } from "react";
-import {
-  FormInputTextCard,
-  FormInputSelectCard,
-  FormInputTextareaCard,
-} from "../../components";
-import data from "../../json/cities.json";
-
+import { FormInputTextCard, FormInputSelectCityCard } from "../../components";
 function SettingsPaymentCard() {
   const [status, setStatus] = useState(0);
-  const [city, setCity] = useState(data);
-  console.log("SAYFA ICINDE", city);
   const controlClick = () => {
     setStatus(!status);
   };
   return (
     <div className="settingsPaymentCard">
       {status ? (
-        <a onClick={controlClick} className="settingsPaymentCard-edit">
+        <button onClick={controlClick} className="settingsEditCustomButton">
           <Close />
-        </a>
+        </button>
       ) : (
-        <a onClick={controlClick} className="settingsPaymentCard-edit">
-          <div className="settingsPaymentCard-edit-icon">
+        <button onClick={controlClick} className="settingsEditCustomButton">
+          <div className="settingsEditCustomButton-icon">
             <Edit />
           </div>
-          <div className="settingsPaymentCard-edit-text">Düzenle</div>
-        </a>
+          <div className="settingsEditCustomButton-text">Düzenle</div>
+        </button>
       )}
       <div className="settingsPaymentCard-fullwidth">
         <div className="settingsPaymentCard-fullwidth-item">
-          <span className="settingsPaymentCard-fullwidth-item-title">
-            Adınız
-          </span>
-          <span className="settingsPaymentCard-fullwidth-item-text">
+          <span className="settingSubTitle">Adınız</span>
+          <span className="settingValue">
             {status ? <FormInputTextCard data="Faruk" /> : "Faruk"}
           </span>
         </div>
         <div className="settingsPaymentCard-fullwidth-item">
-          <span className="settingsPaymentCard-fullwidth-item-title">
-            Soyadınız
-          </span>
-          <span className="settingsPaymentCard-fullwidth-item-text">
+          <span className="settingSubTitle">Soyadınız</span>
+          <span className="settingValue">
             {status ? <FormInputTextCard data="İpek" /> : "İpek"}
           </span>
         </div>
       </div>
       <div className="settingsPaymentCard-fullwidth">
         <div className="settingsPaymentCard-fullwidth-item">
-          <span className="settingsPaymentCard-fullwidth-item-title">
-            TC Kimlik No
-          </span>
-          <span className="settingsPaymentCard-fullwidth-item-text">
+          <span className="settingSubTitle">TC Kimlik No</span>
+          <span className="settingValue">
             {status ? <FormInputTextCard data="10010010010" /> : "10010010010"}
           </span>
         </div>
         <div className="settingsPaymentCard-fullwidth-item">
-          <span className="settingsPaymentCard-fullwidth-item-title">
-            Cep Telefonu
-          </span>
-          <span className="settingsPaymentCard-fullwidth-item-text">
+          <span className="settingSubTitle">Cep Telefonu</span>
+          <span className="settingValue">
             {status ? (
               <FormInputTextCard data="+90 553 113 1291" />
             ) : (
@@ -71,8 +55,8 @@ function SettingsPaymentCard() {
       </div>
       <div className="settingsPaymentCard-fullwidth">
         <div className="settingsPaymentCard-fullwidth-one">
-          <span className="settingsPaymentCard-fullwidth-one-title">IBAN</span>
-          <span className="settingsPaymentCard-fullwidth-one-text">
+          <span className="settingSubTitle">IBAN</span>
+          <span className="settingValue">
             {status ? (
               <FormInputTextCard data="TR00 0000 0000 0000 0000 0000 00" />
             ) : (
@@ -83,8 +67,8 @@ function SettingsPaymentCard() {
       </div>
       <div className="settingsPaymentCard-fullwidth">
         <div className="settingsPaymentCard-fullwidth-one">
-          <span className="settingsPaymentCard-fullwidth-one-title">Adres</span>
-          <span className="settingsPaymentCard-fullwidth-one-text">
+          <span className="settingSubTitle">Adres</span>
+          <span className="settingValue">
             {status ? (
               <FormInputTextCard data="Mentör mh. Mentör sk. Mentör apt. No: 1/1" />
             ) : (
@@ -95,30 +79,21 @@ function SettingsPaymentCard() {
       </div>
       <div className="settingsPaymentCard-fullwidth">
         <div className="settingsPaymentCard-fullwidth-item">
-          <span className="settingsPaymentCard-fullwidth-item-title">İl</span>
-          <span className="settingsPaymentCard-fullwidth-item-text">
-            {status ? (
-              <FormInputSelectCard data="Antalya" city={city} />
-            ) : (
-              "Antalya"
-            )}
-          </span>
-        </div>
-        <div className="settingsPaymentCard-fullwidth-item">
-          <span className="settingsPaymentCard-fullwidth-item-title">İlçe</span>
-          <span className="settingsPaymentCard-fullwidth-item-text">
-            {status ? (
-              <FormInputSelectCard data="Antalya" city={city} />
-            ) : (
-              "Konyaaltı"
-            )}
+          <span className="settingSubTitle">İl / İlçe</span>
+          <span className="settingValue">
+            {status ? <FormInputSelectCityCard /> : "Antalya, Muratpaşa"}
           </span>
         </div>
       </div>
       {status ? (
-        <div className="settingsGeneralCard-right-buttons">
-          <div className="settingsGeneralCard-right-buttons-cancel">İptal</div>
-          <div className="settingsGeneralCard-right-buttons-save">Kaydet</div>
+        <div className="settingsCancelSaveCustomButton">
+          <div
+            className="settingsCancelSaveCustomButton-cancel"
+            onClick={controlClick}
+          >
+            İptal
+          </div>
+          <div className="settingsCancelSaveCustomButton-save">Kaydet</div>
         </div>
       ) : (
         ""

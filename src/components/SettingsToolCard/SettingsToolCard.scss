@@ -2,39 +2,19 @@
 .settingsToolCard {
   @extend %flex;
   flex-wrap: wrap;
-  align-items: flex-start;
   background-color: #fff;
   box-shadow: $boxshadow;
   border-radius: $radius;
   padding: 24px;
-  padding-right: 140px;
   width: 100%;
   position: relative;
-  &-edit {
-    position: absolute;
-    visibility: none;
-    top: 16px;
-    right: 16px;
-    @extend %subtext1;
-    color: #000;
-    @extend %flex;
-    cursor: pointer;
-    background-color: $softgray;
-    padding: 8px 12px;
-    border-radius: $radius_small;
-    &:hover {
-      background-color: $bordergray;
-    }
-    &-text {
-      margin-left: 8px;
-    }
-  }
   &-list {
     @extend %flexvertical;
+    align-items: flex-start;
     width: 100%;
     gap: 16px;
     &-item {
-      width: 100%;
+      width: 50%;
       height: 48px;
       background-color: $softgray;
       @extend %flex;

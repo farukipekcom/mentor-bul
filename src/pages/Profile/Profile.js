@@ -7,8 +7,6 @@ import {
   ProfessionCard,
   VerificationCard,
   ShareCard,
-  ProjectSquareCard,
-  ProjectCard,
   ReviewsCard,
   UserProjectList,
 } from "../../components";

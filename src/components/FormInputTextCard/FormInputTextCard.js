@@ -1,17 +1,17 @@
 import "./FormInputTextCard.scss";
-import React, {useState} from 'react'
-function FormInputTextCard({ placeholder = "Bir şeyler giriniz..." , data} ) {
-  const [value,setValue] = useState(data);
+import React, { useState } from "react";
+function FormInputTextCard({ placeholder = "Bir şeyler giriniz...", data }) {
+  const [value, setValue] = useState(data);
   function onChange(e) {
     e.preventDefault();
     setValue(e.target.value);
   }
   return (
-    <div className="FormInputTextCard">
+    <div className="inputCustom">
       <input
         type="text"
         placeholder={placeholder}
-        className="FormInputTextCard-input"
+        className="inputCustom-input"
         onChange={onChange}
         value={value}
       />

@@ -1,11 +1,7 @@
 import "./SettingsToolCard.scss";
 import { Edit, Close } from "../../icons";
 import { useState } from "react";
-import {
-  FormInputTextCard,
-  FormInputSelectCard,
-  FormInputTextareaCard,
-} from "../../components";
+import { FormInputTextCard } from "../../components";
 function SettingsToolCard() {
   const [status, setStatus] = useState(0);
   const controlClick = () => {
@@ -13,45 +9,41 @@ function SettingsToolCard() {
   };
   return (
     <div className="settingsToolCard">
-      {status == 0 ? (
-        <a onClick={controlClick}>
-          <div className="settingsToolCard-edit">
-            <div className="settingsToolCard-edit-icon">
-              <Edit />
-            </div>
-            <div className="settingsToolCard-edit-text">Düzenle</div>
-          </div>
-        </a>
+      {status ? (
+        <button onClick={controlClick} className="settingsEditCustomButton">
+          <Close />
+        </button>
       ) : (
-        <a onClick={controlClick}>
-          <div className="settingsToolCard-edit">
-            <Close />
+        <button onClick={controlClick} className="settingsEditCustomButton">
+          <div className="settingsEditCustomButton-icon">
+            <Edit />
           </div>
-        </a>
+          <div className="settingsEditCustomButton-text">Düzenle</div>
+        </button>
       )}
       <div className="settingsToolCard-list">
         <div className="settingsToolCard-list-item">
           <span className="settingsToolCard-list-item-name">
-            {status == 1 ? <FormInputTextCard data="Adobe XD" /> : "Adobe XD"}
+            {status ? <FormInputTextCard data="Adobe XD" /> : "Adobe XD"}
           </span>
           <div className="settingsToolCard-list-item-icon"></div>
         </div>
 
         <div className="settingsToolCard-list-item">
           <span className="settingsToolCard-list-item-name">
-            {status == 1 ? <FormInputTextCard data="Figma" /> : "Figma"}
+            {status ? <FormInputTextCard data="Figma" /> : "Figma"}
           </span>
           <div className="settingsToolCard-list-item-icon"></div>
         </div>
         <div className="settingsToolCard-list-item">
           <span className="settingsToolCard-list-item-name">
-            {status == 1 ? <FormInputTextCard data="React" /> : "React"}
+            {status ? <FormInputTextCard data="React" /> : "React"}
           </span>
           <div className="settingsToolCard-list-item-icon"></div>
         </div>
         <div className="settingsToolCard-list-item">
           <span className="settingsToolCard-list-item-name">
-            {status == 1 ? (
+            {status ? (
               <FormInputTextCard data="Adobe Photoshop" />
             ) : (
               "Adobe Photoshop"
@@ -62,17 +54,30 @@ function SettingsToolCard() {
 
         <div className="settingsToolCard-list-item">
           <span className="settingsToolCard-list-item-name">
-            {status == 1 ? <FormInputTextCard data="Java" /> : "Java"}
+            {status ? <FormInputTextCard data="Java" /> : "Java"}
           </span>
           <div className="settingsToolCard-list-item-icon"></div>
         </div>
 
         <div className="settingsToolCard-list-item">
           <span className="settingsToolCard-list-item-name">
-            {status == 1 ? <FormInputTextCard data="Asp.net" /> : "Asp.net"}
+            {status ? <FormInputTextCard data="Asp.net" /> : "Asp.net"}
           </span>
           <div className="settingsToolCard-list-item-icon"></div>
         </div>
+        {status ? (
+          <div className="settingsCancelSaveCustomButton">
+            <div
+              className="settingsCancelSaveCustomButton-cancel"
+              onClick={controlClick}
+            >
+              İptal
+            </div>
+            <div className="settingsCancelSaveCustomButton-save">Kaydet</div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

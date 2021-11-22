@@ -1,12 +1,6 @@
 import "./SettingsPasswordCard.scss";
-import { Edit, Close } from "../../icons";
-import { useState } from "react";
 import FormInputTextCard from "../FormInputTextCard/FormInputTextCard";
 function SettingsPasswordCard() {
-  const [status, setStatus] = useState(0);
-  const controlClick = () => {
-    setStatus(!status);
-  };
   return (
     <div className="settingsPasswordCard">
       <div className="settingsPasswordCard-fullwidth">
@@ -40,10 +34,9 @@ function SettingsPasswordCard() {
           </span>
         </div>
       </div>
-
-      <div className="settingsGeneralCard-right-buttons">
-        <div className="settingsGeneralCard-right-buttons-cancel">İptal</div>
-        <div className="settingsGeneralCard-right-buttons-save">Kaydet</div>
+      <div className="settingsCancelSaveCustomButton">
+        <div className="settingsCancelSaveCustomButton-cancel">İptal</div>
+        <div className="settingsCancelSaveCustomButton-save">Kaydet</div>
       </div>
     </div>
   );

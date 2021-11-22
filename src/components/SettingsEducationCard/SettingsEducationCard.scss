@@ -9,26 +9,7 @@
   width: 100%;
   position: relative;
   gap: 30px;
-  &-edit {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    @extend %subtext1;
-    color: #000;
-    @extend %flex;
-    gap: 8px;
-    cursor: pointer;
-    background-color: $softgray;
-    padding: 8px 12px;
-    border-radius: $radius_small;
-    &:hover {
-      background-color: $bordergray;
-    }
-    svg {
-      width: 12px;
-      height: 12px;
-    }
-  }
+
   &-fullwidth {
     width: 100%;
     @extend %flex;

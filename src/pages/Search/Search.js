@@ -1,7 +1,6 @@
 import "./Search.scss";
 import { Header, Category as CategoryHeader, Footer } from "../components";
 import {
-  CategorySummaryCard,
   ShowMoreCard,
   FilterCard,
   SearchCard,

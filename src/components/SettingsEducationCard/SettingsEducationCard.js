@@ -11,23 +11,21 @@ function SettingsEducationCard() {
   return (
     <div className="settingsEducationCard">
       {status ? (
-        <a onClick={controlClick} className="settingsEducationCard-edit">
+        <button onClick={controlClick} className="settingsEditCustomButton">
           <Close />
-        </a>
+        </button>
       ) : (
-        <a onClick={controlClick} className="settingsEducationCard-edit">
-          <div className="settingsEducationCard-edit-icon">
+        <button onClick={controlClick} className="settingsEditCustomButton">
+          <div className="settingsEditCustomButton-icon">
             <Edit />
           </div>
-          <div className="settingsEducationCard-edit-text">Düzenle</div>
-        </a>
+          <div className="settingsEditCustomButton-text">Düzenle</div>
+        </button>
       )}
       <div className="settingsEducationCard-fullwidth">
         <div className="settingsEducationCard-fullwidth-one">
-          <span className="settingsEducationCard-fullwidth-one-title">
-            Okul Adı
-          </span>
-          <span className="settingsEducationCard-fullwidth-one-text">
+          <span className="settingSubTitle">Okul Adı</span>
+          <span className="settingValue">
             {status ? (
               <FormInputTextCard data="Konya Teknik Üniversitesi" />
             ) : (
@@ -38,10 +36,8 @@ function SettingsEducationCard() {
       </div>
       <div className="settingsEducationCard-fullwidth">
         <div className="settingsEducationCard-fullwidth-one">
-          <span className="settingsEducationCard-fullwidth-one-title">
-            Bölüm Adı
-          </span>
-          <span className="settingsEducationCard-fullwidth-one-text">
+          <span className="settingSubTitle">Bölüm Adı</span>
+          <span className="settingValue">
             {status ? (
               <FormInputTextCard data="Bilgisayar Mühendisliği" />
             ) : (
@@ -52,18 +48,21 @@ function SettingsEducationCard() {
       </div>
       <div className="settingsEducationCard-fullwidth">
         <div className="settingsEducationCard-fullwidth-one">
-          <span className="settingsEducationCard-fullwidth-one-title">
-            Mezuniyet Yılı
-          </span>
-          <span className="settingsEducationCard-fullwidth-one-text">
+          <span className="settingSubTitle">Mezuniyet Yılı</span>
+          <span className="settingValue">
             {status ? <FormInputTextCard data="2022" /> : "2022"}
           </span>
         </div>
       </div>
       {status ? (
-        <div className="settingsGeneralCard-right-buttons">
-          <div className="settingsGeneralCard-right-buttons-cancel">İptal</div>
-          <div className="settingsGeneralCard-right-buttons-save">Kaydet</div>
+        <div className="settingsCancelSaveCustomButton">
+          <div
+            className="settingsCancelSaveCustomButton-cancel"
+            onClick={controlClick}
+          >
+            İptal
+          </div>
+          <div className="settingsCancelSaveCustomButton-save">Kaydet</div>
         </div>
       ) : (
         ""

@@ -35,8 +35,9 @@ import SettingsEducationCard from "./SettingsEducationCard/SettingsEducationCard
 import SettingsToolCard from "./SettingsToolCard/SettingsToolCard";
 import FormInputTextCard from "./FormInputTextCard/FormInputTextCard";
 import FormInputTextareaCard from "./FormInputTextareaCard/FormInputTextareaCard";
-import FormInputSelectCard from "./FormInputSelectCard/FormInputSelectCard";
+import FormInputSelectCityCard from "./FormInputSelectCityCard/FormInputSelectCityCard";
 import SettingsPasswordCard from "./SettingsPasswordCard/SettingsPasswordCard";
+import FormInputSelectCard from "./FormInputSelectCard/FormInputSelectCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -75,6 +76,7 @@ export {
   SettingsToolCard,
   FormInputTextCard,
   FormInputTextareaCard,
-  FormInputSelectCard,
+  FormInputSelectCityCard,
   SettingsPasswordCard,
+  FormInputSelectCard,
 };

@@ -1,4 +1,97 @@
 @import "../../sass/main.scss";
+.custom_select {
+  position: relative;
+  select {
+    appearance: none;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+  }
+}
+.inputCustom {
+  width: 100%;
+  position: relative;
+  &-input {
+    border: 1px solid $bordergray;
+    width: 100%;
+    height: 48px;
+    background-color: $softgray;
+    border-radius: $radius;
+    padding-left: 16px;
+    margin-top: 8px;
+    &:focus {
+      outline: 1px solid $primary;
+      box-shadow: 0px 0px 0px 5px rgba($primary, 0.2);
+    }
+    &::placeholder {
+      color: #737373;
+      font-size: tagtext;
+    }
+  }
+}
+.settingsEditCustomButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  @extend %subtext1;
+  color: #000;
+  @extend %flex;
+  cursor: pointer;
+  background-color: $softgray;
+  padding: 8px 12px;
+  border-radius: $radius_small;
+  &:hover {
+    background-color: $bordergray;
+  }
+  &-text {
+    margin-left: 8px;
+  }
+}
+.settingSubTitle {
+  @extend %category;
+  font-weight: 500;
+  color: $gray;
+}
+.settingValue {
+  @extend %category;
+  font-weight: 500;
+  margin-top: 8px;
+  width: 100%;
+}
+.settingsCancelSaveCustomButton {
+  width: 100%;
+  justify-content: flex-end;
+  @extend %flex;
+  gap: 24px;
+  &-cancel {
+    border: 2px solid #000;
+    height: 50px;
+    width: 130px;
+    border-radius: $radius_small;
+    @extend %flexcenter;
+    cursor: pointer;
+    @extend %category;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  &-save {
+    background-color: $secondary;
+    height: 50px;
+    width: 130px;
+    border-radius: $radius_small;
+    @extend %flexcenter;
+    cursor: pointer;
+    color: #fff;
+    &:hover {
+      background-color: $secondary_dark;
+    }
+  }
+}
+
 .settingsGeneralCard {
   @extend %flex;
   align-items: flex-start;
@@ -8,24 +101,7 @@
   padding: 24px;
   width: 100%;
   position: relative;
-  &-edit {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    @extend %subtext1;
-    color: #000;
-    @extend %flex;
-    cursor: pointer;
-    background-color: $softgray;
-    padding: 8px 12px;
-    border-radius: $radius_small;
-    &:hover {
-      background-color: $bordergray;
-    }
-    &-text {
-      margin-left: 8px;
-    }
-  }
+
   &-left {
     &-photo {
       width: 180px;
@@ -59,48 +135,6 @@
       @extend %flexvertical;
       align-items: flex-start;
       width: 100%;
-      &-title {
-        @extend %category;
-        font-weight: 500;
-        color: $gray;
-      }
-      &-text {
-        @extend %category;
-        font-weight: 500;
-        margin-top: 8px;
-        width: 100%;
-      }
-    }
-    &-buttons {
-      width: 100%;
-      justify-content: flex-end;
-      @extend %flex;
-      gap: 24px;
-      &-cancel {
-        border: 2px solid #000;
-        height: 50px;
-        width: 130px;
-        border-radius: $radius_small;
-        @extend %flexcenter;
-        cursor: pointer;
-        @extend %category;
-        &:hover {
-          background-color: #000;
-          color: #fff;
-        }
-      }
-      &-save {
-        background-color: $secondary;
-        height: 50px;
-        width: 130px;
-        border-radius: $radius_small;
-        @extend %flexcenter;
-        cursor: pointer;
-        color: #fff;
-        &:hover {
-          background-color: $secondary_dark;
-        }
-      }
     }
   }
 }
