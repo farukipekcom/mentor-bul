@@ -17,6 +17,7 @@ import SettingPayment from "./pages/SettingPayment/SettingPayment";
 import SettingEducation from "./pages/SettingEducation/SettingEducation";
 import SettingTools from "./pages/SettingTools/SettingTools";
 import SettingPassword from "./pages/SettingPassword/SettingPassword";
+import Messages from "./pages/Messages/Messages";
 function App() {
   return (
     <>
@@ -72,6 +73,9 @@ function App() {
           </Route>
           <Route path="/settingsPassword">
             <SettingPassword />
+          </Route>
+          <Route path="/messages">
+            <Messages />
           </Route>
         </Switch>
       </Router>

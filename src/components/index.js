@@ -38,6 +38,11 @@ import FormInputTextareaCard from "./FormInputTextareaCard/FormInputTextareaCard
 import FormInputSelectCityCard from "./FormInputSelectCityCard/FormInputSelectCityCard";
 import SettingsPasswordCard from "./SettingsPasswordCard/SettingsPasswordCard";
 import FormInputSelectCard from "./FormInputSelectCard/FormInputSelectCard";
+import MessagesList from "./MessagesList/MessagesList";
+import MessagesCard from "./MessagesCard/MessagesCard";
+import MessagesSearchCard from "./MessagesSearchCard/MessagesSearchCard";
+import MessagesListItem from "./MessagesListItem/MessagesListItem";
+import MessagesContent from "./MessagesContent/MessagesContent";
 export {
   AboutCard,
   ProfessionCard,
@@ -79,4 +84,9 @@ export {
   FormInputSelectCityCard,
   SettingsPasswordCard,
   FormInputSelectCard,
+  MessagesList,
+  MessagesCard,
+  MessagesSearchCard,
+  MessagesListItem,
+  MessagesContent,
 };

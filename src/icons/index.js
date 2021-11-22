@@ -45,6 +45,7 @@ import { ReactComponent as Securityv2 } from "./securityv2.svg";
 import { ReactComponent as Tool } from "./tool.svg";
 import { ReactComponent as Edit } from "./edit.svg";
 import { ReactComponent as Close } from "./close.svg";
+import { ReactComponent as Trash } from "./trash.svg";
 
 export {
   Star,
@@ -94,4 +95,5 @@ export {
   Tool,
   Edit,
   Close,
+  Trash,
 };

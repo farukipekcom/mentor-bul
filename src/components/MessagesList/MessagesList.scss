@@ -1,0 +1,11 @@
+@import "../../sass/main.scss";
+
+.messagesList {
+  width: 100%;
+  background-color: #fff;
+  @extend %flexvertical;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  height: 80vh;
+  overflow-y: auto;
+}

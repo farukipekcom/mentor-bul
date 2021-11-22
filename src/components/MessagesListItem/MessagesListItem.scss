@@ -1,0 +1,39 @@
+@import "../../sass/main.scss";
+.messagesListItem {
+  border-bottom: 1px solid $bordergray;
+  @extend %flex;
+  align-items: flex-start;
+  padding: 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: $softgray;
+  }
+  &-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+  }
+  &-details {
+    @extend %flexvertical;
+    align-items: flex-start;
+    margin-left: 12px;
+    &-heading {
+      width: 100%;
+      @extend %flex;
+      justify-content: space-between;
+      &-name {
+        @extend %icontext;
+      }
+      &-time {
+        @extend %subtext1;
+        font-weight: 400;
+        color: $gray;
+      }
+    }
+    &-text {
+      @extend %subtext1;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+  }
+}

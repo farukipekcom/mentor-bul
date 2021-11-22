@@ -1,0 +1,89 @@
+@import "../../sass/main.scss";
+
+.messagesContent {
+  width: 100%;
+  @extend %flexvertical;
+  gap: 24px;
+  margin-top: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  &-right {
+    width: 100%;
+    @extend %flex;
+    justify-content: flex-end;
+    &-time {
+      @extend %subtext1;
+      color: $gray;
+    }
+    &-text {
+      @extend %tagtext;
+      width: 50%;
+      background-color: $primary;
+      padding: 12px;
+      border-radius: $radius;
+      color: #fff;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+    &-photo {
+      width: 36px;
+      height: 36px;
+      border-radius: 100%;
+    }
+  }
+  &-left {
+    width: 100%;
+    @extend %flex;
+    justify-content: flex-start;
+    &-time {
+      @extend %subtext1;
+      color: $gray;
+    }
+    &-text {
+      @extend %tagtext;
+      width: 50%;
+      background-color: $softgray;
+      padding: 12px;
+      border-radius: $radius;
+      color: #000;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+    &-photo {
+      width: 36px;
+      height: 36px;
+      border-radius: 100%;
+    }
+  }
+  &-input {
+    width: 100%;
+    position: relative;
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 8px;
+      border: 1px solid $bordergray;
+      border-radius: $radius;
+      &::placeholder {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+      }
+    }
+    button {
+      position: absolute;
+      bottom: 16px;
+      right: 8px;
+      color: #fff;
+      background-color: $primary;
+      border-radius: $radius;
+      @extend %subtext2;
+      letter-spacing: 0.5px;
+      padding: 6px 12px;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary_dark;
+      }
+    }
+  }
+}

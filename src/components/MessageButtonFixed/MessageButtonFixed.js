@@ -3,12 +3,12 @@ import "./MessageButtonFixed.scss";
 import { Message } from "../../icons";
 function MessageButtonFixed() {
   return (
-    <div className="messageButtonFixed">
+    <a href="/messages" className="messageButtonFixed">
       <div className="messageButtonFixed-icon">
         <Message />
       </div>
       <div className="messageButtonFixed-text">Mesajlar</div>
-    </div>
+    </a>
   );
 }
 

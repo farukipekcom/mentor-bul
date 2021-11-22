@@ -15,9 +15,11 @@ function Header() {
         </a>
       </div>
       <div className="header-right">
-        <div className="header-right-message">
-          <Message />
-        </div>
+        <a href="/messages">
+          <div className="header-right-message">
+            <Message />
+          </div>
+        </a>
         <a href="/addproject">
           <div className="header-right-addproject">
             <div className="header-right-addproject-icon">
