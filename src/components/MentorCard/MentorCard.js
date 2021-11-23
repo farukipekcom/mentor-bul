@@ -1,5 +1,5 @@
 import "./MentorCard.scss";
-import { Stars } from "../../components";
+import { Stars } from "..";
 import { profilePhoto } from "../../images";
 
 function MentorCard() {

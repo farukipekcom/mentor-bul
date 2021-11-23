@@ -1,7 +1,7 @@
 import "./SettingsPaymentCard.scss";
 import { Edit, Close } from "../../icons";
 import { useState } from "react";
-import { FormInputTextCard, FormInputSelectCityCard } from "../../components";
+import { FormInputTextCard, FormInputSelectCityCard } from "..";
 function SettingsPaymentCard() {
   const [status, setStatus] = useState(0);
   const controlClick = () => {

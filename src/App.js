@@ -22,6 +22,7 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import MenteeProjects from "./pages/MenteeProjects/MenteeProjects";
 import OfferProjects from "./pages/OfferProjects/OfferProjects";
+import Order from "./pages/Order/Order";
 function App() {
   return (
     <>
@@ -92,6 +93,9 @@ function App() {
           </Route>
           <Route path="/offerProjects">
             <OfferProjects />
+          </Route>
+          <Route path="/order">
+            <Order />
           </Route>
         </Switch>
       </Router>

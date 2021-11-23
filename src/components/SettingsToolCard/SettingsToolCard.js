@@ -1,7 +1,7 @@
 import "./SettingsToolCard.scss";
 import { Edit, Close } from "../../icons";
 import { useState } from "react";
-import { FormInputTextCard } from "../../components";
+import { FormInputTextCard } from "..";
 function SettingsToolCard() {
   const [status, setStatus] = useState(0);
   const controlClick = () => {

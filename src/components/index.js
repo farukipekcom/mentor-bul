@@ -44,6 +44,9 @@ import MessagesSearchCard from "./MessagesSearchCard/MessagesSearchCard";
 import MessagesListItem from "./MessagesListItem/MessagesListItem";
 import MessagesContent from "./MessagesContent/MessagesContent";
 import ProjectOfferCard from "./ProjectOfferCard/ProjectOfferCard";
+import OrderStatusCard from "./OrderStatusCard/OrderStatusCard";
+import OrderDetails from "./OrderDetails/OrderDetails";
+import OrderProcess from "./OrderProcess/OrderProcess";
 export {
   AboutCard,
   ProfessionCard,
@@ -91,4 +94,7 @@ export {
   MessagesListItem,
   MessagesContent,
   ProjectOfferCard,
+  OrderStatusCard,
+  OrderDetails,
+  OrderProcess,
 };

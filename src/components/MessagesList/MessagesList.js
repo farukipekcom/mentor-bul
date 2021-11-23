@@ -1,5 +1,5 @@
 import "./MessagesList.scss";
-import { MessagesSearchCard, MessagesListItem } from "../";
+import { MessagesSearchCard, MessagesListItem } from "..";
 
 function MessagesList() {
   return (

@@ -48,6 +48,10 @@ import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Google } from "./google.svg";
 import { ReactComponent as View } from "./view.svg";
+import { ReactComponent as Circle } from "./circle.svg";
+import { ReactComponent as Status1 } from "./status1.svg";
+import { ReactComponent as Status2 } from "./status2.svg";
+import { ReactComponent as Status3 } from "./status3.svg";
 
 export {
   Star,
@@ -100,4 +104,8 @@ export {
   Trash,
   Google,
   View,
+  Circle,
+  Status1,
+  Status2,
+  Status3,
 };

@@ -2,7 +2,7 @@ import "./MessagesCard.scss";
 import { user2 } from "../../images";
 import Star from "../Stars/Stars";
 import { Profile, Trash } from "../../icons";
-import { MessagesContent } from "../";
+import { MessagesContent } from "..";
 function MessagesCard() {
   return (
     <div className="messagesCard">

@@ -1,0 +1,71 @@
+@import "../../sass/main.scss";
+.orderDetails {
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  width: 100%;
+  @extend %flexvertical;
+  align-items: flex-start;
+  &-subtitle {
+    @extend %icontext;
+    color: $gray;
+  }
+  &-heading {
+    width: 100%;
+    margin-top: 8px;
+    @extend %flex;
+    justify-content: space-between;
+    @extend %title;
+  }
+  &-profile {
+    background-color: $softgray;
+    border-radius: $radius;
+    padding: 16px;
+    @extend %flex;
+    height: 80px;
+    padding-left: 24px;
+    padding-right: 24px;
+    &-photo {
+      width: 54px;
+      height: 54px;
+      border-radius: $radius;
+    }
+    &-details {
+      @extend %flexvertical;
+      align-items: flex-start;
+      margin-left: 12px;
+      &-job {
+        @extend %icontext;
+        color: $gray;
+      }
+      &-username {
+        @extend %category;
+        margin-top: 4px;
+      }
+    }
+  }
+  &-orderDate {
+    background-color: $softgray;
+    border-radius: $radius;
+    padding: 16px;
+    height: 80px;
+    @extend %flexvertical;
+    align-items: flex-start;
+    padding-left: 24px;
+    padding-right: 24px;
+    &-heading {
+      @extend %icontext;
+      color: $gray;
+    }
+    &-date {
+      @extend %category;
+      margin-top: 4px;
+    }
+  }
+  &-summary {
+    @extend %flex;
+    gap: 30px;
+    margin-top: 24px;
+  }
+}

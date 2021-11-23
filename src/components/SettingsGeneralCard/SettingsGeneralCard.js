@@ -2,7 +2,7 @@ import "./SettingsGeneralCard.scss";
 import { profilePhoto } from "../../images";
 import { Edit, Close, ArrowBottom } from "../../icons";
 import data from "../../json/cities.json";
-import { FormInputTextCard, FormInputTextareaCard } from "../../components";
+import { FormInputTextCard, FormInputTextareaCard } from "..";
 import { useState } from "react";
 
 function SettingsGeneralCard() {
