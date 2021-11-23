@@ -1,0 +1,139 @@
+@import "../../sass/main.scss";
+.login {
+  @extend %flex;
+  height: 100vh;
+  &-left {
+    width: 50%;
+    padding-left: 200px;
+    &-container {
+      height: 100vh;
+      width: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    &-logo {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 4%;
+    }
+    &-desc {
+      @extend %text;
+    }
+    &-loginGoogle {
+      border: 1px solid black;
+      width: 100%;
+      height: 48px;
+      border-radius: $radius;
+      @extend %flexcenter;
+      cursor: pointer;
+      transition: 0.4s;
+      &:hover {
+        background-color: #000;
+        transition: 0.4s;
+        color: #fff;
+      }
+      &-icon {
+        width: 24px;
+        height: 24px;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      &-text {
+        margin-left: 16px;
+        @extend %category;
+      }
+    }
+    &-subtitle {
+      @extend %subtext1;
+      color: $gray;
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+      &::before,
+      &::after {
+        background-color: $bordergray;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+      }
+
+      &::before {
+        right: 0.5em;
+        margin-left: -50%;
+      }
+
+      &::after {
+        left: 0.5em;
+        margin-right: -50%;
+      }
+    }
+
+    &-input {
+      @extend %flexvertical;
+      align-items: flex-start;
+      width: 100%;
+      &-heading {
+        @extend %category;
+      }
+    }
+    &-subinfo {
+      @extend %flex;
+      width: 100%;
+      justify-content: space-between;
+      &-rememberme {
+        label {
+          @extend %icontext;
+          padding-left: 28px;
+        }
+      }
+      &-forgetPassword {
+        @extend %icontext;
+      }
+    }
+    &-button {
+      @extend %flexcenter;
+      background-color: $primary;
+      height: 48px;
+      width: 100%;
+      color: #fff;
+      border-radius: $radius;
+      cursor: pointer;
+      transition: 0.4s;
+      &:hover {
+        transition: 0.4s;
+        background-color: $primary_dark;
+      }
+    }
+    &-signup {
+      @extend %category;
+      color: $gray;
+      font-weight: 500;
+      a {
+        color: $primary;
+        @extend %category;
+        margin-left: 8px;
+      }
+    }
+    &-footer {
+      @extend %icontext;
+      color: $gray;
+    }
+  }
+  &-right {
+    width: 50%;
+    height: 100vh;
+    @extend %flexcenter;
+    background: url("../../images/login-background.jpg");
+    img {
+      width: 80%;
+    }
+  }
+}

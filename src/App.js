@@ -18,6 +18,8 @@ import SettingEducation from "./pages/SettingEducation/SettingEducation";
 import SettingTools from "./pages/SettingTools/SettingTools";
 import SettingPassword from "./pages/SettingPassword/SettingPassword";
 import Messages from "./pages/Messages/Messages";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 function App() {
   return (
     <>
@@ -76,6 +78,12 @@ function App() {
           </Route>
           <Route path="/messages">
             <Messages />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
         </Switch>
       </Router>

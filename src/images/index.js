@@ -8,6 +8,8 @@ import media2 from "./media2.jpg";
 import media3 from "./media3.jpg";
 import media4 from "./media4.jpg";
 import categoryImage from "./category-image.svg";
+import loginBackgroundItem from "./login-background-item.svg";
+import signupBackgroundItem from "./signup-background-item.svg";
 export {
   profilePhoto,
   user1,
@@ -19,4 +21,6 @@ export {
   media3,
   media4,
   categoryImage,
+  loginBackgroundItem,
+  signupBackgroundItem,
 };
