@@ -23,6 +23,14 @@ function ProfileMenuCard() {
             </div>
           </div>
         </a>
+        <a href="/menteeProjects">
+          <div className="profileMenuCard-menu-item">
+            <div className="profileMenuCard-menu-item-icon">
+              <List />
+            </div>
+            <div className="profileMenuCard-menu-item-name">İlanlarım</div>
+          </div>
+        </a>
         <a href="/menteeFinance">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
@@ -45,12 +53,15 @@ function ProfileMenuCard() {
             </div>
           </div>
         </a>
-        <a href="/">
+
+        <a href="/offerProjects">
           <div className="profileMenuCard-menu-item">
             <div className="profileMenuCard-menu-item-icon">
               <List />
             </div>
-            <div className="profileMenuCard-menu-item-name">İlanlarım</div>
+            <div className="profileMenuCard-menu-item-name">
+              Teklif Verdiğim Projeler
+            </div>
           </div>
         </a>
         <a href="/mentorFinance">

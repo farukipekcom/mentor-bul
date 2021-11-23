@@ -1,7 +1,9 @@
 import "./ProjectCardHorizontal.scss";
 import { Star, Timev2 } from "../../icons";
 import { profilePhoto } from "../../images";
-function ProjectCardHorizontal() {
+import { View, Trash, Edit } from "../../icons";
+import { useState } from "react";
+function ProjectCardHorizontal({ active = 0 }) {
   return (
     <div className="projectCardHorizontal">
       <a href="/project">
@@ -57,6 +59,21 @@ function ProjectCardHorizontal() {
           </div>
         </div>
       </a>
+      {active ? (
+        <div className="actions">
+          <div className="actions-icon">
+            <View />
+          </div>
+          <div className="actions-icon">
+            <Trash />
+          </div>
+          <div className="actions-icon">
+            <Edit />
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

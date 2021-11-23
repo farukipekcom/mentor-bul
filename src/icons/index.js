@@ -47,6 +47,7 @@ import { ReactComponent as Edit } from "./edit.svg";
 import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Google } from "./google.svg";
+import { ReactComponent as View } from "./view.svg";
 
 export {
   Star,
@@ -98,4 +99,5 @@ export {
   Close,
   Trash,
   Google,
+  View,
 };

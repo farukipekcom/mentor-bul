@@ -20,6 +20,8 @@ import SettingPassword from "./pages/SettingPassword/SettingPassword";
 import Messages from "./pages/Messages/Messages";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import MenteeProjects from "./pages/MenteeProjects/MenteeProjects";
+import OfferProjects from "./pages/OfferProjects/OfferProjects";
 function App() {
   return (
     <>
@@ -84,6 +86,12 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/menteeProjects">
+            <MenteeProjects />
+          </Route>
+          <Route path="/offerProjects">
+            <OfferProjects />
           </Route>
         </Switch>
       </Router>

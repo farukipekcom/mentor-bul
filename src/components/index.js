@@ -43,6 +43,7 @@ import MessagesCard from "./MessagesCard/MessagesCard";
 import MessagesSearchCard from "./MessagesSearchCard/MessagesSearchCard";
 import MessagesListItem from "./MessagesListItem/MessagesListItem";
 import MessagesContent from "./MessagesContent/MessagesContent";
+import ProjectOfferCard from "./ProjectOfferCard/ProjectOfferCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -89,4 +90,5 @@ export {
   MessagesSearchCard,
   MessagesListItem,
   MessagesContent,
+  ProjectOfferCard,
 };

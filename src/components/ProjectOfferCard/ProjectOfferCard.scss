@@ -1,0 +1,76 @@
+@import "../../sass/main.scss";
+.ProjectOfferCard {
+  @extend %flex;
+  background-color: #fff;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  padding: 24px;
+  width: 100%;
+  position: relative;
+  &-photo {
+    width: 42px;
+    height: 42px;
+    border-radius: $radius;
+  }
+  .info {
+  }
+  .confirmationdate {
+    margin-left: 42px;
+  }
+  .orderdate {
+    margin-left: 42px;
+  }
+  &-info {
+    @extend %flexvertical;
+    margin-left: 12px;
+    align-items: flex-start;
+    &-title {
+      @extend %subtext1;
+      color: $gray;
+    }
+    &-text {
+      @extend %buttontext;
+    }
+  }
+  &-status {
+    background-color: rgba($orange, 0.2);
+    color: $orange;
+    padding: 4px 24px;
+    @extend %subtext2;
+    @extend %flexcenter;
+    border-radius: $radius_small;
+    cursor: pointer;
+    margin-left: 42px;
+    height: 40px;
+  }
+  &-price {
+    @extend %title;
+    margin-left: 42px;
+  }
+  &-arrow {
+    margin-left: auto;
+    transition: margin-left 0.5s;
+    cursor: pointer;
+    border: 2px solid #000;
+    padding: 4px;
+    height: 36px;
+    width: 36px;
+    @extend %flexcenter;
+    border-radius: $radius;
+    position: absolute;
+    right: 30px;
+    transition: 0.5s right;
+  }
+  border: 2px solid transparent;
+  transition: 0.5s border;
+  &:hover {
+    .projectSummaryCard-arrow {
+      transition: 0.5s right;
+      position: absolute;
+      right: 16px;
+    }
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000;
+    transition: 0.5s border;
+  }
+}
