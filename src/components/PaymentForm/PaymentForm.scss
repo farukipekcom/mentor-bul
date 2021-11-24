@@ -1,0 +1,85 @@
+@import "../../sass/main.scss";
+
+.paymentForm {
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  @extend %flexvertical;
+  align-items: flex-start;
+  width: 100%;
+  &-heading {
+    @extend %flex;
+    svg {
+      width: 36px;
+      height: 32px;
+    }
+    &-title {
+      @extend %sidebar;
+      margin-left: 12px;
+    }
+  }
+  &-form {
+    width: 100%;
+    @extend %flex;
+    margin-top: 24px;
+    &-left {
+      width: 50%;
+      @extend %flexvertical;
+      align-items: flex-start;
+      gap: 24px;
+      &-item {
+        width: 100%;
+        &-full {
+          @extend %flex;
+        }
+        &-title {
+          @extend %category;
+        }
+        input {
+          width: 100%;
+          background-color: white;
+        }
+        &-full {
+          width: 100%;
+          @extend %flex;
+          gap: 30px;
+        }
+        &-left {
+          width: 50%;
+        }
+
+        &-right {
+          width: 50%;
+        }
+      }
+      select {
+        appearance: auto;
+        width: 50%;
+        padding-left: 8px;
+        @extend %category;
+        background-color: #fff;
+      }
+      button {
+        background-color: $dark;
+        color: #fff;
+        @extend %flexcenter;
+        padding: 8px 12px;
+        height: 48px;
+        width: 100%;
+        border-radius: $radius;
+        cursor: pointer;
+        @extend %buttontext;
+      }
+    }
+    &-right {
+      width: 50%;
+      @extend %flex;
+      justify-content: flex-end;
+      &-photo {
+        width: 320px;
+        height: 400px;
+      }
+    }
+  }
+}

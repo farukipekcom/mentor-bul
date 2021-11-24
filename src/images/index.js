@@ -10,6 +10,7 @@ import media4 from "./media4.jpg";
 import categoryImage from "./category-image.svg";
 import loginBackgroundItem from "./login-background-item.svg";
 import signupBackgroundItem from "./signup-background-item.svg";
+import payment from "./payment.svg";
 export {
   profilePhoto,
   user1,
@@ -23,4 +24,5 @@ export {
   categoryImage,
   loginBackgroundItem,
   signupBackgroundItem,
+  payment,
 };

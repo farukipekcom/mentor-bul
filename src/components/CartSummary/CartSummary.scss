@@ -1,0 +1,41 @@
+@import "../../sass/main.scss";
+.cartSummary {
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  width: 100%;
+  position: relative;
+  @extend %flexvertical;
+  align-items: flex-start;
+  &-heading {
+    @extend %subtitle;
+  }
+  &-item {
+    width: 100%;
+    margin-top: 24px;
+    @extend %flex;
+    justify-content: space-between;
+    &-title {
+      @extend %icontext;
+      color: $gray;
+    }
+    &-value {
+      @extend %sidebar;
+    }
+  }
+}
+.secure {
+  position: absolute;
+  bottom: -36px;
+  text-align: center;
+  width: calc(100% - 48px);
+  @extend %subtext2;
+  color: $gray;
+  @extend %flexcenter;
+  letter-spacing: 0.2px;
+  svg {
+    margin-right: 8px;
+    margin-top: -2px;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../sass/main.scss";
+
+.projectSmall {
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  width: 100%;
+  @extend %flex;
+  &-photo {
+    height: 64px;
+    width: 64px;
+    border-radius: $radius;
+  }
+  &-heading {
+    @extend %flexvertical;
+    align-items: flex-start;
+    margin-left: 12px;
+    &-title {
+      @extend %subtitle;
+    }
+    &-star {
+      @extend %flex;
+      &-count {
+        color: $gray;
+        @extend %icontext;
+        margin-left: 8px;
+      }
+    }
+  }
+  &-type {
+    background-color: $soft_purple;
+    color: $primary;
+    padding: 6px 12px;
+    border-radius: $radius_small;
+    margin-left: auto;
+    @extend %category;
+  }
+}

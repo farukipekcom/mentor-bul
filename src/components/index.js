@@ -51,6 +51,9 @@ import Reviewed from "./Reviewed/Reviewed";
 import LeaveReviewCard from "./LeaveReviewCard/LeaveReviewCard";
 import RequestCategoryItemCard from "./RequestCategoryItemCard/RequestCategoryItemCard";
 import OfferFormCard from "./OfferFormCard/OfferFormCard";
+import CartSummary from "./CartSummary/CartSummary";
+import ProjectSmallCard from "./ProjectSmallCard/ProjectSmallCard";
+import PaymentForm from "./PaymentForm/PaymentForm";
 export {
   AboutCard,
   ProfessionCard,
@@ -105,4 +108,7 @@ export {
   LeaveReviewCard,
   RequestCategoryItemCard,
   OfferFormCard,
+  CartSummary,
+  ProjectSmallCard,
+  PaymentForm,
 };

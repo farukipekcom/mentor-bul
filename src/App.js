@@ -26,6 +26,7 @@ import Order from "./pages/Order/Order";
 import RequestCategory from "./pages/RequestCategory/RequestCategory";
 import RequestProfession from "./pages/RequestProfession/RequestProfession";
 import SendOffer from "./pages/SendOffer/SendOffer";
+import Payment from "./pages/Payment/Payment";
 function App() {
   return (
     <>
@@ -108,6 +109,9 @@ function App() {
           </Route>
           <Route path="/sendOffer">
             <SendOffer />
+          </Route>
+          <Route path="/payment">
+            <Payment />
           </Route>
         </Switch>
       </Router>

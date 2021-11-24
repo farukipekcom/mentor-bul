@@ -54,6 +54,7 @@ import { ReactComponent as Status2 } from "./status2.svg";
 import { ReactComponent as Status3 } from "./status3.svg";
 import { ReactComponent as ArrowTop } from "./arrow-top.svg";
 import { ReactComponent as Dot } from "./dot.svg";
+import { ReactComponent as CreditCard } from "./credit-card.svg";
 
 export {
   Star,
@@ -112,4 +113,5 @@ export {
   Status3,
   ArrowTop,
   Dot,
+  CreditCard,
 };
