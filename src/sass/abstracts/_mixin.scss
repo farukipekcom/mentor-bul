@@ -1,5 +1,9 @@
 @mixin mq($width: "tablet") {
-  @if ($width == "tablet") {
+  @if ($width == "mobile") {
+    @media (min-width: 560px) {
+      @content;
+    }
+  } @else if ($width == "tablet") {
     // Medium devices (tablets, 768px and up)
     @media (min-width: 768px) {
       @content;

@@ -1,6 +1,7 @@
 @import "../../sass/main.scss";
 
 .messageButtonFixed {
+  display: none;
   padding: 16px;
   border-radius: $radius_small;
   box-shadow: $boxshadow;

@@ -14,8 +14,8 @@ function Profile({ deneme }) {
   console.log(deneme);
   return (
     <div className="main">
-      {/* <Header />
-      <Category /> */}
+      <Header />
+      <Category />
       <div className="container">
         <div className="sidebar">
           <ProfileCard />
