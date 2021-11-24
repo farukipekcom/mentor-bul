@@ -23,6 +23,8 @@ import Signup from "./pages/Signup/Signup";
 import MenteeProjects from "./pages/MenteeProjects/MenteeProjects";
 import OfferProjects from "./pages/OfferProjects/OfferProjects";
 import Order from "./pages/Order/Order";
+import RequestCategory from "./pages/RequestCategory/RequestCategory";
+import RequestProfession from "./pages/RequestProfession/RequestProfession";
 function App() {
   return (
     <>
@@ -96,6 +98,12 @@ function App() {
           </Route>
           <Route path="/order">
             <Order />
+          </Route>
+          <Route path="/requestCategory">
+            <RequestCategory />
+          </Route>
+          <Route path="/requestProfession">
+            <RequestProfession />
           </Route>
         </Switch>
       </Router>

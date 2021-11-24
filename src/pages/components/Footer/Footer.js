@@ -55,6 +55,12 @@ function Footer() {
             <div className="footer-top-boxes-box-heading">Destek</div>
             <div className="footer-top-boxes-box-list">
               <div className="footer-top-boxes-box-list-item">
+                <a href="/requestCategory">Kategori Ekle</a>
+              </div>
+              <div className="footer-top-boxes-box-list-item">
+                <a href="/requestProfession">Uzmanlık Alanı Ekle</a>
+              </div>
+              <div className="footer-top-boxes-box-list-item">
                 Yardım Merkezi
               </div>
               <div className="footer-top-boxes-box-list-item">

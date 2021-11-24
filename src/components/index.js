@@ -49,6 +49,7 @@ import OrderDetails from "./OrderDetails/OrderDetails";
 import OrderProcess from "./OrderProcess/OrderProcess";
 import Reviewed from "./Reviewed/Reviewed";
 import LeaveReviewCard from "./LeaveReviewCard/LeaveReviewCard";
+import RequestCategoryItemCard from "./RequestCategoryItemCard/RequestCategoryItemCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -101,4 +102,5 @@ export {
   OrderProcess,
   Reviewed,
   LeaveReviewCard,
+  RequestCategoryItemCard,
 };

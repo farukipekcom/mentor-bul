@@ -1,0 +1,114 @@
+@import "../../sass/main.scss";
+
+.requestCategory {
+  .rightSidebar {
+    .container {
+      @extend %flexvertical;
+      width: 820px;
+    }
+  }
+  &-heading {
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 24px;
+    @extend %flexvertical;
+    align-items: flex-start;
+    box-shadow: $boxshadow;
+    border-radius: $radius;
+    gap: 16px;
+  }
+  &-title {
+    @extend %subtitle;
+  }
+  &-desc {
+    @extend %text;
+    width: 70%;
+  }
+  &-list {
+    width: 100%;
+    background-color: #fff;
+    padding: 48px;
+    padding-left: 80px;
+    padding-right: 80px;
+    @extend %flexvertical;
+    align-items: flex-start;
+    box-shadow: $boxshadow;
+    border-radius: $radius;
+    &-add {
+      width: 100%;
+      margin-bottom: 48px;
+      @extend %flexvertical;
+      align-items: flex-start;
+      justify-content: space-between;
+      background-color: $primary;
+      border-radius: $radius;
+      padding: 24px;
+      &-heading {
+        @extend %buttontext;
+        color: #fff;
+      }
+      &-form {
+        width: 100%;
+        margin-top: 12px;
+        @extend %flex;
+
+        input {
+          width: 70%;
+        }
+        button {
+          background-color: $primary;
+          border: 2px solid #fff;
+          color: #fff;
+          height: 48px;
+          @extend %category;
+          padding-left: 48px;
+          padding-right: 48px;
+          border-radius: $radius_small;
+          cursor: pointer;
+          transition: 0.2s;
+          &:hover {
+            transition: 0.2s;
+            background-color: #fff;
+            color: $primary;
+            border: 2px solid #fff;
+          }
+        }
+      }
+    }
+    &-search {
+      @extend %flex;
+      width: 100%;
+      justify-content: space-between;
+      &-left {
+        width: 250px;
+        position: relative;
+        svg {
+          position: absolute;
+          top: 12px;
+          left: 10px;
+          z-index: 999;
+        }
+        input {
+          margin-top: 0px;
+          width: 100%;
+          padding-left: 36px;
+          height: 40px;
+        }
+      }
+      &-right {
+        button {
+          background-color: $primary;
+          color: #fff;
+          border-radius: $radius;
+          height: 40px;
+          padding-left: 48px;
+          padding-right: 48px;
+          cursor: pointer;
+          &:hover {
+            background-color: $primary_dark;
+          }
+        }
+      }
+    }
+  }
+}

@@ -52,6 +52,8 @@ import { ReactComponent as Circle } from "./circle.svg";
 import { ReactComponent as Status1 } from "./status1.svg";
 import { ReactComponent as Status2 } from "./status2.svg";
 import { ReactComponent as Status3 } from "./status3.svg";
+import { ReactComponent as ArrowTop } from "./arrow-top.svg";
+import { ReactComponent as Dot } from "./dot.svg";
 
 export {
   Star,
@@ -108,4 +110,6 @@ export {
   Status1,
   Status2,
   Status3,
+  ArrowTop,
+  Dot,
 };
