@@ -1,3 +1,64 @@
+.main {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    @extend %flexvertical;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 30px;
+    @include mq("tablet") {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    @include mq("desktop") {
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+    }
+    @include mq("large") {
+      width: 1200px;
+    }
+  }
+  .content {
+    width: 100%;
+    @extend %flexvertical;
+    align-items: flex-start;
+    gap: 30px;
+    @include mq("tablet") {
+      width: 100%;
+    }
+    @include mq("desktop") {
+      width: 100%;
+    }
+    @include mq("large") {
+      min-width: 820px !important;
+    }
+  }
+  .sidebar {
+    width: 100%;
+    // @extend %flexvertical;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+    @include mq("tablet") {
+    }
+    @include mq("desktop") {
+      max-width: 350px;
+    }
+    @include mq("large") {
+      min-width: 350px;
+    }
+  }
+  .fullWidth {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row;
+    gap: 30px;
+  }
+}
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 .rightSidebar {
   .container {
     width: 1200px;

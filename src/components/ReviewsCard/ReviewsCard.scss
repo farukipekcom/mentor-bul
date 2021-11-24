@@ -2,7 +2,7 @@
 .reviewsCard {
   background-color: #fff;
   padding: 24px;
-  width: 820px;
+  width: 100%;
   box-shadow: $boxshadow;
   border-radius: $radius;
   &-heading {
@@ -12,6 +12,7 @@
     margin-top: 24px;
     &-boxes {
       @extend %flex;
+      flex-wrap: wrap;
       gap: 16px;
       &-box {
         border: 1px solid $bordergray;
@@ -78,11 +79,21 @@
   &-list {
     &-item {
       @extend %flex;
+      flex-direction: column;
       align-items: flex-start;
       margin-top: 24px;
       padding-top: 24px;
-      padding-bottom: 24px;
+      padding-bottom: 0px;
       border-top: 1px solid $bordergray;
+      @include mq("tablet") {
+        flex-direction: column;
+      }
+      @include mq("desktop") {
+        flex-direction: column;
+      }
+      @include mq("large") {
+        flex-direction: row;
+      }
       &:last-child {
         padding-bottom: 0px;
       }
@@ -116,6 +127,10 @@
           @extend %flex;
           width: 100%;
           justify-content: space-between;
+          margin-top: 12px;
+          @include mq("large") {
+            margin-top: 0px;
+          }
           &-date {
             @extend %subtext1;
             color: $gray;

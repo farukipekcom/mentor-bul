@@ -13,9 +13,9 @@ import {
 function Profile({ deneme }) {
   console.log(deneme);
   return (
-    <div className="rightSidebar">
-      <Header />
-      <Category />
+    <div className="main">
+      {/* <Header />
+      <Category /> */}
       <div className="container">
         <div className="sidebar">
           <ProfileCard />
