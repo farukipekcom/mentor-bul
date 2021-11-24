@@ -1,0 +1,59 @@
+@import "../../sass/main.scss";
+
+.offerForm {
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  padding: 24px;
+  @extend %flexvertical;
+  align-items: flex-start;
+  width: 100%;
+  &-heading {
+    @extend %buttontext;
+  }
+  &-input {
+    margin-top: 12px;
+    @extend %flexvertical;
+    width: 100%;
+    gap: 30px;
+    textarea {
+      width: 100%;
+    }
+    &-price {
+      width: 100%;
+      position: relative;
+      @extend %flex;
+      input {
+        width: 100%;
+        margin-top: 0px;
+      }
+    }
+    button {
+      background-color: $primary;
+      color: #fff;
+      padding-left: 24px;
+      padding-right: 24px;
+      height: 42px;
+      border-radius: $radius;
+      @extend %icontext;
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+}
+.price-range {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  @extend %flex;
+  .text {
+    @extend %subtext1;
+    line-height: 1;
+    color: $gray;
+  }
+  .price {
+    @extend %icontext;
+    margin-left: 8px;
+    line-height: 1;
+  }
+}
