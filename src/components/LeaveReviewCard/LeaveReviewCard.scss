@@ -1,0 +1,51 @@
+@import "../../sass/main.scss";
+.leaveReview {
+  width: 100%;
+  @extend %flexvertical;
+  align-items: flex-start;
+  &-heading {
+    @extend %buttontext;
+  }
+  &-item {
+    @extend %flexvertical;
+    margin-top: 24px;
+    align-items: flex-start;
+    &-title {
+      @extend %category;
+      margin-top: 4px;
+    }
+    &-desc {
+      @extend %subtext1;
+      font-weight: 400;
+      color: $gray;
+    }
+    .react__star__rating__lite {
+      margin-top: 4px;
+    }
+  }
+  &-input {
+    width: 100%;
+    margin-top: 24px;
+    @extend %flexvertical;
+    align-items: flex-end;
+    textarea {
+      height: 80px;
+    }
+    button {
+      background-color: $primary;
+      height: 48px;
+      width: max-content;
+      padding-left: 48px;
+      padding-right: 48px;
+      @extend %flexcenter;
+      color: #fff;
+      @extend %category;
+      border-radius: $radius;
+      margin-top: 12px;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary_dark;
+      }
+    }
+  }
+}

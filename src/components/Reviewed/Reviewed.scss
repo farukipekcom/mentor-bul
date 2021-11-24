@@ -1,0 +1,12 @@
+@import "../../sass/main.scss";
+
+.reviewed {
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  width: 100%;
+  padding: 24px;
+  &-heading {
+    @extend %buttontext;
+  }
+}

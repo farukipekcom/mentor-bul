@@ -6,6 +6,7 @@ import {
   OrderStatusCard,
   OrderDetails,
   OrderProcess,
+  Reviewed,
 } from "../../components";
 function Order() {
   return (
@@ -17,10 +18,11 @@ function Order() {
           <ProfileMenuCard />
         </div>
         <div className="content">
+          <div className="send-message">Mesaj Gönder</div>
           <span className="heading">Sipariş Özeti</span>
           <OrderStatusCard />
           <OrderDetails />
-
+          <Reviewed />
           <span className="orderProcessHeading">Sipariş Süreci</span>
           <OrderProcess type="3" />
           <OrderProcess type="2" />

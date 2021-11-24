@@ -47,6 +47,8 @@ import ProjectOfferCard from "./ProjectOfferCard/ProjectOfferCard";
 import OrderStatusCard from "./OrderStatusCard/OrderStatusCard";
 import OrderDetails from "./OrderDetails/OrderDetails";
 import OrderProcess from "./OrderProcess/OrderProcess";
+import Reviewed from "./Reviewed/Reviewed";
+import LeaveReviewCard from "./LeaveReviewCard/LeaveReviewCard";
 export {
   AboutCard,
   ProfessionCard,
@@ -97,4 +99,6 @@ export {
   OrderStatusCard,
   OrderDetails,
   OrderProcess,
+  Reviewed,
+  LeaveReviewCard,
 };
