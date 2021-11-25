@@ -34,28 +34,29 @@ function Category() {
       </div>
       <div className="category-mobile">
         <Menu right>
-          <div className="category-list-item border-animation menu-border menu-item">
+          <span className="kategori">Kategoriler</span>
+          <div className="category-list-item menu-border menu-item">
             <a href="/category">Grafik & Tasarım</a>
           </div>
-          <div className="category-list-item border-animation menu-border menu-item">
+          <div className="category-list-item menu-border menu-item">
             <a href="/category">İnternet Reklamcılığı</a>
           </div>
-          <div className="category-list-item border-animation menu-border menu-item">
+          <div className="category-list-item menu-border menu-item">
             <a href="/category">Yazı & Çeviri</a>
           </div>
-          <div className="category-list-item border-animation menu-border menu-item">
+          <div className="category-list-item menu-border menu-item">
             <a href="/category">Video & Animasyon</a>
           </div>
-          <div className="category-list-item border-animation menu-border menu-item">
+          <div className="category-list-item menu-border menu-item">
             <a href="/sub-category">Müzik</a>
           </div>
-          <div className="category-list-item border-animation menu-border menu-item">
+          <div className="category-list-item menu-border menu-item">
             <a href="/sub-category">Eğlence</a>
           </div>
-          <div className="category-list-item border-animation menu-border menu-item">
+          <div className="category-list-item menu-border menu-item">
             <a href="/sub-category">Yazılım & Teknoloji</a>
           </div>
-          <div className="category-list-item border-animation menu-border menu-item">
+          <div className="category-list-item menu-border menu-item">
             <a href="/sub-category">İş & Yönetim</a>
           </div>
         </Menu>

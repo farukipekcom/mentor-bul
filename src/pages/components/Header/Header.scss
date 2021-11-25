@@ -20,10 +20,16 @@
     padding-right: 120px;
   }
   &-logo {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 4%;
     flex: 1;
+    @include mq("tablet") {
+      font-size: 32px;
+    }
+    @include mq("desktop") {
+      font-size: 36px;
+    }
     a {
       color: #000;
       margin-right: 12px;
@@ -141,4 +147,125 @@
       }
     }
   }
+}
+
+.mobile-profile {
+  margin-top: 8px;
+  margin-right: 42px;
+  display: inline-block;
+  @include mq("desktop") {
+    display: none;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}
+
+.mobile-profile-dropdown {
+  display: none;
+  position: absolute;
+  right: 24px;
+  background-color: #fff;
+  border: 2px solid $primary;
+  border-radius: $radius;
+  box-shadow: 2px 2px 0px 2px $primary;
+  min-width: 200px;
+  z-index: 1;
+  padding-right: 0px;
+}
+
+.mobile-profile-dropdown a {
+  color: black;
+  padding: 12px 12px;
+  @extend %icontext;
+  text-decoration: none;
+  display: block;
+  border-bottom: 2px solid $primary;
+}
+
+.mobile-profile-dropdown a:hover {
+  background-color: $primary;
+  color: #fff;
+}
+
+.mobile-profile:hover .mobile-profile-dropdown {
+  display: block;
+}
+
+// !!!!!!!!!!!!!!!!!!!!!!!!
+
+.mobile-search-box {
+  svg {
+    position: absolute;
+    left: 28px;
+    top: 18px;
+    z-index: 1;
+    color: $gray;
+    width: 20px !important;
+    height: 20px !important;
+    cursor: default !important;
+  }
+}
+.mobile-search-input {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  height: 44px;
+  border: 2px solid $primary;
+  width: 65%;
+  border-radius: $radius;
+  padding-left: 42px;
+  &::placeholder {
+    color: #000;
+    @extend %icontext;
+  }
+}
+.mobile-search {
+  margin-top: 8px;
+  margin-right: 16px;
+  display: inline-block;
+  @include mq("desktop") {
+    display: none;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  button {
+    background-color: #fff;
+  }
+}
+
+.mobile-search-dropdown {
+  display: none;
+  position: absolute;
+  right: 24px;
+  background-color: #fff;
+  border: 2px solid $primary;
+  border-radius: $radius;
+  box-shadow: 2px 2px 0px 2px $primary;
+  min-width: 200px;
+  z-index: 1;
+  padding-right: 0px;
+}
+
+.mobile-search-dropdown a {
+  color: black;
+  padding: 12px 12px;
+  @extend %icontext;
+  text-decoration: none;
+  display: block;
+  border-bottom: 2px solid $primary;
+}
+
+.mobile-search-dropdown a:hover {
+  background-color: $primary;
+  color: #fff;
+}
+
+.mobile-search:hover .mobile-search-dropdown {
+  display: block;
 }

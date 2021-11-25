@@ -1,8 +1,13 @@
 import "./Header.scss";
 import { profilePhoto } from "../../../images";
-import { ArrowBottom, Message, Plus, Search } from "../../../icons";
+import { ArrowBottom, Message, Plus, Search, Profile } from "../../../icons";
+import { useState } from "react";
 
 function Header() {
+  const [active, setActive] = useState();
+  const degistir = () => {
+    setActive(!active);
+  };
   return (
     <div className="header">
       <div className="header-logo">
@@ -46,6 +51,33 @@ function Header() {
             </div>
             <ArrowBottom />
           </a>
+        </div>
+      </div>
+      <div class="mobile-search">
+        <button onClick={degistir}>
+          <Search />
+        </button>
+        {active ? (
+          <div className="mobile-search-box">
+            <Search />
+            <input
+              type="text"
+              className="mobile-search-input"
+              placeholder="Arama Yapınız.."
+            />
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      <div class="mobile-profile">
+        <a href="/profile">
+          <Profile />
+        </a>
+        <div class="mobile-profile-dropdown">
+          <a href="/profile">Profil</a>
+          <a href="/messages">Mesajlar</a>
+          <a href="/SettingsGeneral">Ayarlar</a>
         </div>
       </div>
     </div>
