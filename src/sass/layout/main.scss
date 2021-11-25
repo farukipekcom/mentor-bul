@@ -6,7 +6,9 @@
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 30px;
-    @include mq("tablet") {
+    padding-left: 24px;
+    padding-right: 24px;
+    @include mq("mobile") {
       padding-left: 24px;
       padding-right: 24px;
     }

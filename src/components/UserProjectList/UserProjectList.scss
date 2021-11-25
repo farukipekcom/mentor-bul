@@ -9,7 +9,6 @@
     @extend %subtitle;
   }
   &-list {
-    margin-top: 24px;
     @extend %flexvertical;
     @include mq("tablet") {
       flex-direction: row;
@@ -18,7 +17,6 @@
       flex-direction: column;
     }
     @include mq("large") {
-      margin-top: 36px;
       flex-direction: row;
     }
     gap: 12px;

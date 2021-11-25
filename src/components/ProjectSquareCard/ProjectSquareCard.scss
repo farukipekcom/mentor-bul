@@ -3,11 +3,17 @@
 .projectSquareCard {
   width: 100%;
   color: #000;
-  padding: 24px;
+  padding: 12px;
   background-color: #fff;
   box-shadow: $boxshadow;
   border-radius: $radius;
   cursor: pointer;
+  margin-top: 16px;
+  @extend %flex;
+  gap: 16px;
+  @include mq("mobile") {
+    padding: 24px;
+  }
   &:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
@@ -17,16 +23,26 @@
   }
   &-heading {
     @extend %subtitle;
+    font-size: 1em;
     margin-top: 8px;
+    @include mq("mobile") {
+      font-size: 1.25em;
+    }
   }
   &-details {
     margin-top: 8px;
     @extend %tagtext;
   }
+
   &-info {
     margin-top: 12px;
-    @extend %flex;
+    @extend %flexvertical;
+    align-items: flex-start;
     justify-content: space-between;
+    @include mq("tablet") {
+      flex-direction: row;
+    }
+
     &-category {
       @extend %subtext1;
       background-color: $softgray;
@@ -34,6 +50,10 @@
       border-radius: $radius;
     }
     &-price {
+      margin-top: 8px;
+      @include mq("tablet") {
+        margin-top: 0px;
+      }
       @extend %subtitle;
       font-weight: 600;
     }
