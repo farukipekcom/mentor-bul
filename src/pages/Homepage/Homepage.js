@@ -8,7 +8,7 @@ import {
 } from "../../components";
 function Homepage() {
   return (
-    <div className="rightSidebar">
+    <div className="main">
       <Header />
       <Category />
       <div className="container">
@@ -17,15 +17,15 @@ function Homepage() {
         </div>
         <div className="content">
           <WelcomeCard />
-          <span className="rightSidebar-heading">Öne çıkan ilanlara gözat</span>
-          <div className="rightSidebar-projects">
+          <span className="main-heading">Öne çıkan ilanlara gözat</span>
+          <div className="main-projects">
             <ProjectSquareCard />
             <ProjectSquareCard />
             <ProjectSquareCard />
             <ProjectSquareCard />
           </div>
-          <span className="rightSidebar-heading">Popüler Mentörler</span>
-          <div className="rightSidebar-mentors">
+          <span className="main-heading">Popüler Mentörler</span>
+          <div className="main-mentors">
             <MentorCard />
             <MentorCard />
             <MentorCard />

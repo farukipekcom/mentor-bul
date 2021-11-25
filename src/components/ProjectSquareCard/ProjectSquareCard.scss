@@ -8,9 +8,11 @@
   box-shadow: $boxshadow;
   border-radius: $radius;
   cursor: pointer;
-  margin-top: 16px;
   @extend %flex;
   gap: 16px;
+  &-container {
+    width: 100%;
+  }
   @include mq("mobile") {
     padding: 24px;
   }

@@ -5,7 +5,7 @@ import { profilePhoto } from "../../images";
 function ProjectSquareCard() {
   return (
     <a href="/project" className="projectSquareCard">
-      <div>
+      <div className="projectSquareCard-container">
         <span className="projectSquareCard-subheading">Görüntülü Görüşme</span>
         <div className="projectSquareCard-heading">
           Seo Analizi Yapılacaktır

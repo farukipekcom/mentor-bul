@@ -9,6 +9,15 @@
   color: #000;
   border: 3px solid transparent;
   transition: 0.5s border;
+  min-width: 55%;
+  scroll-snap-align: start;
+  @include mq("mobile") {
+    min-width: 40%;
+  }
+  @include mq("tablet") {
+    min-width: unset;
+    scroll-snap-align: unset;
+  }
   &:hover {
     border: 3px solid $primary;
     transition: 0.5s border;

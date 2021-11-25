@@ -1,28 +1,65 @@
 @import "../../sass/main.scss";
 
-.rightSidebar {
+.main {
+  .content {
+    gap: 30px !important;
+  }
   &-heading {
     @extend %subtitle;
-    margin-top: 18px;
   }
   &-projects {
-    @extend %flex;
-    gap: 30px;
+    @extend %flexvertical;
     align-items: flex-start;
     flex-wrap: wrap;
+    gap: 30px;
     width: 100%;
+    @include mq("tablet") {
+      flex-direction: row;
+    }
+    @include mq("desktop") {
+      flex-direction: column;
+    }
+    @include mq("large") {
+      flex-direction: row;
+    }
     .projectSquareCard {
-      width: calc(50% - 15px);
+      width: 100%;
+      @include mq("tablet") {
+        width: calc(50% - 15px);
+      }
+      @include mq("desktop") {
+        width: 100%;
+      }
+      @include mq("large") {
+        width: calc(50% - 15px);
+      }
     }
   }
   &-mentors {
     @extend %flex;
     gap: 30px;
-    align-items: flex-start;
-    flex-wrap: wrap;
     width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    @include mq("tablet") {
+      max-width: unset;
+      overflow: unset;
+      scroll-snap-type: unset;
+      -webkit-overflow-scrolling: unset;
+      flex-wrap: wrap;
+    }
+
     .mentorCard {
-      width: calc(25% - 24px);
+      margin-bottom: 12px;
+      @include mq("tablet") {
+        width: calc(50% - 15px);
+        margin-bottom: 0px;
+      }
+      @include mq("large") {
+        width: calc(25% - 23px);
+      }
     }
   }
 }

@@ -5,6 +5,10 @@
   background-color: #fff;
   border-radius: $radius;
   box-shadow: $boxshadow;
+  width: 100%;
+  @include mq("tablet") {
+    width: unset;
+  }
   &-photo {
     width: 64px;
     height: 64px;
