@@ -5,7 +5,6 @@
     @extend %flexvertical;
     flex-direction: column-reverse;
     align-items: flex-start;
-    gap: 30px;
     padding-left: 24px;
     padding-right: 24px;
     @include mq("mobile") {
@@ -15,6 +14,7 @@
     @include mq("desktop") {
       width: 100%;
       flex-direction: row;
+      gap: 30px;
       justify-content: center;
     }
     @include mq("large") {
@@ -38,6 +38,7 @@
   }
   .sidebar {
     width: 100%;
+    margin-top: 30px;
     // @extend %flexvertical;
     display: flex;
     flex-direction: row;
@@ -48,6 +49,7 @@
     }
     @include mq("desktop") {
       max-width: 350px;
+      margin-top: 0px;
     }
     @include mq("large") {
       min-width: 350px;

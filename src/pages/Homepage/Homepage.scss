@@ -1,9 +1,55 @@
 @import "../../sass/main.scss";
 
 .main {
+  .deneme {
+    background-color: red;
+  }
+  .container {
+    // flex-direction: column !important;
+    // .sidebar {
+    //   margin-top: 0px;
+    //   svg {
+    //     cursor: pointer;
+    //     display: flex;
+    //     @include mq("tablet") {
+    //       display: none;
+    //     }
+    //   }
+    // }
+
+    .sidebar {
+      display: none;
+      @include mq("desktop") {
+        display: flex;
+      }
+    }
+  }
   .content {
     gap: 30px !important;
+    position: relative;
+    .bm-menu-wrap {
+      left: 0px;
+    }
+    .bm-menu {
+      background-color: #fff;
+      width: 100%;
+    }
   }
+  .kontrolet {
+    display: block;
+    @include mq("desktop") {
+      display: none;
+    }
+  }
+  .oldusanirim {
+    left: 0px;
+    top: -12px;
+    @extend %subtext1;
+    .bm-menu-wrap {
+      left: 0px;
+    }
+  }
+
   &-heading {
     @extend %subtitle;
   }
@@ -52,7 +98,6 @@
     }
 
     .mentorCard {
-      margin-bottom: 12px;
       @include mq("tablet") {
         width: calc(50% - 15px);
         margin-bottom: 0px;

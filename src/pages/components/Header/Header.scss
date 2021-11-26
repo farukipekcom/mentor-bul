@@ -214,7 +214,7 @@
   left: 16px;
   height: 44px;
   border: 2px solid $primary;
-  width: 65%;
+  width: 60%;
   border-radius: $radius;
   padding-left: 42px;
   &::placeholder {
@@ -226,6 +226,9 @@
   margin-top: 8px;
   margin-right: 16px;
   display: inline-block;
+  button {
+    color: black;
+  }
   @include mq("desktop") {
     display: none;
   }
