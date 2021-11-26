@@ -1,7 +1,8 @@
 @import "../../sass/main.scss";
 
 .projectSquareCard {
-  width: 100%;
+  scroll-snap-align: start;
+  background-color: red;
   color: #000;
   padding: 12px;
   background-color: #fff;

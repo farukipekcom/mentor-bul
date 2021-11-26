@@ -16,7 +16,7 @@ function Homepage() {
   };
 
   return (
-    <div className="main">
+    <div className="main homepage">
       <Header />
       <Category />
       <div className="container">

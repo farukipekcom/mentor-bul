@@ -18,12 +18,43 @@
   .container {
     width: 1610px;
     @extend %flexvertical;
+    flex-direction: column !important;
+    @include mq("tablet") {
+    }
   }
   &-list {
     @extend %flex;
     gap: 30px;
+    max-width: 100%;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    @include mq("desktop") {
+      overflow: unset;
+      scroll-snap-type: unset;
+      -webkit-overflow-scrolling: unset;
+      gap: 10px;
+    }
+    @include mq("large") {
+      gap: 30px;
+    }
     &-heading {
       @extend %title;
+    }
+
+    .projectSquareCard {
+      margin-top: 16px;
+      min-width: 80%;
+      @include mq("tablet") {
+        margin-top: 0px;
+        min-width: 60%;
+      }
+      @include mq("desktop") {
+        min-width: 25%;
+      }
+    }
+    .projectSquareCard-profile-details-ratings-count {
+      font-size: 12px;
     }
   }
 }

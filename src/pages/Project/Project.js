@@ -9,7 +9,7 @@ import {
 import { Header, Category, Footer } from "../../pages/components";
 function Project() {
   return (
-    <div className="rightSidebar">
+    <div className="main projectPage">
       <Header />
       <Category />
       <div className="container">

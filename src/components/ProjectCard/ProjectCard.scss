@@ -1,7 +1,7 @@
 @import "../../sass/main.scss";
 
 .projectCard {
-  width: 820px;
+  width: 100%;
   background-color: #fff;
   box-shadow: $boxshadow;
   border-radius: $radius;
@@ -12,6 +12,11 @@
     @extend %flex;
     width: 100%;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    @include mq("tablet") {
+      flex-direction: row;
+    }
     &-left {
       @extend %category;
       font-weight: 600;
@@ -19,6 +24,10 @@
     }
     &-right {
       @extend %flex;
+      margin-top: 12px;
+      @include mq("tablet") {
+        margin-top: 0px;
+      }
       &-icon {
         width: 20px;
         height: 20px;
@@ -40,6 +49,10 @@
   &-title {
     @extend %title;
     margin-top: 12px;
+    font-size: 1.25em;
+    @include mq("tablet") {
+      font-size: 1.75em;
+    }
   }
   &-seperator {
     width: 100%;
@@ -58,13 +71,17 @@
     }
     &-list {
       @extend %flex;
+      flex-wrap: wrap;
       gap: 12px;
       margin-top: 16px;
       img {
-        width: calc(25% - 8px);
+        width: calc(50% - 8px);
         height: 160px;
         object-fit: cover;
         border-radius: $radius_small;
+        @include mq("tablet") {
+          width: calc(25% - 10px);
+        }
       }
     }
   }
@@ -79,9 +96,12 @@
       gap: 12px;
       &-item {
         padding: 8px 12px;
-        @extend %tagtext;
+        @extend %subtext1;
         background-color: $softgray;
         border-radius: $radius;
+        @include mq("tablet") {
+          font-size: 0.875em;
+        }
       }
     }
   }

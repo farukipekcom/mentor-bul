@@ -1,31 +1,74 @@
 @import "../../sass/main.scss";
 .priceCard {
-  width: 350px;
-  background-color: rgba(#ffffff, 0.5);
-  border: 2px dashed $secondary;
-  padding: 24px;
+  width: 100%;
   @extend %flexvertical;
+  background-color: $primary;
+  position: fixed;
+  bottom: 0px;
+  padding: 24px;
+  left: 0px;
+  height: 90px;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 999;
+  border-top: 2px solid $primary;
+  box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  @include mq("tablet") {
+    position: relative;
+    background-color: rgba(#ffffff, 0.5);
+    height: auto;
+    flex-direction: column;
+    border: 2px dashed $secondary;
+    box-shadow: none;
+  }
   &-heading {
     @extend %buttontext;
+    display: none;
+    @include mq("tablet") {
+      display: block;
+    }
   }
   &-price {
-    font-size: 36px;
     font-weight: 600;
-    color: $secondary;
-    margin-top: 12px;
+    color: #fff;
+    font-size: 24px;
+    @extend %flexvertical;
+    align-items: flex-start;
+    @include mq("tablet") {
+      color: $secondary;
+      margin-top: 12px;
+      font-size: 36px;
+    }
+    &-mobiletext {
+      font-size: 12px;
+      @include mq("tablet") {
+        display: none;
+      }
+    }
   }
   &-button {
     cursor: pointer;
-    background-color: $secondary;
+    background-color: #fff;
     @extend %buttontext;
     @extend %flexcenter;
     padding: 12px 36px;
-    color: $white;
+    color: $primary;
     border-radius: $radius;
-    margin-top: 12px;
-    width: 80%;
+    width: 50%;
+    border: 2px solid #fff;
+    @include mq("tablet") {
+      background-color: $secondary;
+      color: #fff;
+      margin-top: 12px;
+      width: 80%;
+    }
     &:hover {
-      background-color: $secondary_dark;
+      background-color: $softgray;
+      color: $primary_dark;
+      @include mq("tablet") {
+        background-color: $secondary_dark;
+        color: #fff;
+      }
     }
   }
 }
