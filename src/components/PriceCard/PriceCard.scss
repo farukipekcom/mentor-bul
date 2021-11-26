@@ -13,7 +13,7 @@
   z-index: 999;
   border-top: 2px solid $primary;
   box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.3);
-  @include mq("tablet") {
+  @include mq("desktop") {
     position: relative;
     background-color: rgba(#ffffff, 0.5);
     height: auto;
@@ -24,7 +24,7 @@
   &-heading {
     @extend %buttontext;
     display: none;
-    @include mq("tablet") {
+    @include mq("desktop") {
       display: block;
     }
   }
@@ -34,14 +34,14 @@
     font-size: 24px;
     @extend %flexvertical;
     align-items: flex-start;
-    @include mq("tablet") {
+    @include mq("desktop") {
       color: $secondary;
       margin-top: 12px;
       font-size: 36px;
     }
     &-mobiletext {
       font-size: 12px;
-      @include mq("tablet") {
+      @include mq("desktop") {
         display: none;
       }
     }
@@ -56,7 +56,7 @@
     border-radius: $radius;
     width: 50%;
     border: 2px solid #fff;
-    @include mq("tablet") {
+    @include mq("desktop") {
       background-color: $secondary;
       color: #fff;
       margin-top: 12px;
@@ -65,7 +65,7 @@
     &:hover {
       background-color: $softgray;
       color: $primary_dark;
-      @include mq("tablet") {
+      @include mq("desktop") {
         background-color: $secondary_dark;
         color: #fff;
       }

@@ -2,6 +2,9 @@
 .homepage {
   .container {
     .sidebar {
+      position: sticky;
+      top: 24px;
+      left: 0px;
       display: none;
       @include mq("desktop") {
         display: flex;

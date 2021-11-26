@@ -5,8 +5,10 @@
   border-radius: $radius;
   padding: 24px;
   width: 100%;
+
   &-heading {
     @extend %subtitle;
+    margin-bottom: 12px;
   }
   &-list {
     @extend %flexvertical;
