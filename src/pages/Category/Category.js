@@ -6,9 +6,10 @@ import {
   CategorySummaryCard,
   ShowMoreCard,
 } from "../../components";
+import { slide as Menu2 } from "react-burger-menu";
 function Category() {
   return (
-    <div className="rightSidebar">
+    <div className="main categoryPage">
       <Header />
       <CategoryHeader />
       <CategorySummaryCard />
@@ -17,6 +18,11 @@ function Category() {
           <FilterCard />
         </div>
         <div className="content">
+          <div className="navFilterMenu">
+            <Menu2 burgerButtonClassName={"filterMenu"}>
+              <FilterCard />
+            </Menu2>
+          </div>
           <ProjectCardHorizontal />
           <ProjectCardHorizontal />
           <ProjectCardHorizontal />

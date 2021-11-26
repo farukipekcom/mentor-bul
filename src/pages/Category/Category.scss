@@ -1,1 +1,47 @@
 @import "../../sass/main";
+
+.bm-overlay {
+  top: 0px;
+  cursor: pointer;
+}
+.categoryPage {
+  .container {
+    .sidebar {
+      display: none;
+      @include mq("desktop") {
+        display: flex;
+      }
+    }
+    .content {
+      gap: 60px !important;
+      @include mq("desktop") {
+        gap: 30px !important;
+      }
+      .navFilterMenu {
+        margin-bottom: -36px;
+        position: relative;
+        @include mq("desktop") {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.filterMenu {
+  left: 0px;
+  top: -12px;
+  @extend %subtext1;
+  button {
+    font-size: 0px !important;
+    &::after {
+      content: "Filtrele";
+      font-size: 16px;
+      font-weight: 600;
+      padding-left: 36px;
+    }
+  }
+  .bm-menu-wrap {
+    left: 0px;
+  }
+}

@@ -11,31 +11,87 @@
     @extend %icontext;
     color: $gray;
   }
+  position: relative;
   &-heading {
     width: 100%;
     @extend %flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include mq("mobile") {
+      flex-direction: row;
+      align-items: center;
+    }
     &-title {
+      width: 100%;
       @extend %title;
+      font-size: 1.05em;
+
+      @include mq("mobile") {
+        font-size: 1.15em;
+      }
+      @include mq("tablet") {
+        font-size: 1.25em;
+      }
+      @include mq("large") {
+        font-size: 1.35em;
+      }
     }
     &-price {
-      @extend %subtitle;
-      font-weight: 600;
-      margin-left: auto;
+      position: absolute;
+      background-color: $primary;
+      color: #fff;
+      bottom: -40px;
+      left: 10%;
+      height: 40px;
+      @extend %flexcenter;
+      width: 80%;
+      border-radius: 0px 0px 5px 5px;
+      @extend %sidebar;
+      z-index: 2;
+      .mobileViewPrice {
+        @extend %tagtext;
+        margin-right: 8px;
+        @include mq("tablet") {
+          display: none;
+        }
+      }
+      @include mq("tablet") {
+        position: unset;
+        background-color: unset;
+        height: unset;
+        width: unset;
+        font-size: 1.5em;
+        font-weight: 600;
+        color: $secondary;
+        min-width: max-content;
+      }
     }
   }
   &-desc {
     @extend %text;
+    font-size: 0.875em;
     margin-top: 8px;
+    @include mq("tablet") {
+      font-size: 1em;
+    }
   }
   &-categories {
     margin-top: 16px;
     @extend %flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include mq("tablet") {
+      flex-direction: row;
+    }
     &-item {
       @extend %icontext;
       &::after {
-        content: "•";
-        padding-left: 16px;
-        padding-right: 16px;
+        content: "";
+        @include mq("tablet") {
+          content: "•";
+          padding-left: 16px;
+          padding-right: 16px;
+        }
       }
       &:last-child::after {
         content: "";
@@ -57,23 +113,29 @@
       height: 42px;
       border-radius: $radius;
     }
-    &-username {
-      @extend %category;
+    &-info {
       margin-left: 12px;
-    }
-    &-rating {
-      margin-left: 36px;
-      @extend %flex;
-      svg {
-        color: $orange;
-        margin-right: 8px;
+      &-username {
+        @extend %category;
       }
-      @extend %buttontext;
-      span {
-        margin-left: 4px;
-        @extend %icontext;
+      &-rating {
+        @extend %flex;
+        svg {
+          color: $orange;
+          margin-right: 8px;
+        }
+        @extend %buttontext;
+        span {
+          margin-left: 4px;
+          @extend %icontext;
+          display: none;
+          @include mq("tablet") {
+            display: block;
+          }
+        }
       }
     }
+
     &-time {
       margin-left: auto;
       @extend %flex;

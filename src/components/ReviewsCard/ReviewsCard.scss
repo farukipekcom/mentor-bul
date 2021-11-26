@@ -121,7 +121,7 @@
       &-right {
         @extend %flexvertical;
         align-items: flex-start;
-
+        width: 100%;
         flex: 2;
         &-info {
           @extend %flex;

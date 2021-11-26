@@ -8,16 +8,28 @@
   padding: 24px;
   align-items: flex-start;
   &-heading {
-    @extend %title;
+    font-size: 1.25em;
+    font-weight: 500;
+    @include mq("desktop") {
+      font-size: 1.75em;
+      font-weight: 600;
+    }
   }
   &-filteritem {
-    margin-top: 48px;
+    margin-top: 16px;
+    @include mq("desktop") {
+      margin-top: 48px;
+    }
     &:nth-child(2) {
       margin-top: 0px;
     }
     &-heading {
-      @extend %sidebar;
+      font-size: 0.875em;
+      font-weight: 600;
       margin-top: 8px;
+      @include mq("desktop") {
+        font-size: 1.15em;
+      }
     }
     &-price {
       @extend %flex;
@@ -37,9 +49,17 @@
           height: 32px;
           margin-top: 12px;
           padding-left: 12px;
+          width: 100%;
           &::placeholder {
             @extend %text;
             font-family: sans-serif;
+          }
+        }
+        span {
+          @extend %icontext;
+          @include mq("desktop") {
+            font-size: 1em;
+            font-weight: 600;
           }
         }
       }
@@ -61,13 +81,18 @@
   &-button {
     width: 100%;
     background-color: $primary;
-    @extend %buttontext;
     @extend %flexcenter;
     border-radius: $radius;
     margin-top: 48px;
     cursor: pointer;
     color: $white;
     padding: 12px 0px;
+    font-size: 0.875em;
+    @extend %icontext;
+
+    @include mq("desktop") {
+      font-size: 1em;
+    }
   }
   .form-item {
     @extend %flex;
@@ -84,11 +109,16 @@
   margin-bottom: 8px;
   cursor: pointer;
   @extend %flex;
-  @extend %tagtext;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  @extend %subtext1;
+  font-weight: 400;
+  @include mq("desktop") {
+    font-size: 0.875em;
+    font-weight: 500;
+  }
   svg {
     color: $orange;
     margin-right: 8px;
@@ -153,11 +183,16 @@
   -ms-user-select: none;
   user-select: none;
   @extend %flex;
-  @extend %tagtext;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  @extend %subtext1;
+  font-weight: 400;
+  @include mq("desktop") {
+    font-size: 0.875em;
+    font-weight: 500;
+  }
 }
 .radiobutton input {
   position: absolute;

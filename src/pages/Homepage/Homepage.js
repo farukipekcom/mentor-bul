@@ -24,8 +24,8 @@ function Homepage() {
           <ProfileMenuCard />
         </div>
         <div className="content">
-          <div className="kontrolet">
-            <Menu2 burgerButtonClassName={"oldusanirim"}>
+          <div className="navLeftMenu">
+            <Menu2 burgerButtonClassName={"leftMenu"}>
               <ProfileMenuCard />
             </Menu2>
           </div>

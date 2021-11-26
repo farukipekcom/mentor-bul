@@ -3,24 +3,47 @@
 .categorySummaryCard {
   background-color: #fff;
   width: 100%;
-  height: 270px;
   margin-top: -30px;
   border-top: 1px solid $bordergray;
   margin-bottom: 30px;
   @extend %flex;
+  @include mq("tablet") {
+    height: 270px;
+  }
   .container {
     height: 100%;
     align-items: center !important;
   }
   &-left {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+    @extend %flexvertical;
+    align-items: flex-start;
+    @include mq("desktop") {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
     &-heading {
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 600;
+      @include mq("tablet") {
+        font-size: 32px;
+      }
     }
     &-statics {
-      margin-top: 36px;
       @extend %flex;
-      gap: 64px;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 16px;
+      gap: 24px;
+      @include mq("tablet") {
+        margin-top: 36px;
+        flex-direction: row;
+        gap: 64px;
+      }
       &-item {
         @extend %flex;
         &-icon {
@@ -49,7 +72,10 @@
   }
   &-right {
     margin-left: auto;
-
     @extend %flex;
+    display: none;
+    @include mq("desktop") {
+      display: block;
+    }
   }
 }

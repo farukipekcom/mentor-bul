@@ -15,7 +15,8 @@ function ProjectCardHorizontal({ active = 0 }) {
             Seo Analizi Yapılacaktır
           </span>
           <span className="projectCardHorizontal-heading-price">
-            80 - 120 <span className="tl">₺</span>
+            <span className="mobileViewPrice">Teklif Aralığı: </span>80 - 120{" "}
+            <span className="tl">₺</span>
           </span>
         </div>
         <p className="projectCardHorizontal-desc">
@@ -41,14 +42,17 @@ function ProjectCardHorizontal({ active = 0 }) {
             alt=""
             className="projectCardHorizontal-profile-photo"
           />
-          <span className="projectCardHorizontal-profile-username">
-            farukipekcom
-          </span>
-          <span className="projectCardHorizontal-profile-rating">
-            <Star />
-            4.82
-            <span>(5 değerlendirme)</span>
-          </span>
+          <div className="projectCardHorizontal-profile-info">
+            <span className="projectCardHorizontal-profile-info-username">
+              farukipekcom
+            </span>
+            <span className="projectCardHorizontal-profile-info-rating">
+              <Star />
+              4.82
+              <span>(5 değerlendirme)</span>
+            </span>
+          </div>
+
           <div className="projectCardHorizontal-profile-time">
             <div className="projectCardHorizontal-profile-time-icon">
               <Timev2 />

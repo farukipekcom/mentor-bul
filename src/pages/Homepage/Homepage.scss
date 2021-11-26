@@ -1,4 +1,22 @@
 @import "../../sass/main.scss";
+.leftMenu {
+  left: 0px;
+  top: -12px;
+  @extend %subtext1;
+  button {
+    font-size: 0px !important;
+    &::after {
+      content: "Menü";
+      font-size: 16px;
+      font-weight: 600;
+      padding-left: 36px;
+    }
+  }
+  .bm-menu-wrap {
+    left: 0px;
+  }
+}
+
 .homepage {
   .container {
     .sidebar {
@@ -40,18 +58,11 @@
       width: 100%;
     }
   }
-  .kontrolet {
+  .navLeftMenu {
     display: block;
+    position: relative;
     @include mq("desktop") {
       display: none;
-    }
-  }
-  .oldusanirim {
-    left: 0px;
-    top: -12px;
-    @extend %subtext1;
-    .bm-menu-wrap {
-      left: 0px;
     }
   }
 

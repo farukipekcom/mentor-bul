@@ -5,9 +5,6 @@ import { Background } from "../../icons";
 function SimilarProject() {
   return (
     <div className="similarProject">
-      <div className="background">
-        <Background />
-      </div>
       <div className="container">
         <span className="similarProject-list-heading">Benzer İlanlar</span>
         <div className="similarProject-list">
