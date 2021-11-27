@@ -1,9 +1,21 @@
 @import "../../sass/main.scss";
-.rightSidebar {
+.main {
   .container {
     .content {
       .title {
         @extend %subtitle;
+      }
+      .settingsGeneralCard {
+        margin-top: -12px;
+      }
+    }
+    .sidebar {
+      position: sticky;
+      top: 24px;
+      left: 0px;
+      display: none;
+      @include mq("desktop") {
+        display: flex;
       }
     }
   }

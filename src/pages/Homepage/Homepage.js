@@ -7,14 +7,8 @@ import {
   ProjectSquareCard,
   MentorCard,
 } from "../../components";
-import { Menu } from "../../icons";
 import { slide as Menu2 } from "react-burger-menu";
 function Homepage() {
-  const [active, setActive] = useState();
-  const degistir = () => {
-    setActive(!active);
-  };
-
   return (
     <div className="main homepage">
       <Header />

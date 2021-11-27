@@ -41,15 +41,17 @@ function SettingsGeneralCard() {
         />
       </div>
       <div className="settingsGeneralCard-right">
-        <span className="settingsGeneralCard-right-fullname">Faruk İpek</span>
+        <span className="settingsGeneralCard-right-fullname">farukipekcom</span>
         <div className="settingsGeneralCard-right-item">
-          <span className="settingSubTitle">Kullanıcı Adı</span>
+          <span className="settingSubTitle">Adı</span>
           <span className="settingValue">
-            {status ? (
-              <FormInputTextCard data="farukipekcom" />
-            ) : (
-              "farukipekcom"
-            )}
+            {status ? <FormInputTextCard data="Faruk" /> : "Faruk"}
+          </span>
+        </div>
+        <div className="settingsGeneralCard-right-item">
+          <span className="settingSubTitle">Soyadı</span>
+          <span className="settingValue">
+            {status ? <FormInputTextCard data="İpek" /> : "İpek"}
           </span>
         </div>
         <div className="settingsGeneralCard-right-item">

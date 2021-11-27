@@ -93,7 +93,7 @@
 }
 
 .settingsGeneralCard {
-  @extend %flex;
+  @extend %flexvertical;
   align-items: flex-start;
   background-color: #fff;
   box-shadow: $boxshadow;
@@ -102,19 +102,30 @@
   width: 100%;
   position: relative;
 
+  @include mq("tablet") {
+    flex-direction: row;
+  }
   &-left {
     &-photo {
-      width: 180px;
-      height: 180px;
+      width: 48px;
+      height: 48px;
       border-radius: $radius;
+      @include mq("tablet") {
+        width: 180px;
+        height: 180px;
+      }
     }
   }
   &-right {
     @extend %flexvertical;
     align-items: flex-start;
-    margin-left: 30px;
+    margin-left: 0px;
     gap: 30px;
+    margin-top: 16px;
     width: 100%;
+    @include mq("tablet") {
+      margin-left: 30px;
+    }
     &-heading {
       width: 100%;
       @extend %flex;
@@ -124,8 +135,14 @@
       }
     }
     &-fullname {
-      @extend %buttontext;
+      @extend %sidebar;
       width: 100%;
+      position: absolute;
+      top: 36px;
+      left: 80px;
+      @include mq("tablet") {
+        position: unset;
+      }
     }
     &-about {
       @extend %text;
