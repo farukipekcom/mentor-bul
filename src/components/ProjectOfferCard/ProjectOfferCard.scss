@@ -1,24 +1,65 @@
 @import "../../sass/main.scss";
 .ProjectOfferCard {
-  @extend %flex;
+  @extend %flexvertical;
+  align-items: flex-start;
   background-color: #fff;
   border-radius: $radius;
   box-shadow: $boxshadow;
   padding: 24px;
   width: 100%;
+  margin-top: 24px;
   position: relative;
-  &-photo {
-    width: 42px;
-    height: 42px;
-    border-radius: $radius;
+  @include mq("tablet") {
+    width: calc(50% - 15px);
   }
-  .info {
+  @include mq("desktop") {
+    width: calc(100%);
   }
-  .confirmationdate {
-    margin-left: 42px;
+  // 992 - 1280
+  @media (min-width: 1080px) and (max-width: 1280px) {
+    width: calc(50% - 15px);
   }
-  .orderdate {
-    margin-left: 42px;
+  @include mq("large") {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &-profile {
+    @extend %flex;
+    &-photo {
+      width: 42px;
+      height: 42px;
+      border-radius: $radius;
+    }
+    &-info {
+      margin-left: 12px;
+      @extend %flexvertical;
+      align-items: flex-start;
+      &-title {
+        @extend %subtext1;
+        color: $gray;
+      }
+      &-text {
+        @extend %buttontext;
+      }
+    }
+  }
+  &-date {
+    @extend %flex;
+    margin-left: 12px;
+    margin-top: 24px;
+    @include mq("desktop") {
+    }
+    @include mq("large") {
+      margin-left: unset;
+      margin-top: unset;
+    }
+    .confirmationdate {
+      margin-left: 42px;
+    }
+    .orderdate {
+      margin-left: 42px;
+    }
   }
   &-info {
     @extend %flexvertical;
@@ -40,13 +81,28 @@
     @extend %flexcenter;
     border-radius: $radius_small;
     cursor: pointer;
-    margin-left: 42px;
     height: 40px;
+    margin-left: 52px;
+    margin-top: 12px;
+    @include mq("desktop") {
+    }
+    @include mq("large") {
+      margin-left: 42px;
+      margin-top: unset;
+    }
   }
   &-price {
     @extend %title;
-    margin-left: 42px;
+    margin-left: 52px;
+    margin-top: 12px;
+    @include mq("desktop") {
+    }
+    @include mq("large") {
+      margin-top: unset;
+      margin-left: 42px;
+    }
   }
+
   &-arrow {
     margin-left: auto;
     transition: margin-left 0.5s;
@@ -64,7 +120,7 @@
   border: 2px solid transparent;
   transition: 0.5s border;
   &:hover {
-    .projectSummaryCard-arrow {
+    .ProjectOfferCard-arrow {
       transition: 0.5s right;
       position: absolute;
       right: 16px;
