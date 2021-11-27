@@ -4,7 +4,7 @@ import { Header, Footer } from "../components";
 import { Category as CategoryHeader } from "../../pages/components/";
 function SubCategory() {
   return (
-    <div className="rightSidebar">
+    <div className="main">
       <Header />
       <CategoryHeader />
       <CategorySummaryCard />

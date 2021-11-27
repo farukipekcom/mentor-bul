@@ -1,1 +1,12 @@
 @import "../../sass/main.scss";
+
+.main {
+  .container {
+    .fullWidth {
+      @extend %flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  }
+}

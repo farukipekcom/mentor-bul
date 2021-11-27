@@ -1,22 +1,52 @@
 @import "../../sass/main.scss";
 
 .subCategoryCard {
-  padding: 36px;
   @extend %flexvertical;
+  align-items: flex-start;
   background-color: #fff;
   border-radius: $radius;
   box-shadow: $boxshadow;
+  width: 100%;
+  padding: 24px;
+  @include mq("tablet") {
+    width: calc(33.3% - 11px);
+    padding: 36px;
+  }
+  @include mq("desktop") {
+    width: calc(25% - 12px);
+    padding: 36px;
+  }
   &-title {
-    @extend %subtitle;
+    font-size: 1em;
+    font-weight: 500;
+    @include mq("tablet") {
+      font-size: 1em;
+    }
+    @include mq("desktop") {
+      font-size: 1.15em;
+      font-weight: 500;
+    }
   }
   &-footer {
     width: 100%;
-    margin-top: 48px;
-
+    margin-top: 12 px;
     @extend %flex;
     justify-content: flex-end;
+    @include mq("tablet") {
+      margin-top: 24px;
+    }
+    @include mq("desktop") {
+      margin-top: 24px;
+    }
+    @include mq("large") {
+      margin-top: 48px;
+    }
+
     &-count {
-      @extend %sidebar;
+      font-size: 1em;
+      font-weight: 500;
+      @include mq("tablet") {
+      }
     }
     &-icon {
       margin-left: 8px;
