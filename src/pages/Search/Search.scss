@@ -1,1 +1,13 @@
 @import "../../sass/main.scss";
+.searchPage {
+  .container {
+    .content {
+      .list {
+        margin-top: 12px;
+        .projectCardHorizontal {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}

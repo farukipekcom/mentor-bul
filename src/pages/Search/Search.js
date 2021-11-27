@@ -6,9 +6,10 @@ import {
   SearchCard,
   ProjectCardHorizontal,
 } from "../../components";
+import { slide as Menu2 } from "react-burger-menu";
 function Search() {
   return (
-    <div className="rightSidebar">
+    <div className="main searchPage">
       <Header />
       <CategoryHeader />
       <SearchCard />
@@ -17,12 +18,19 @@ function Search() {
           <FilterCard />
         </div>
         <div className="content">
-          <ProjectCardHorizontal />
-          <ProjectCardHorizontal />
-          <ProjectCardHorizontal />
-          <ProjectCardHorizontal />
-          <ProjectCardHorizontal />
-          <ShowMoreCard />
+          <div className="navFilterMenu">
+            <Menu2 burgerButtonClassName={"filterMenu"}>
+              <FilterCard />
+            </Menu2>
+          </div>
+          <div className="list">
+            <ProjectCardHorizontal />
+            <ProjectCardHorizontal />
+            <ProjectCardHorizontal />
+            <ProjectCardHorizontal />
+            <ProjectCardHorizontal />
+            <ShowMoreCard />
+          </div>
         </div>
       </div>
       <Footer />
