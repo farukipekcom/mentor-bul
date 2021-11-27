@@ -12,16 +12,22 @@
 
   &-fullwidth {
     width: 100%;
-    @extend %flex;
+    @extend %flexvertical;
+    align-items: flex-start;
     gap: 30px;
+    @include mq("mobile") {
+      flex-direction: row;
+    }
     &-one {
       @extend %flexvertical;
       align-items: flex-start;
+      width: 100%;
       flex: 1;
     }
     &-item {
       @extend %flexvertical;
       align-items: flex-start;
+      width: 100%;
       flex: 1;
     }
   }
