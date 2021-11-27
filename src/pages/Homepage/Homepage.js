@@ -1,6 +1,5 @@
 import "./Homepage.scss";
 import { Header, Category, Footer } from "../components";
-import { useState } from "react";
 import {
   ProfileMenuCard,
   WelcomeCard,

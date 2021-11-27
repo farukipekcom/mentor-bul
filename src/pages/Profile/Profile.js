@@ -13,7 +13,7 @@ import {
 function Profile({ deneme }) {
   console.log(deneme);
   return (
-    <div className="main">
+    <div className="main profilePage">
       <Header />
       <Category />
       <div className="container">

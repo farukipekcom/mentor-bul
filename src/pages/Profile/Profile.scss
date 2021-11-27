@@ -1,1 +1,10 @@
 @import "../../sass/main.scss";
+.profilePage {
+  .container {
+    .sidebar {
+      display: flex !important;
+      @include mq("tablet") {
+      }
+    }
+  }
+}

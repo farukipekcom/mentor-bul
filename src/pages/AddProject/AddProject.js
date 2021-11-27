@@ -1,10 +1,10 @@
 import "./AddProject.scss";
 import { Header, Category, Footer } from "../components";
 import { ProfileMenuCard, AddProjectAllPart } from "../../components";
-
+import { slide as Menu } from "react-burger-menu";
 function AddProject() {
   return (
-    <div className="rightSidebar">
+    <div className="main">
       <Header />
       <Category />
       <div className="container">
@@ -12,6 +12,11 @@ function AddProject() {
           <ProfileMenuCard />
         </div>
         <div className="content">
+          <div className="navLeftMenu">
+            <Menu burgerButtonClassName={"leftMenu"}>
+              <ProfileMenuCard />
+            </Menu>
+          </div>
           <AddProjectAllPart />
         </div>
       </div>
