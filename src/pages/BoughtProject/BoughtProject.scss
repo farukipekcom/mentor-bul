@@ -1,7 +1,45 @@
 @import "../../sass/main.scss";
 
-.rightSidebar {
+.main {
   .heading {
     @extend %subtitle;
+  }
+}
+
+.main {
+  .container {
+    .content {
+      width: 100%;
+      .list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        @media (min-width: 1050px) {
+          flex-direction: row !important;
+          flex-wrap: wrap !important;
+        }
+        @include mq("desktop") {
+          flex-wrap: unset;
+          flex-direction: column;
+        }
+        .projectSummaryCard {
+          margin-top: 12px;
+          @include mq("desktop") {
+            margin-top: 24px;
+          }
+        }
+      }
+    }
+    .sidebar {
+      position: sticky;
+      top: 24px;
+      left: 0px;
+      display: none;
+      @include mq("desktop") {
+        display: flex;
+      }
+    }
   }
 }
