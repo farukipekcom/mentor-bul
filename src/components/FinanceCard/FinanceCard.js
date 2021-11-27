@@ -5,10 +5,12 @@ import { ArrowRight } from "../../icons";
 function FinanceCard({ value }) {
   return (
     <a href="/order" className="financeCard">
-      <img src={profilePhoto} alt="" className="financeCard-photo" />
-      <div className="financeCard-info financeusername">
-        <span className="financeCard-info-title">{value}</span>
-        <span className="financeCard-info-text">webhizmetleri</span>
+      <div className="financeCard-profile">
+        <img src={profilePhoto} alt="" className="financeCard-profile-photo" />
+        <div className="financeCard-profile-info financeusername">
+          <span className="financeCard-profile-info-title">{value}</span>
+          <span className="financeCard-profile-info-text">webhizmetleri</span>
+        </div>
       </div>
       <div className="financeCard-info financetitle">
         <span className="financeCard-info-title">Başlık</span>

@@ -2,6 +2,9 @@
 
 .main {
   .heading {
-    @extend %subtitle;
+    @extend %buttontext;
+    @include mq("desktop") {
+      font-size: 1.25em;
+    }
   }
 }

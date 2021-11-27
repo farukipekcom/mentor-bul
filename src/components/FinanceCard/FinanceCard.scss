@@ -1,7 +1,8 @@
 @import "../../sass/main.scss";
 
 .financeCard {
-  @extend %flex;
+  @extend %flexvertical;
+  align-items: flex-start;
   background-color: #fff;
   border-radius: $radius;
   box-shadow: $boxshadow;
@@ -9,21 +10,57 @@
   width: 100%;
   margin-top: 0px;
   position: relative;
-  &-photo {
-    width: 42px;
-    height: 42px;
-    border-radius: $radius;
+  @include mq("tablet") {
+    width: calc(50% - 15px);
   }
-  .financeusername {
-    margin-left: 12px;
+  @include mq("desktop") {
+    width: calc(100%);
+  }
+  // 992 - 1280
+  @media (min-width: 1080px) and (max-width: 1280px) {
+    width: calc(50% - 15px);
+  }
+  @include mq("large") {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  &-profile {
+    @extend %flex;
+    &-photo {
+      width: 42px;
+      height: 42px;
+      border-radius: $radius;
+    }
+    &-info {
+      margin-left: 12px !important;
+      @extend %flexvertical;
+      align-items: flex-start;
+      @include mq("tablet") {
+        margin-left: 0px;
+      }
+      &-title {
+        @extend %subtext1;
+        color: $gray;
+      }
+      &-text {
+        @extend %buttontext;
+      }
+    }
   }
   .financetitle {
-    margin-left: 42px;
+    margin-left: 0px;
+    @include mq("large") {
+      margin-left: 42px;
+    }
   }
   &-info {
     @extend %flexvertical;
-    margin-left: 12px;
     align-items: flex-start;
+    margin-top: 12px;
+    @include mq("large") {
+      margin-top: 0px;
+    }
     &-title {
       @extend %subtext1;
       color: $gray;
@@ -33,8 +70,14 @@
     }
   }
   &-price {
-    @extend %title;
-    margin-left: 42px;
+    @extend %subtitle;
+    font-weight: 600;
+    margin-left: 0px;
+    margin-top: 12px;
+    @include mq("large") {
+      margin-left: 42px;
+      margin-top: 0px;
+    }
   }
   &-arrow {
     margin-left: auto;
