@@ -1,9 +1,10 @@
 import "./SellProject.scss";
 import { Header, Category, Footer } from "../components";
 import { ProfileMenuCard, ProjectSummaryCard } from "../../components";
+import { slide as Menu } from "react-burger-menu";
 function SellProject() {
   return (
-    <div className="rightSidebar">
+    <div className="main">
       <Header />
       <Category />
       <div className="container">
@@ -11,13 +12,20 @@ function SellProject() {
           <ProfileMenuCard />
         </div>
         <div className="content">
+          <div className="navLeftMenu">
+            <Menu burgerButtonClassName={"leftMenu"}>
+              <ProfileMenuCard />
+            </Menu>
+          </div>
           <span className="heading">Mentee’lere vermiş olduğum hizmetler</span>
-          <ProjectSummaryCard value="Mentee" />
-          <ProjectSummaryCard value="Mentee" />
-          <ProjectSummaryCard value="Mentee" />
-          <ProjectSummaryCard value="Mentee" />
-          <ProjectSummaryCard value="Mentee" />
-          <ProjectSummaryCard value="Mentee" />
+          <div className="list">
+            <ProjectSummaryCard value="Mentee" />
+            <ProjectSummaryCard value="Mentee" />
+            <ProjectSummaryCard value="Mentee" />
+            <ProjectSummaryCard value="Mentee" />
+            <ProjectSummaryCard value="Mentee" />
+            <ProjectSummaryCard value="Mentee" />
+          </div>
         </div>
       </div>
       <Footer />
