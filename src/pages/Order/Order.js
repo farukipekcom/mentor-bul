@@ -1,5 +1,4 @@
 import "./Order.scss";
-
 import { Header, Category, Footer } from "../components";
 import {
   ProfileMenuCard,
@@ -8,9 +7,10 @@ import {
   OrderProcess,
   Reviewed,
 } from "../../components";
+import { slide as Menu } from "react-burger-menu";
 function Order() {
   return (
-    <div className="rightSidebar">
+    <div className="main">
       <Header />
       <Category />
       <div className="container">
@@ -18,6 +18,11 @@ function Order() {
           <ProfileMenuCard />
         </div>
         <div className="content">
+          <div className="navLeftMenu">
+            <Menu burgerButtonClassName={"leftMenu"}>
+              <ProfileMenuCard />
+            </Menu>
+          </div>
           <div className="send-message">Mesaj Gönder</div>
           <span className="heading">Sipariş Özeti</span>
           <OrderStatusCard />

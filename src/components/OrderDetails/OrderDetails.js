@@ -6,7 +6,7 @@ function OrderDetails() {
       <span className="orderDetails-subtitle">İş Detayı</span>
       <div className="orderDetails-heading">
         <span className="orderDetails-heading-title">
-          Seo Analizi Yaptırılacaktır
+          Seo Analizi Yaptırılacaktır belki biraz daha uzun
         </span>
         <span className="orderDetails-heading-price">
           100 <span className="tl">₺</span>

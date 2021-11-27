@@ -14,9 +14,23 @@
   &-heading {
     width: 100%;
     margin-top: 8px;
-    @extend %flex;
+    @extend %flexvertical;
+    align-items: flex-start;
     justify-content: space-between;
-    @extend %title;
+    @include mq("mobile") {
+      flex-direction: row;
+      align-items: center;
+    }
+    &-title {
+      @extend %buttontext;
+      @include mq("tablet") {
+        font-size: 1.25em;
+      }
+    }
+    &-price {
+      min-width: max-content;
+      @extend %title;
+    }
   }
   &-profile {
     background-color: $softgray;
@@ -64,8 +78,14 @@
     }
   }
   &-summary {
-    @extend %flex;
-    gap: 30px;
-    margin-top: 24px;
+    @extend %flexvertical;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 12px;
+    @include mq("tablet") {
+      gap: 30px;
+      flex-direction: row;
+      margin-top: 24px;
+    }
   }
 }
