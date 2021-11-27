@@ -14,13 +14,19 @@
     width: 100%;
     gap: 16px;
     &-item {
-      width: 50%;
+      width: 60%;
       height: 48px;
       background-color: $softgray;
       @extend %flex;
       border-radius: $radius;
       @extend %subtext2;
       padding: 8px 12px;
+      @include mq("mobile") {
+        width: 75%;
+      }
+      @include mq("desktop") {
+        width: 50%;
+      }
       &-name {
         width: 100%;
         input[type="text"] {
