@@ -1,5 +1,28 @@
 @import "../../sass/main.scss";
-
+.offerPage {
+  .header {
+    margin-bottom: 12px;
+    @include mq("desktop") {
+      margin-bottom: 0px;
+    }
+  }
+  .container {
+    flex-direction: column !important;
+    @include mq("desktop") {
+      flex-direction: row !important;
+    }
+    .content {
+      .offer {
+        margin-top: -12px;
+      }
+    }
+    .sidebar {
+      position: sticky;
+      right: 0px;
+      top: 24px;
+    }
+  }
+}
 .rightSidebar {
   &-heading {
     @extend %subtitle;

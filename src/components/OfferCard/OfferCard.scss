@@ -10,9 +10,13 @@
     @extend %flex;
     width: 100%;
     &-photo {
-      width: 64px;
-      height: 64px;
+      width: 48px;
+      height: 48px;
       border-radius: $radius;
+      @include mq("tablet") {
+        width: 64px;
+        height: 64px;
+      }
     }
     &-profile {
       margin-left: 12px;
@@ -27,15 +31,20 @@
         span {
           @extend %icontext;
           margin-left: 8px;
+          display: none;
+          @include mq("mobile") {
+            display: block;
+          }
         }
         svg {
           color: $orange;
           margin-right: 8px;
+          margin-top: -4px;
         }
       }
     }
     &-price {
-      font-size: 36px;
+      font-size: 28px;
       font-weight: 600;
       margin-left: auto;
     }

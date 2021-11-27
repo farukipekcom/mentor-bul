@@ -2,6 +2,9 @@
 .projectPage {
   .header {
     margin-bottom: 12px;
+    @include mq("desktop") {
+      margin-bottom: 0px;
+    }
   }
   .container {
     flex-direction: column !important;

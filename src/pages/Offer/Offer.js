@@ -3,7 +3,7 @@ import { OfferCard, OfferStatics, ProjectSquareCard } from "../../components";
 import { Header, Category, Footer } from "../components";
 function Offer() {
   return (
-    <div className="rightSidebar">
+    <div className="main offerPage">
       <Header />
       <Category />
       <div className="container">
