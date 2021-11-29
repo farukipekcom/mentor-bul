@@ -1,1 +1,15 @@
 @import "../../sass/main.scss";
+
+.main {
+  .container {
+    display: flex;
+    flex-direction: column !important;
+    @include mq("desktop") {
+      flex-direction: row !important;
+    }
+    .sidebar {
+      display: flex;
+      position: unset;
+    }
+  }
+}

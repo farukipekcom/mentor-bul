@@ -7,7 +7,7 @@ import {
 import { Header, Category, Footer } from "../../pages/components";
 function SendOffer() {
   return (
-    <div className="rightSidebar">
+    <div className="main">
       <Header />
       <Category />
       <div className="container">
