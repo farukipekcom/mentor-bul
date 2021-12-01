@@ -56,31 +56,3 @@
     }
   }
 }
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-.rightSidebar {
-  .container {
-    width: 1200px;
-    margin: 0 auto;
-    @extend %flex;
-    align-items: flex-start;
-    gap: 30px;
-  }
-  .content {
-    width: 820px;
-    @extend %flexvertical;
-    align-items: flex-start;
-    gap: 30px;
-  }
-  .sidebar {
-    width: 350px;
-    @extend %flexvertical;
-    align-items: flex-start;
-    gap: 30px;
-  }
-  .fullWidth {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-flow: row;
-    gap: 30px;
-  }
-}

@@ -1,6 +1,7 @@
 @import "../../sass/main.scss";
 .requestCategoryItem {
   @extend %flex;
+  align-items: center;
   padding-top: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid $softgray;
@@ -9,6 +10,10 @@
   &-left {
   }
   &-right {
+    margin-top: 12px;
+    @include mq("mobile") {
+      margin-top: 0px;
+    }
     &-vote {
       @extend %flexcenter;
       border: 1px solid $bordergray;
@@ -34,11 +39,20 @@
 
   &-info {
     margin-top: 8px;
-    @extend %flex;
+    @extend %flexvertical;
+    align-items: flex-start;
+    gap: 4px;
+    @include mq("mobile") {
+      flex-direction: row;
+      align-items: center;
+    }
     span::before {
-      content: "•";
-      margin-left: 12px;
-      margin-right: 12px;
+      content: "";
+      @include mq("mobile") {
+        content: "•";
+        margin-left: 12px;
+        margin-right: 12px;
+      }
     }
 
     &-username {

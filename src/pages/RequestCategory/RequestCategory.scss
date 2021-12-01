@@ -1,11 +1,7 @@
 @import "../../sass/main.scss";
-
-.requestCategory {
-  .rightSidebar {
-    .container {
-      @extend %flexvertical;
-      width: 820px;
-    }
+.fullWidthPage {
+  .header {
+    margin-bottom: 6px;
   }
   &-heading {
     width: 100%;
@@ -17,24 +13,48 @@
     box-shadow: $boxshadow;
     border-radius: $radius;
     gap: 16px;
+    font-size: 16px;
+    &-title {
+      @extend %subtitle;
+    }
+    &-desc {
+      @extend %text;
+      width: 70%;
+    }
   }
-  &-title {
-    @extend %subtitle;
+}
+.requestContainer {
+  width: 100%;
+  @extend %flexvertical;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 24px;
+  @include mq("mobile") {
+    width: 100%;
   }
-  &-desc {
-    @extend %text;
-    width: 70%;
+  @include mq("tablet") {
+    width: 100%;
   }
+  @include mq("desktop") {
+    width: 820px;
+  }
+}
+.requestCategory {
   &-list {
     width: 100%;
     background-color: #fff;
-    padding: 48px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 24px;
     @extend %flexvertical;
     align-items: flex-start;
     box-shadow: $boxshadow;
     border-radius: $radius;
+    @include mq("mobile") {
+    }
+    @include mq("tablet") {
+      padding: 48px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
     &-add {
       width: 100%;
       margin-bottom: 48px;
@@ -51,10 +71,21 @@
       &-form {
         width: 100%;
         margin-top: 12px;
-        @extend %flex;
-
+        @extend %flexvertical;
+        align-items: flex-start;
+        @include mq("tablet") {
+          flex-direction: row;
+          align-items: center;
+        }
         input {
-          width: 70%;
+          width: 100%;
+          margin-top: 0px;
+          @include mq("tablet") {
+            width: 90%;
+          }
+          @include mq("desktop") {
+            width: 90%;
+          }
         }
         button {
           background-color: $primary;
@@ -67,6 +98,12 @@
           border-radius: $radius_small;
           cursor: pointer;
           transition: 0.2s;
+          margin-top: 24px;
+          width: 100%;
+          @include mq("tablet") {
+            margin-top: 0px;
+            width: max-content;
+          }
           &:hover {
             transition: 0.2s;
             background-color: #fff;
@@ -100,6 +137,7 @@
         button {
           @extend %subtext1;
           width: max-content;
+          padding: 0px 12px;
           background-color: $primary;
           color: #fff;
           border-radius: $radius;
