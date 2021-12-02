@@ -10,7 +10,9 @@ function PriceCard() {
           50 - 100 <span className="tl">₺</span>
         </span>
       </span>
-      <div className="priceCard-button">Teklif Ver</div>
+      <a href="/sendoffer" className="priceCard-button">
+        Teklif Ver
+      </a>
     </div>
   );
 }

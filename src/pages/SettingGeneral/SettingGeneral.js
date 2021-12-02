@@ -4,7 +4,7 @@ import { SettingsMenuCard, SettingsGeneralCard } from "../../components";
 import { slide as Menu } from "react-burger-menu";
 function SettingGeneral() {
   return (
-    <div className="main">
+    <div className="main settingGeneralPage">
       <Header />
       <Category />
       <div className="container">
