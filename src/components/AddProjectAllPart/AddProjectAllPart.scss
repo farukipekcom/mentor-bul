@@ -36,6 +36,7 @@
       height: 40px;
       box-shadow: $boxshadow;
       @extend %category;
+      @extend %flexcenter;
       @include mq("tablet") {
         padding: 12px 36px;
         width: unset;

@@ -52,13 +52,13 @@
     @extend %buttontext;
     @extend %flexcenter;
     padding: 12px 36px;
-    color: $primary;
     border-radius: $radius;
     width: 50%;
+    color: #000 !important;
     border: 2px solid #fff;
     @include mq("desktop") {
       background-color: $secondary;
-      color: #fff;
+      color: #fff !important;
       margin-top: 12px;
       width: 80%;
     }

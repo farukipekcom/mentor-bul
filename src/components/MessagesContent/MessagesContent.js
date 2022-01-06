@@ -47,10 +47,6 @@ function MessagesContent() {
           className="messagesContent-right-photo"
         />
       </div>
-      <div className="messagesContent-input">
-        <textarea placeholder="Mesajınızı yazınız...   " />
-        <button>Gönder</button>
-      </div>
     </div>
   );
 }

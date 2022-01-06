@@ -14,6 +14,10 @@ function MessagesCard() {
       <div className="messagesCard-left">
         <span className="messagesCard-left-name">Ronald Richard</span>
         <MessagesContent />
+        <div className="messagesContent-input">
+          <textarea placeholder="Mesajınızı yazınız...   " />
+          <button>Gönder</button>
+        </div>
       </div>
       <div className="iconums">
         <DotSetting onClick={degistir} />
