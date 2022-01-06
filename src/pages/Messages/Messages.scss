@@ -1,0 +1,28 @@
+@import "../../sass/main.scss";
+.messagePage {
+  .container {
+    .content {
+      .navLeftMenu {
+        #react-burger-menu-btn::after {
+          content: "Sohbetler";
+        }
+        .bm-menu-wrap {
+          width: 400px !important;
+          height: 100vh;
+          .bm-menu {
+            .bm-item-list {
+              .messagesList {
+                height: 100vh;
+                .messagesSearchCard {
+                  input {
+                    width: 90%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -17,13 +17,16 @@
     }
     &-text {
       @extend %tagtext;
-      width: 50%;
+      width: 80%;
       background-color: $primary;
       padding: 12px;
       border-radius: $radius;
       color: #fff;
       margin-left: 8px;
       margin-right: 8px;
+      @include mq("tablet") {
+        width: 50%;
+      }
     }
     &-photo {
       width: 36px;
@@ -41,13 +44,16 @@
     }
     &-text {
       @extend %tagtext;
-      width: 50%;
       background-color: $softgray;
       padding: 12px;
       border-radius: $radius;
       color: #000;
       margin-left: 8px;
       margin-right: 8px;
+      width: 80%;
+      @include mq("tablet") {
+        width: 50%;
+      }
     }
     &-photo {
       width: 36px;

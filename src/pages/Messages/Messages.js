@@ -1,9 +1,10 @@
 import "./Messages.scss";
 import { Header, Category, Footer } from "../components";
 import { MessagesList, MessagesCard } from "../../components";
+import { slide as Menu } from "react-burger-menu";
 function Messages() {
   return (
-    <div className="rightSidebar">
+    <div className="main messagePage">
       <Header />
       <Category />
       <div className="container">
@@ -11,6 +12,11 @@ function Messages() {
           <MessagesList />
         </div>
         <div className="content">
+          <div className="navLeftMenu">
+            <Menu burgerButtonClassName={"leftMenu"}>
+              <MessagesList />
+            </Menu>
+          </div>
           <MessagesCard />
         </div>
       </div>
