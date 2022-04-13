@@ -1,17 +1,42 @@
 import "./ProfileCard.scss";
-import { profilePhoto } from "../../images";
-import Star from "../Stars/Stars";
-function ProfileCard() {
+import { Star } from "../../icons";
+import { useState } from "react";
+import { Rating } from "react-simple-star-rating";
+import { useParams } from "react-router-dom";
+function ProfileCard({
+  username,
+  profilePhoto,
+  city,
+  country,
+  rate,
+  count,
+  loggedIn,
+}) {
   return (
     <div className="profileCard">
       <img src={profilePhoto} alt="" className="profileCard-photo" />
-      <span className="profileCard-username">farukipekcom</span>
-      <span className="profileCard-location">Antalya, Türkiye</span>
-      <span className="profileCard-rating">
-        <Star color="currentColor" value="5" />
-        <span className="profileCard-rating-count">(5)</span>
+      <span className="profileCard-username">{username}</span>
+      <span className="profileCard-location">
+        {city}, {country}
       </span>
-      <div className="profileCard-button">Mesaj Gönder</div>
+      <span className="profileCard-rating">
+        <Rating
+          size={5}
+          transition
+          allowHalfIcon
+          fullIcon={<Star />}
+          emptyIcon={<Star />}
+          style={{ marginRight: "4px" }}
+          initialValue={isNaN(rate) ? 0 : rate}
+          readonly={true}
+        />
+        <span className="profileCard-rating-count">({count})</span>
+      </span>
+      {loggedIn === username ? (
+        ""
+      ) : (
+        <div className="profileCard-button">Mesaj Gönder</div>
+      )}
     </div>
   );
 }

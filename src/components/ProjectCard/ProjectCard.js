@@ -1,51 +1,94 @@
 import "./ProjectCard.scss";
 import { TimeFilled } from "../../icons";
-import { media1, media2, media3, media4 } from "../../images";
-function ProjectCard() {
+import moment from "moment";
+import { useState, useEffect } from "react";
+import axios from "axios";
+function ProjectCard({ project }) {
+  var birinci = new Date(Date.now());
+  var result1 = birinci.getTime();
+  var ikinci = new Date(project.dueDate);
+  var result2 = ikinci.getTime();
+  const startDate = moment(result1);
+  const timeEnd = moment(result2);
+  const diff = timeEnd.diff(startDate);
+  const diffDuration = moment.duration(diff);
+  const [tags, setTags] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios("https://localhost:5001/api/tags");
+      setTags(result.data);
+      setIsLoading(true);
+    };
+    fetchItems();
+  }, []);
+
+  const deneme = project.tagsId.split(",");
   return (
-    <div className="projectCard">
-      <div className="projectCard-heading">
-        <div className="projectCard-heading-left">İNTERNET REKLAMCILIĞI</div>
-        <div className="projectCard-heading-right">
-          <div className="projectCard-heading-right-icon">
-            <TimeFilled />
+    <>
+      <div className="projectCard">
+        <div className="projectCard-heading">
+          <div className="projectCard-heading-left">İNTERNET REKLAMCILIĞI</div>
+          <div className="projectCard-heading-right">
+            <div className="projectCard-heading-right-icon">
+              <TimeFilled />
+            </div>
+            <div className="projectCard-heading-right-details">
+              Teklif{" "}
+              <span className="date">
+                {diffDuration.months() > 0
+                  ? diffDuration.months() + " ay "
+                  : ""}
+                {diffDuration.days() > 0 ? diffDuration.days() + " gün " : ""}
+                {diffDuration.hours() > 0
+                  ? diffDuration.hours() + " saat "
+                  : ""}
+                {diffDuration.months() === 0 && diffDuration.days() === 0
+                  ? diffDuration.minutes() + " dakika"
+                  : ""}
+              </span>{" "}
+              sonra sona eriyor
+            </div>
           </div>
-          <div className="projectCard-heading-right-details">
-            Teklif <span className="date">6 Gün 10 saat</span> sonra sona eriyor
+        </div>
+        <div className="projectCard-title">{project.title}</div>
+        <div className="projectCard-seperator"></div>
+        <div className="projectCard-details">{project.description}</div>
+
+        {project.fileName ? (
+          <>
+            <div className="projectCard-gallery">
+              <span className="projectCard-gallery-heading">Medya</span>
+              <div className="projectCard-gallery-list">
+                <img
+                  src={`https://localhost:5001/Resources/Images/${project.fileName}`}
+                  alt=""
+                />
+              </div>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+        <div className="projectCard-skill">
+          <span className="projectCard-skill-heading">Gerekli Yetenekler</span>
+          <div className="projectCard-skill-list">
+            {isLoading &&
+              deneme.map((item, index) =>
+                tags
+                  .filter((items) => items.tagId === parseInt(item))
+                  .map((tag) => {
+                    return (
+                      <div className="projectCard-skill-list-item" key={index}>
+                        {tag.name}
+                      </div>
+                    );
+                  })
+              )}
           </div>
         </div>
       </div>
-      <div className="projectCard-title">Website Seo analizi yaptırılacak</div>
-      <div className="projectCard-seperator"></div>
-      <div className="projectCard-details">
-        I am creating an online notarization/virtual notarization website. I
-        have an idea of the landing page but need full development for the site,
-        all functionality, etc. Please let me know if you are interested and I
-        can provide more details. - Create SRS Documentation - Create Design
-        (Including Graphics and Media) - Front-end Implementation -Back-end
-        Implementation - QA & Testing - I will provide SEO copy for the site
-      </div>
-      <div className="projectCard-gallery">
-        <span className="projectCard-gallery-heading">Medya</span>
-        <div className="projectCard-gallery-list">
-          <img src={media1} alt="" />
-          <img src={media2} alt="" />
-          <img src={media3} alt="" />
-          <img src={media4} alt="" />
-        </div>
-      </div>
-      <div className="projectCard-skill">
-        <span className="projectCard-skill-heading">Gerekli Yetenekler</span>
-        <div className="projectCard-skill-list">
-          <div className="projectCard-skill-list-item">
-            Arama Motoru Optimizasyonu
-          </div>
-          <div className="projectCard-skill-list-item">
-            Google Search Console
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 

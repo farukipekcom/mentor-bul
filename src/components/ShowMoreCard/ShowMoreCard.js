@@ -1,9 +1,9 @@
 import "./ShowMoreCard.scss";
 import { Loading } from "../../icons";
-function ShowMoreCard() {
+function ShowMoreCard({ length }) {
   return (
     <div className="showMore">
-      <div className="showMore-summary">5 adet proje listelenmiştir</div>
+      <div className="showMore-summary">{length} adet proje listelenmiştir</div>
       <div className="showMore-button">
         <div className="showMore-button-text">Daha Fazla Göster</div>
         <div className="showMore-button-icon">

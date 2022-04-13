@@ -2,7 +2,22 @@ import "./MenteeProjects.scss";
 import { Header, Category, Footer } from "../../pages/components";
 import { ProfileMenuCard, ProjectCardHorizontal } from "../../components/";
 import { slide as Menu } from "react-burger-menu";
+import { useState, useEffect } from "react";
+import axios from "axios";
 function MenteeProjects() {
+  const [project, setProject] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://localhost:5001/api/Projects/GetUserProject/1`
+      );
+      setProject(result.data);
+      console.log("TAMAMI", result.data);
+      setIsLoading(true);
+    };
+    fetchItems();
+  }, [isLoading]);
   return (
     <div className="main">
       <Header />
@@ -17,14 +32,12 @@ function MenteeProjects() {
               <ProfileMenuCard />
             </Menu>
           </div>
-          <span className="heading">Mentör’lerden almış olduğum hizmetler</span>
+          <span className="heading">İlanlarım</span>
           <div className="list">
-            <ProjectCardHorizontal active="1" />
-            <ProjectCardHorizontal active="1" />
-            <ProjectCardHorizontal active="1" />
-            <ProjectCardHorizontal active="1" />
-            <ProjectCardHorizontal active="1" />
-            <ProjectCardHorizontal active="1" />
+            {isLoading &&
+              project.map((item) => (
+                <ProjectCardHorizontal active="1" item={item} />
+              ))}
           </div>
         </div>
       </div>

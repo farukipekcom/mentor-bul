@@ -1,19 +1,19 @@
 import "./AddProjectCategoryItem.scss";
-function AddProjectCategoryItem({ value }) {
+function AddProjectCategoryItem({ item }) {
   const onChange = (e) => {
-    console.log(e.target.value);
+    console.log(e.target.id);
   };
   return (
     <div className="addProjectCategoryItem">
       <label>
         <input
-          id="category"
+          id={item.categoryId}
           type="radio"
-          value={value}
+          value={item.name}
           name="category"
           onChange={onChange}
         />
-        <span className="active">{value}</span>
+        <span className="active">{item.name}</span>
       </label>
     </div>
   );

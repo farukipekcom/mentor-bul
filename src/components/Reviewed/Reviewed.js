@@ -1,10 +1,10 @@
 import "./Reviewed.scss";
 import { Reliability, Communication, Timing } from "../../icons";
 import Star from "../Stars/Stars";
-import { LeaveReviewCard } from "../";
+import { CommentCardForm } from "..";
 import { useState } from "react";
 function Reviewed() {
-  const [reviewed, setReviewed] = useState(0);
+  const [reviewed] = useState(0);
   return (
     <div className="reviewed">
       {reviewed ? (
@@ -56,7 +56,7 @@ function Reviewed() {
           </div>
         </>
       ) : (
-        <LeaveReviewCard />
+        <CommentCardForm />
       )}
     </div>
   );

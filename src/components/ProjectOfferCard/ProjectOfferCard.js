@@ -1,35 +1,47 @@
 import "./ProjectOfferCard.scss";
 import { profilePhoto } from "../../images";
 import { ArrowRight } from "../../icons";
-function ProjectOfferCard({ value }) {
+import Moment from "react-moment";
+import "moment/locale/tr";
+function ProjectOfferCard({ value, item }) {
+  const loggedIn = JSON.parse(localStorage.getItem("user"));
+  console.log(item);
   return (
-    <a href="/" className="ProjectOfferCard">
+    <a href={`project/${item.project.slug}`} className="ProjectOfferCard">
       <div className="ProjectOfferCard-profile">
-        <img
-          src={profilePhoto}
-          alt=""
-          className="ProjectOfferCard-profile-photo"
-        />
         <div className="ProjectOfferCard-profile-info info">
-          <span className="ProjectOfferCard-profile-info-title">{value}</span>
+          <span className="ProjectOfferCard-profile-info-title">
+            Proje Adı:
+          </span>
           <span className="ProjectOfferCard-profile-info-text">
-            grafikerdunyasi
+            {item.project.title}
           </span>
         </div>
       </div>
       <div className="ProjectOfferCard-date">
         <div className="ProjectOfferCard-info orderdate">
           <span className="ProjectOfferCard-info-title">Teklif Tarihi</span>
-          <span className="ProjectOfferCard-info-text">12.10.2021</span>
-        </div>
-        <div className="ProjectOfferCard-info confirmationdate">
-          <span className="ProjectOfferCard-info-title">İlan Bitiş Süresi</span>
-          <span className="ProjectOfferCard-info-text">14.10.2021</span>
+          <span className="ProjectOfferCard-info-text">
+            <Moment format="DD MMMM YYYY" locale="tr">
+              {item.date}
+            </Moment>
+          </span>
         </div>
       </div>
+      {item.selected === true ? (
+        <div className="ProjectOfferCard-status ProjectOfferCard-status-green">
+          Tamamlandı!
+        </div>
+      ) : (
+        <div className="ProjectOfferCard-status ProjectOfferCard-status-orange">
+          Teklif verildi!
+        </div>
+      )}
 
-      <div className="ProjectOfferCard-status">Bekliyor</div>
-      <div className="ProjectOfferCard-price">150 TL</div>
+      <div className="ProjectOfferCard-price">
+        <span className="tl">₺ </span>
+        {item.price}
+      </div>
       <div className="ProjectOfferCard-arrow">
         <ArrowRight />
       </div>

@@ -1,30 +1,29 @@
 import "./ProjectCardHorizontal.scss";
 import { Star, Timev2 } from "../../icons";
-import { profilePhoto } from "../../images";
 import { View, Trash, Edit } from "../../icons";
-import { useState } from "react";
-function ProjectCardHorizontal({ active = 0 }) {
+function ProjectCardHorizontal({ active = 0, item }) {
   return (
-    <div className="projectCardHorizontal">
-      <a href="/project">
+    <>
+      <a href={`../project/${item.slug}`} className="projectCardHorizontal">
         <span className="projectCardHorizontal-subheading">
-          Görüntülü Görüşme
+          {item.type === 1
+            ? "Görüntülü Görüşme"
+            : item.type === 2
+            ? "Proje Teslim"
+            : item.type === 3
+            ? "Dosya Teslim"
+            : ""}
         </span>
         <div className="projectCardHorizontal-heading">
           <span className="projectCardHorizontal-heading-title">
-            Seo Analizi Yapılacaktır
+            {item.title}
           </span>
           <span className="projectCardHorizontal-heading-price">
-            <span className="mobileViewPrice">Teklif Aralığı: </span>80 - 120{" "}
-            <span className="tl">₺</span>
+            <span className="mobileViewPrice">Teklif Aralığı: </span>
+            {item.minPrice} - {item.maxPrice} <span className="tl">₺</span>
           </span>
         </div>
-        <p className="projectCardHorizontal-desc">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-          commodi, quos aut repudiandae sapiente dolor eaque officia ullam
-          eligendi sit iste non eius in. Voluptas consectetur accusamus
-          molestias sed officiis!
-        </p>
+        <p className="projectCardHorizontal-desc">{item.description}</p>
         <div className="projectCardHorizontal-categories">
           <div className="projectCardHorizontal-categories-item">
             Adobe Photoshop
@@ -38,13 +37,13 @@ function ProjectCardHorizontal({ active = 0 }) {
 
         <div className="projectCardHorizontal-profile">
           <img
-            src={profilePhoto}
+            src={item.user.profilePhoto}
             alt=""
             className="projectCardHorizontal-profile-photo"
           />
           <div className="projectCardHorizontal-profile-info">
             <span className="projectCardHorizontal-profile-info-username">
-              farukipekcom
+              {item.user.username}
             </span>
             <span className="projectCardHorizontal-profile-info-rating">
               <Star />
@@ -62,23 +61,23 @@ function ProjectCardHorizontal({ active = 0 }) {
             </div>
           </div>
         </div>
+        {active ? (
+          <div className="actions">
+            <div className="actions-icon">
+              <View />
+            </div>
+            <div className="actions-icon">
+              <Trash />
+            </div>
+            <div className="actions-icon">
+              <Edit />
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </a>
-      {active ? (
-        <div className="actions">
-          <div className="actions-icon">
-            <View />
-          </div>
-          <div className="actions-icon">
-            <Trash />
-          </div>
-          <div className="actions-icon">
-            <Edit />
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
-    </div>
+    </>
   );
 }
 

@@ -2,7 +2,9 @@
 
 .mentorCard {
   background-color: #fff;
-  @extend %flexvertical;
+  a {
+    @extend %flexvertical;
+  }
   border-radius: $radius;
   box-shadow: $boxshadow;
   padding: 24px;

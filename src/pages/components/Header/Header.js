@@ -1,12 +1,58 @@
 import "./Header.scss";
 import { profilePhoto } from "../../../images";
 import { ArrowBottom, Message, Plus, Search, Profile } from "../../../icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Header() {
+  const loggedIn = JSON.parse(localStorage.getItem("user"));
+
+  let navigate = useNavigate();
   const [active, setActive] = useState();
+  const [project, setProject] = useState([]);
+  const [text, setText] = useState("");
+  const [suggestList, setSuggestList] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
+  const [suggestId, setSuggestId] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [yaz, setYaz] = useState();
   const degistir = () => {
     setActive(!active);
+  };
+  const handlesubmit = async (e) => {
+    navigate(`../search/${yaz}`);
+  };
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+    }
+  };
+  useEffect(() => {
+    const loadProject = async () => {
+      const response = await axios.get("https://localhost:5001/api/Projects");
+      setProject(response.data);
+      setIsLoading(true);
+    };
+    loadProject();
+  }, []);
+  const OnChangeProject = async (text) => {
+    setYaz(text);
+    let matches = [];
+    if (text.length > 0) {
+      matches = project.filter((item) => {
+        const regex = new RegExp(`${text}`, "gi");
+        return item.title.match(regex);
+      });
+    }
+    setSuggestions(matches);
+    setText(text);
+  };
+  const onSuggestHandler = (text, slug) => {
+    setSuggestId((prevState) => [...prevState]);
+    setSuggestList((prevState) => [...prevState, [text]]);
+    setText("");
+    setSuggestions();
+    navigate(`../../project/${slug}`);
   };
   return (
     <div className="header">
@@ -14,10 +60,31 @@ function Header() {
         <a href="/">MENTÖRBUL</a>
       </div>
       <div className="header-search">
-        <Search />
-        <a href="/search">
-          <input type="text" placeholder="Arama Yap..." />
-        </a>
+        {/* <a href="/search"> */}
+        <form onSubmit={handlesubmit}>
+          <input
+            type="text"
+            value={text}
+            placeholder="Arama Yap..."
+            onChange={(e) => OnChangeProject(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+          <div className="header-search-suggestions">
+            {suggestions.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => onSuggestHandler(item.title, item.slug)}
+                className="header-search-suggestions-item"
+              >
+                {item.title}
+              </div>
+            ))}
+          </div>
+          <button type="submit" className="header-search-button">
+            <Search />
+          </button>
+        </form>
+        {/* </a> */}
       </div>
       <div className="header-right">
         <a href="/messages">
@@ -35,15 +102,15 @@ function Header() {
           </div>
         </a>
         <div className="header-right-profile">
-          <a href="/profile">
+          <a href={`/profile/${loggedIn.username}`}>
             <img
-              src={profilePhoto}
+              src={loggedIn.profilePhoto}
               alt=""
               className="header-right-profile-photo"
             />
             <div className="header-right-profile-details">
               <div className="header-right-profile-details-fullname">
-                Faruk İpek
+                {loggedIn.firstName} {loggedIn.lastName}
               </div>
               <div className="header-right-profile-details-profession">
                 Front-end Developer
@@ -53,7 +120,7 @@ function Header() {
           </a>
         </div>
       </div>
-      <div class="mobile-search">
+      <div className="mobile-search">
         <button onClick={degistir}>
           <Search />
         </button>
@@ -70,11 +137,11 @@ function Header() {
           ""
         )}
       </div>
-      <div class="mobile-profile">
+      <div className="mobile-profile">
         <a href="/profile">
           <Profile />
         </a>
-        <div class="mobile-profile-dropdown">
+        <div className="mobile-profile-dropdown">
           <a href="/profile">Profil</a>
           <a href="/messages">Mesajlar</a>
           <a href="/SettingsGeneral">Ayarlar</a>

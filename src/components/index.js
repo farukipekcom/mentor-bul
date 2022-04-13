@@ -2,7 +2,9 @@ import AboutCard from "./AboutCard/AboutCard";
 import ProfessionCard from "./ProfessionCard/ProfessionCard";
 import ProfileCard from "./ProfileCard/ProfileCard";
 import ProjectSquareCard from "./ProjectSquareCard/ProjectSquareCard";
-import ReviewsCard from "./ReviewsCard/ReviewsCard";
+import ProjectSquareCardProfile from "./ProjectSquareCardProfile/ProjectSquareCardProfile";
+import CommentCard from "./CommentCard/CommentCard";
+import CommentCardOrder from "./CommentCardOrder/CommentCardOrder";
 import ShareCard from "./ShareCard/ShareCard";
 import Stars from "./Stars/Stars";
 import StaticsCard from "./StaticsCard/StaticsCard";
@@ -27,6 +29,7 @@ import AddProjectAllPart from "./AddProjectAllPart/AddProjectAllPart";
 import WelcomeCard from "./WelcomeCard/WelcomeCard";
 import MentorCard from "./MentorCard/MentorCard";
 import ProjectSummaryCard from "./ProjectSummaryCard/ProjectSummaryCard";
+import ProjectSummaryCardBought from "./ProjectSummaryCardBought/ProjectSummaryCardBought";
 import FinanceCard from "./FinanceCard/FinanceCard";
 import SettingsMenuCard from "./SettingsMenuCard/SettingsMenuCard";
 import SettingsGeneralCard from "./SettingsGeneralCard/SettingsGeneralCard";
@@ -48,18 +51,20 @@ import OrderStatusCard from "./OrderStatusCard/OrderStatusCard";
 import OrderDetails from "./OrderDetails/OrderDetails";
 import OrderProcess from "./OrderProcess/OrderProcess";
 import Reviewed from "./Reviewed/Reviewed";
-import LeaveReviewCard from "./LeaveReviewCard/LeaveReviewCard";
+import CommentCardForm from "./CommentCardForm/CommentCardForm";
 import RequestCategoryItemCard from "./RequestCategoryItemCard/RequestCategoryItemCard";
 import OfferFormCard from "./OfferFormCard/OfferFormCard";
 import CartSummary from "./CartSummary/CartSummary";
 import ProjectSmallCard from "./ProjectSmallCard/ProjectSmallCard";
 import PaymentForm from "./PaymentForm/PaymentForm";
+import Loading from "./Loading/Loading";
 export {
   AboutCard,
   ProfessionCard,
   ProfileCard,
   ProjectSquareCard,
-  ReviewsCard,
+  ProjectSquareCardProfile,
+  CommentCard,
   ShareCard,
   Stars,
   StaticsCard,
@@ -84,6 +89,7 @@ export {
   WelcomeCard,
   MentorCard,
   ProjectSummaryCard,
+  ProjectSummaryCardBought,
   FinanceCard,
   SettingsMenuCard,
   SettingsGeneralCard,
@@ -105,10 +111,12 @@ export {
   OrderDetails,
   OrderProcess,
   Reviewed,
-  LeaveReviewCard,
+  CommentCardForm,
+  CommentCardOrder,
   RequestCategoryItemCard,
   OfferFormCard,
   CartSummary,
   ProjectSmallCard,
   PaymentForm,
+  Loading,
 };

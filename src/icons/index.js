@@ -45,6 +45,7 @@ import { ReactComponent as Securityv2 } from "./securityv2.svg";
 import { ReactComponent as Tool } from "./tool.svg";
 import { ReactComponent as Edit } from "./edit.svg";
 import { ReactComponent as Close } from "./close.svg";
+import { ReactComponent as Closev2 } from "./closev2.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Google } from "./google.svg";
 import { ReactComponent as View } from "./view.svg";
@@ -106,6 +107,7 @@ export {
   Tool,
   Edit,
   Close,
+  Closev2,
   Trash,
   Google,
   View,

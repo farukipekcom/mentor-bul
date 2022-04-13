@@ -2,7 +2,22 @@ import "./OfferProjects.scss";
 import { Header, Category, Footer } from "../components";
 import { ProfileMenuCard, ProjectOfferCard } from "../../components";
 import { slide as Menu } from "react-burger-menu";
+import { useState, useEffect } from "react";
+import axios from "axios";
 function OfferProjects() {
+  const [offer, setOffer] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://localhost:5001/api/Offers/GetUserOffer/1`
+      );
+      setOffer(result.data);
+      console.log("TAMAMI", result.data);
+      setIsLoading(true);
+    };
+    fetchItems();
+  }, [isLoading]);
   return (
     <div className="main">
       <Header />
@@ -19,12 +34,10 @@ function OfferProjects() {
           </div>
           <span className="heading">Teklif Verdiğim Hizmetler</span>
           <div className="list">
-            <ProjectOfferCard value="Mentee" />
-            <ProjectOfferCard value="Mentee" />
-            <ProjectOfferCard value="Mentee" />
-            <ProjectOfferCard value="Mentee" />
-            <ProjectOfferCard value="Mentee" />
-            <ProjectOfferCard value="Mentee" />
+            {isLoading &&
+              offer.map((item) => (
+                <ProjectOfferCard item={item} value="Mentee" />
+              ))}
           </div>
         </div>
       </div>

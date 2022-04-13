@@ -1,7 +1,9 @@
 import React from "react";
 import "./StaticsCard.scss";
 import { Star, Cancel, Person, Rating } from "../../icons";
-function Statics() {
+import Moment from "react-moment";
+import "moment/locale/tr";
+function Statics({ user }) {
   return (
     <div className="staticsCard">
       <h3 className="staticsCard-heading">İstatistikler</h3>
@@ -19,7 +21,11 @@ function Statics() {
         <div className="staticsCard-list-item">
           <Person />
           <div className="staticsCard-list-item-title">Üyelik Tarihi</div>
-          <div className="staticsCard-list-item-text">03.10.2021</div>
+          <div className="staticsCard-list-item-text">
+            <Moment format="DD MMMM YYYY" locale="tr">
+              {user.createdAt}
+            </Moment>
+          </div>
         </div>
         <div className="staticsCard-list-item">
           <Rating />

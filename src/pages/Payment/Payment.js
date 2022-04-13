@@ -1,5 +1,5 @@
 import "./Payment.scss";
-import { ReviewsCard, ProjectSmallCard, PaymentForm } from "../../components";
+import { ProjectSmallCard, PaymentForm } from "../../components";
 import { Header, Category, Footer } from "../../pages/components";
 import CartSummary from "../../components/CartSummary/CartSummary";
 function Payment() {

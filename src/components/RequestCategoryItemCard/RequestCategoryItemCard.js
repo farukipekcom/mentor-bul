@@ -1,16 +1,21 @@
 import { ArrowTop } from "../../icons";
 import "./RequestCategoryItemCard.scss";
-
-function RequestCategoryItemCard() {
+import Moment from "react-moment";
+import "moment/locale/tr";
+function RequestCategoryItemCard({ item }) {
   return (
-    <div className="requestCategoryItem">
+    <>
       <div className="requestCategoryItem-left">
-        <span className="requestCategoryItem-title">Girişimcilik</span>
+        <span className="requestCategoryItem-title">{item.name}</span>
         <div className="requestCategoryItem-info">
           <span className="requestCategoryItem-info-username">
             @farukipekcom
           </span>
-          <span className="requestCategoryItem-info-date">24.10.2021</span>
+          <span className="requestCategoryItem-info-date">
+            <Moment format="DD MMMM YYYY HH:mm" locale="tr">
+              {item.createdAt}
+            </Moment>
+          </span>
           <span className="requestCategoryItem-info-status">
             <div>Planlandı</div>
           </span>
@@ -24,7 +29,7 @@ function RequestCategoryItemCard() {
           <span className="requestCategoryItem-right-vote-count">48</span>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

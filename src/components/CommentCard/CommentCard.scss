@@ -1,5 +1,5 @@
 @import "../../sass/main.scss";
-.reviewsCard {
+.commentCard {
   background-color: #fff;
   padding: 24px;
   width: 100%;
@@ -150,4 +150,34 @@
       }
     }
   }
+}
+
+.react-simple-star-rating {
+  height: 24px;
+  .empty-icons {
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 2px;
+      color: #cccccc;
+    }
+  }
+  .filled-icons {
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 2px;
+      color: #e77c40;
+    }
+  }
+}
+
+.react-simple-star-rating-tooltip {
+  background-color: transparent !important;
+  padding: 3px 0px 0px 0px !important;
+  margin-left: 8px !important;
+  color: #000 !important;
+  width: max-content;
+  height: 24px;
+  @extend %icontext;
 }

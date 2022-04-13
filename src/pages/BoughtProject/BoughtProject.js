@@ -1,8 +1,28 @@
 import "./BoughtProject.scss";
 import { Header, Category, Footer } from "../../pages/components";
-import { ProfileMenuCard, ProjectSummaryCard } from "../../components/";
+import {
+  ProfileMenuCard,
+  ProjectSummaryCardBought,
+  Loading,
+} from "../../components/";
 import { slide as Menu } from "react-burger-menu";
+import { useState, useEffect } from "react";
+import axios from "axios";
 function BoughtProject() {
+  const [order, setOrder] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const loggedIn = JSON.parse(localStorage.getItem("user"));
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `https://localhost:5001/api/Orders/GetOrderBought/${loggedIn.userId}`
+      );
+      setOrder(result.data);
+      console.log("SXX", result.data);
+      setIsLoading(true);
+    };
+    fetchItems();
+  }, []);
   return (
     <div className="main">
       <Header />
@@ -19,12 +39,13 @@ function BoughtProject() {
           </div>
           <span className="heading">Mentör’lerden almış olduğum hizmetler</span>
           <div className="list">
-            <ProjectSummaryCard value="Mentör" />
-            <ProjectSummaryCard value="Mentör" />
-            <ProjectSummaryCard value="Mentör" />
-            <ProjectSummaryCard value="Mentör" />
-            <ProjectSummaryCard value="Mentör" />
-            <ProjectSummaryCard value="Mentör" />
+            {isLoading ? (
+              order.map((item) => (
+                <ProjectSummaryCardBought item={item} value="Mentee" />
+              ))
+            ) : (
+              <Loading />
+            )}
           </div>
         </div>
       </div>

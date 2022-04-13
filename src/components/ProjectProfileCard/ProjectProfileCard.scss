@@ -42,13 +42,10 @@
       }
     }
     &-profile {
-      a {
-        color: #fff;
-      }
+      color: #fff !important;
       @extend %icontext;
       height: 44px;
       background-color: $primary;
-      color: #fff;
       @extend %flexcenter;
       flex: 1;
       padding: 8px 0px;

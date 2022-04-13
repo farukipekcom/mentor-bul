@@ -1,10 +1,6 @@
 @import "../../sass/main.scss";
 
 .offerForm {
-  background-color: #fff;
-  box-shadow: $boxshadow;
-  border-radius: $radius;
-  padding: 24px;
   @extend %flexvertical;
   align-items: flex-start;
   width: 100%;

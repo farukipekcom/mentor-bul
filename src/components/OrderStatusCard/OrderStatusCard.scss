@@ -1,7 +1,6 @@
 @import "../../sass/main.scss";
 
 .orderStatus {
-  background-color: $secondary;
   width: 100%;
   border-radius: $radius;
   box-shadow: $boxshadow;
@@ -9,12 +8,7 @@
   @extend %flexvertical;
   align-items: flex-start;
   padding: 24px;
-  padding-left: 56px;
   justify-content: space-between;
-  background-image: url("../../icons/bubble.svg");
-  background-repeat: no-repeat;
-  background-position-y: bottom;
-  position: relative;
 
   @include mq("mobile") {
     height: 100px;

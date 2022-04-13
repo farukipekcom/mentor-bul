@@ -1,10 +1,10 @@
 import "./SearchCard.scss";
-function SearchCard() {
+function SearchCard({ slug }) {
   return (
     <div className="searchCard">
       <div className="container">
         <div className="searchCard-title">
-          “wordpress” için sonuçlar listelendi
+          “{slug}” için sonuçlar listelendi
         </div>
       </div>
     </div>

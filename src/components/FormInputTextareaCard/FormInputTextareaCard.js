@@ -1,20 +1,27 @@
 import "./FormInputTextareaCard.scss";
-
-import { useState } from "react";
-function FormInputTextareaCard({ placeholder = "Bir şeyler giriniz...", data }) { 
-  const [value,setValue] = useState(data);
-  function onChange(e) {
-    e.preventDefault();
-    setValue(e.target.value);
-  }
+function FormInputTextareaCard({
+  placeholder = "Bir şeyler giriniz...",
+  name,
+  value,
+  onChange,
+  className,
+  minPrice,
+  maxPrice,
+}) {
+  // const [value, setValue] = useState(data);
+  // function onChange(e) {
+  //   e.preventDefault();
+  //   setValue(e.target.value);
+  // }
   return (
     <div className="FormInputTextareaCard">
       <textarea
-        type="text"
         placeholder={placeholder}
-        className="FormInputTextareaCard-input"
+        className={`${className} FormInputTextareaCard-input`}
+        name={name}
         onChange={onChange}
         value={value}
+        required
       />
     </div>
   );

@@ -1,0 +1,144 @@
+@import "../../sass/main.scss";
+.projectSummaryCard {
+  @extend %flexvertical;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: $radius;
+  box-shadow: $boxshadow;
+  padding: 24px;
+  width: 100%;
+  margin-top: 24px;
+  position: relative;
+  @include mq("tablet") {
+    width: calc(50% - 15px);
+  }
+  @include mq("desktop") {
+    width: calc(100%);
+  }
+  // 992 - 1280
+  @media (min-width: 1080px) and (max-width: 1280px) {
+    width: calc(50% - 15px);
+  }
+  @include mq("large") {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &-profile {
+    @extend %flex;
+    &-photo {
+      width: 42px;
+      height: 42px;
+      border-radius: $radius;
+    }
+    &-info {
+      margin-left: 12px;
+      @extend %flexvertical;
+      align-items: flex-start;
+      &-title {
+        @extend %subtext1;
+        color: $gray;
+      }
+      &-text {
+        @extend %buttontext;
+      }
+    }
+  }
+  &-date {
+    @extend %flex;
+    margin-left: 12px;
+    margin-top: 24px;
+    @include mq("desktop") {
+    }
+    @include mq("large") {
+      margin-left: unset;
+      margin-top: unset;
+    }
+    .confirmationdate {
+      margin-left: 42px;
+    }
+    .orderdate {
+      margin-left: 42px;
+    }
+  }
+  &-info {
+    @extend %flexvertical;
+    margin-left: 12px;
+    align-items: flex-start;
+    &-title {
+      @extend %subtext1;
+      color: $gray;
+    }
+    &-text {
+      @extend %buttontext;
+    }
+  }
+  &-status {
+    background-color: $secondary_soft;
+    color: $secondary;
+    padding: 4px 24px;
+    @extend %subtext2;
+    @extend %flexcenter;
+    border-radius: $radius_small;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 52px;
+    margin-top: 12px;
+    @include mq("desktop") {
+    }
+    @include mq("large") {
+      margin-left: 42px;
+      margin-top: unset;
+    }
+  }
+  &-price {
+    @extend %title;
+    margin-left: 52px;
+    margin-top: 12px;
+    @include mq("desktop") {
+    }
+    @include mq("large") {
+      margin-top: unset;
+      margin-left: 42px;
+    }
+  }
+
+  &-arrow {
+    margin-left: auto;
+    transition: margin-left 0.5s;
+    cursor: pointer;
+    border: 2px solid #000;
+    padding: 4px;
+    height: 36px;
+    width: 36px;
+    @extend %flexcenter;
+    border-radius: $radius;
+    position: absolute;
+    right: 30px;
+    transition: 0.5s right;
+  }
+  border: 2px solid transparent;
+  transition: 0.5s border;
+  &:hover {
+    .projectSummaryCard-arrow {
+      transition: 0.5s right;
+      position: absolute;
+      right: 16px;
+    }
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000;
+    transition: 0.5s border;
+  }
+  &-ratingcontrol {
+    background-color: $red_soft;
+    color: $red;
+    @extend %subtext1;
+    @extend %flexcenter;
+    height: 36px;
+    padding: 8px 16px;
+    border-radius: $radius;
+    position: absolute;
+    right: 24px;
+    top: -24px;
+  }
+}

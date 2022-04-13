@@ -11,6 +11,7 @@
   cursor: pointer;
   @extend %flex;
   width: 100%;
+  height: 300px;
   gap: 16px;
   &-container {
     width: 100%;
@@ -86,6 +87,7 @@
         @extend %icontext;
         color: $gray;
         margin-top: 2px;
+
         svg {
           color: $orange;
           margin-top: -3px;
@@ -97,4 +99,10 @@
       }
     }
   }
+}
+.react-simple-star-rating {
+  padding-top: 5px;
+}
+.filled-icons {
+  padding-top: 5px !important;
 }

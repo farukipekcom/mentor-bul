@@ -51,7 +51,6 @@
       margin-left: 12px;
       &-job {
         @extend %icontext;
-        color: $gray;
       }
       &-username {
         @extend %category;

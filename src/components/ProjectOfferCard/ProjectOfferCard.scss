@@ -26,13 +26,13 @@
 
   &-profile {
     @extend %flex;
+    width: 420px;
     &-photo {
       width: 42px;
       height: 42px;
       border-radius: $radius;
     }
     &-info {
-      margin-left: 12px;
       @extend %flexvertical;
       align-items: flex-start;
       &-title {
@@ -44,24 +44,8 @@
       }
     }
   }
-  &-date {
-    @extend %flex;
-    margin-left: 12px;
-    margin-top: 24px;
-    @include mq("desktop") {
-    }
-    @include mq("large") {
-      margin-left: unset;
-      margin-top: unset;
-    }
-    .confirmationdate {
-      margin-left: 42px;
-    }
-    .orderdate {
-      margin-left: 42px;
-    }
-  }
   &-info {
+    width: 140px;
     @extend %flexvertical;
     margin-left: 12px;
     align-items: flex-start;
@@ -75,36 +59,41 @@
   }
   &-status {
     background-color: rgba($orange, 0.2);
-    color: $orange;
+    color: #fff;
     padding: 4px 24px;
+    min-width: 130px;
     @extend %subtext2;
     @extend %flexcenter;
     border-radius: $radius_small;
     cursor: pointer;
     height: 40px;
-    margin-left: 52px;
     margin-top: 12px;
     @include mq("desktop") {
     }
     @include mq("large") {
-      margin-left: 42px;
       margin-top: unset;
+    }
+    &-green {
+      background-color: #26ca9a;
+    }
+    &-orange {
+      background-color: #ffb122;
     }
   }
   &-price {
     @extend %title;
-    margin-left: 52px;
     margin-top: 12px;
+    min-width: 120px;
+    text-align: right;
+    padding-right: 16px;
     @include mq("desktop") {
     }
     @include mq("large") {
       margin-top: unset;
-      margin-left: 42px;
     }
   }
 
   &-arrow {
-    margin-left: auto;
     transition: margin-left 0.5s;
     cursor: pointer;
     border: 2px solid #000;
@@ -113,8 +102,6 @@
     width: 36px;
     @extend %flexcenter;
     border-radius: $radius;
-    position: absolute;
-    right: 30px;
     transition: 0.5s right;
   }
   border: 2px solid transparent;
@@ -122,8 +109,8 @@
   &:hover {
     .ProjectOfferCard-arrow {
       transition: 0.5s right;
-      position: absolute;
-      right: 16px;
+      // position: absolute;
+      // right: 16px;
     }
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border: 2px solid #000;

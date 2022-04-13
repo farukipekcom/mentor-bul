@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Project from "./pages/Project/Project";
 import Profile from "./pages/Profile/Profile";
 import Offer from "./pages/Offer/Offer";
@@ -22,99 +22,47 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import MenteeProjects from "./pages/MenteeProjects/MenteeProjects";
 import OfferProjects from "./pages/OfferProjects/OfferProjects";
-import Order from "./pages/Order/Order";
+import OrderBought from "./pages/OrderBought/OrderBought";
 import RequestCategory from "./pages/RequestCategory/RequestCategory";
 import RequestProfession from "./pages/RequestProfession/RequestProfession";
 import SendOffer from "./pages/SendOffer/SendOffer";
 import Payment from "./pages/Payment/Payment";
+import OrderSell from "./pages/OrderSell/OrderSell";
 function App() {
   return (
     <>
-      <Router>
-        <Switch>
-          <Route path="/" exact>
-            <Homepage />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/project">
-            <Project />
-          </Route>
-          <Route path="/offer">
-            <Offer />
-          </Route>
-          <Route path="/category">
-            <Category />
-          </Route>
-          <Route path="/sub-category">
-            <SubCategory />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/addproject">
-            <AddProject />
-          </Route>
-          <Route path="/boughtProject">
-            <BoughtProject />
-          </Route>
-          <Route path="/menteeFinance">
-            <MenteeFinance />
-          </Route>
-          <Route path="/sellProject">
-            <SellProject />
-          </Route>
-          <Route path="/mentorFinance">
-            <MentorFinance />
-          </Route>
-          <Route path="/settingsGeneral">
-            <SettingGeneral />
-          </Route>
-          <Route path="/settingsPayment">
-            <SettingPayment />
-          </Route>
-          <Route path="/settingsEducation">
-            <SettingEducation />
-          </Route>
-          <Route path="/settingsTool">
-            <SettingTools />
-          </Route>
-          <Route path="/settingsPassword">
-            <SettingPassword />
-          </Route>
-          <Route path="/messages">
-            <Messages />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/menteeProjects">
-            <MenteeProjects />
-          </Route>
-          <Route path="/offerProjects">
-            <OfferProjects />
-          </Route>
-          <Route path="/order">
-            <Order />
-          </Route>
-          <Route path="/requestCategory">
-            <RequestCategory />
-          </Route>
-          <Route path="/requestProfession">
-            <RequestProfession />
-          </Route>
-          <Route path="/sendOffer">
-            <SendOffer />
-          </Route>
-          <Route path="/payment">
-            <Payment />
-          </Route>
-        </Switch>
-      </Router>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/profile/:username" element={<Profile />} />
+          <Route path="/project/:username" element={<Project />} />
+          <Route path="/offer/:username" element={<Offer />} />
+          <Route path="/category/:slug" element={<Category />} />
+          <Route path="/search/:slug" element={<Search />} />
+          <Route path="/orderBought/:slug" element={<OrderBought />} />
+          <Route path="/orderSell/:slug" element={<OrderSell />} />
+          <Route path="/sub-category" element={<SubCategory />} />
+          <Route path="/addproject" element={<AddProject />} />
+          <Route path="/boughtProject" element={<BoughtProject />} />
+          <Route path="/menteeFinance" element={<MenteeFinance />} />
+          <Route path="/sellProject" element={<SellProject />} />
+          <Route path="/mentorFinance" element={<MentorFinance />} />
+          <Route path="/settingsGeneral" element={<SettingGeneral />} />
+          <Route path="/settingsPayment" element={<SettingPayment />} />
+          <Route path="/settingsEducation" element={<SettingEducation />} />
+          <Route path="/settingsTool" element={<SettingTools />} />
+          <Route path="/settingsPassword" element={<SettingPassword />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/menteeProjects" element={<MenteeProjects />} />
+          <Route path="/offerProjects" element={<OfferProjects />} />
+          <Route path="/requestCategory" element={<RequestCategory />} />
+          <Route path="/requestProfession" element={<RequestProfession />} />
+          <Route path="/sendOffer" element={<SendOffer />} />
+          <Route path="/payment" element={<Payment />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

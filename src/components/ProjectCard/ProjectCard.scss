@@ -80,7 +80,7 @@
         object-fit: cover;
         border-radius: $radius_small;
         @include mq("tablet") {
-          width: calc(25% - 10px);
+          width: calc(100% - 10px);
         }
       }
     }

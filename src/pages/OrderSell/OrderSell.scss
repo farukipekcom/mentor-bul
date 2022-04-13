@@ -1,0 +1,42 @@
+@import "../../sass/main.scss";
+
+.main {
+  .container {
+    .content {
+      .orderStatus {
+        margin-top: -12px;
+      }
+    }
+  }
+}
+.orderProcessHeading {
+  @extend %subtitle;
+}
+.content {
+  position: relative;
+}
+.send-message {
+  position: absolute;
+  top: -0px;
+  right: 0px;
+  background-color: transparent;
+  width: max-content;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 48px;
+  @extend %flexcenter;
+  @extend %category;
+  color: black;
+  border: 2px solid $primary;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: 0.4s;
+  @include mq("desktop") {
+    top: -12px;
+  }
+  &:hover {
+    transition: 0.4s;
+    background-color: $primary;
+    color: #fff;
+  }
+}

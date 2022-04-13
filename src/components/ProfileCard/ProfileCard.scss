@@ -26,9 +26,7 @@
     @extend %flex;
     @extend %icontext;
     margin-top: 20px;
-    svg {
-      color: $orange !important;
-    }
+
     &-count {
       color: $gray;
       margin-left: 8px;

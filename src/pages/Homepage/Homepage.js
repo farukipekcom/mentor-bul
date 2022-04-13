@@ -5,12 +5,38 @@ import {
   WelcomeCard,
   ProjectSquareCard,
   MentorCard,
+  Loading,
 } from "../../components";
 import { slide as Menu2 } from "react-burger-menu";
-function Homepage() {
+import axios from "axios";
+import { useState, useEffect } from "react";
+function Homepage({ e }) {
+  console.log(e);
+  const [project, setProject] = useState();
+  const [user, setUser] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading2, setIsLoading2] = useState(false);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios("https://localhost:5001/api/projects");
+      setProject(result.data);
+      setIsLoading(true);
+    };
+    fetchItems();
+  }, []);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios("https://localhost:5001/api/users");
+      setUser(result.data);
+      setIsLoading2(true);
+    };
+    fetchItems();
+  }, []);
+  const loggedIn = JSON.parse(localStorage.getItem("user"));
+
   return (
     <div className="main homepage">
-      <Header />
+      <Header loggedIn={loggedIn} />
       <Category />
       <div className="container">
         <div className="sidebar">
@@ -25,17 +51,25 @@ function Homepage() {
           <WelcomeCard />
           <span className="main-heading">Öne çıkan ilanlara gözat</span>
           <div className="main-projects">
-            <ProjectSquareCard />
-            <ProjectSquareCard />
-            <ProjectSquareCard />
-            <ProjectSquareCard />
+            {isLoading ? (
+              project.map((item, index) => (
+                <ProjectSquareCard key={index} item={item} />
+              ))
+            ) : (
+              <Loading />
+            )}
           </div>
           <span className="main-heading">Popüler Mentörler</span>
           <div className="main-mentors">
-            <MentorCard />
-            <MentorCard />
-            <MentorCard />
-            <MentorCard />
+            {isLoading2 ? (
+              user.map((item, index) => (
+                <div className="mentorCard" key={index}>
+                  <MentorCard key={index} item={item} />
+                </div>
+              ))
+            ) : (
+              <Loading />
+            )}
           </div>
         </div>
       </div>

@@ -1,13 +1,13 @@
 import "./CategorySummaryCard.scss";
 import { Sale, Users } from "../../icons";
 import { categoryImage } from "../../images";
-function CategorySummaryCard() {
+function CategorySummaryCard({ categoryMain }) {
   return (
     <div className="categorySummaryCard">
       <div className="container">
         <div className="categorySummaryCard-left">
           <h1 className="categorySummaryCard-left-heading">
-            İNTERNET REKLAMCILIĞI
+            {categoryMain.name}
           </h1>
           <div className="categorySummaryCard-left-statics">
             <div className="categorySummaryCard-left-statics-item">
@@ -29,10 +29,10 @@ function CategorySummaryCard() {
               </div>
               <div className="categorySummaryCard-left-statics-item-details">
                 <div className="categorySummaryCard-left-statics-item-details-desc">
-                  Toplam Satış Adeti
+                  Toplam İlan
                 </div>
                 <div className="categorySummaryCard-left-statics-item-details-count">
-                  57
+                  {categoryMain.projects.length}
                 </div>
               </div>
             </div>

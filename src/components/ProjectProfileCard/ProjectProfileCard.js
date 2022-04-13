@@ -1,18 +1,37 @@
 import "./ProjectProfileCard.scss";
-import { profilePhoto } from "../../images";
 import { Time, RatingHeart, Location } from "../../icons";
-import Star from "../Stars/Stars";
-function ProjectProfileCard() {
+import { Star } from "../../icons";
+import Moment from "react-moment";
+import "moment/locale/tr";
+import { Rating } from "react-simple-star-rating";
+import { useState } from "react";
+
+function ProjectProfileCard({ comment, profile }) {
+  var totalQuality =
+    comment &&
+    comment.reduce(function (accumulator, item) {
+      return accumulator + item.commentRate;
+    }, 0);
+  var son = comment && Math.round((totalQuality / comment.length) * 2) / 2;
   return (
     <div className="projectProfileCard">
-      <img src={profilePhoto} alt="" className="projectProfileCard-photo" />
-      <span className="projectProfileCard-username">farukipekcom</span>
-      <span className="projectProfileCard-location">İstanbul, Türkiye</span>
+      <img
+        src={profile.profilePhoto}
+        alt=""
+        className="projectProfileCard-photo"
+      />
+      <span className="projectProfileCard-username">{profile.username}</span>
+      <span className="projectProfileCard-location">
+        {profile.city}, {profile.country}
+      </span>
       <div className="projectProfileCard-buttons">
         <div className="projectProfileCard-buttons-message">Mesaj Gönder</div>
-        <div className="projectProfileCard-buttons-profile">
-          <a href="/profile">Profil</a>
-        </div>
+        <a
+          href={`../profile/${profile.username}`}
+          className="projectProfileCard-buttons-profile"
+        >
+          Profil
+        </a>
       </div>
 
       <div className="projectProfileCard-summary">
@@ -21,7 +40,7 @@ function ProjectProfileCard() {
             <Location />
           </div>
           <div className="projectProfileCard-summary-item-details">
-            Antalya, Türkiye
+            {profile.city}, {profile.country}
           </div>
         </div>
         <div className="projectProfileCard-summary-item item-rating">
@@ -29,8 +48,19 @@ function ProjectProfileCard() {
             <RatingHeart />
           </div>
           <div className="projectProfileCard-summary-item-details">
-            <Star value="5" color="#E77C40" />
-            <span className="count">(8 değerlendirme)</span>
+            <Rating
+              size={5}
+              transition
+              allowHalfIcon
+              fullIcon={<Star />}
+              emptyIcon={<Star />}
+              style={{ marginRight: "4px" }}
+              initialValue={son}
+              readonly={true}
+            />
+            <span className="count">
+              ({comment && comment.length} değerlendirme)
+            </span>
           </div>
         </div>
         <div className="projectProfileCard-summary-item">
@@ -38,7 +68,10 @@ function ProjectProfileCard() {
             <Time />
           </div>
           <div className="projectProfileCard-summary-item-details">
-            3 Ekim 2019'dan beri üye
+            <Moment format="DD MMMM YYYY" locale="tr">
+              {profile.createdAt}
+            </Moment>
+            <span style={{ marginLeft: "2px" }}> tarihinden beri üye</span>
           </div>
         </div>
       </div>
