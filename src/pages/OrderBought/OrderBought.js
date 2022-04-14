@@ -97,7 +97,12 @@ function OrderBought() {
                   Şimdi ödemeyi yapıp süreci başlat.
                 </div>
               </div>
-              <PaymentForm price={order.offer.price} updatePost={updatePost} />
+              <PaymentForm
+                updatedData={updatedData}
+                price={order.offer.price}
+                id={order.orderId}
+                updatePost={updatePost}
+              />
             </>
           )}
           {isLoading && order.status === 2 && (
