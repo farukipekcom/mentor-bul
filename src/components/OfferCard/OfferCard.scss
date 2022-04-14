@@ -82,7 +82,7 @@
   }
 }
 
-.faruk {
+.selectedOffer {
   position: absolute;
   display: flex;
   align-items: center;
@@ -93,7 +93,7 @@
   font-weight: 800;
   top: 40%;
   left: calc(50% - 50px);
-  z-index: 999;
+  z-index: 1;
   opacity: 1;
   transform: rotateZ(-10deg);
 }

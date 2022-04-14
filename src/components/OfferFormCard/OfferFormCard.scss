@@ -1,6 +1,7 @@
 @import "../../sass/main.scss";
 
 .offerForm {
+  z-index: 2;
   @extend %flexvertical;
   align-items: flex-start;
   width: 100%;

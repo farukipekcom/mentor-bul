@@ -2,7 +2,7 @@ import "./PaymentForm.scss";
 import { CreditCard } from "../../icons";
 import { FormInputTextCard } from "..";
 import { payment } from "../../images";
-function PaymentForm({ updatePost }) {
+function PaymentForm({ updatePost, price }) {
   return (
     <div className="paymentForm">
       <div className="paymentForm-heading">
@@ -56,7 +56,8 @@ function PaymentForm({ updatePost }) {
             </div>
           </div>
           <button id="2" onClick={updatePost}>
-            Ödeme Yap (150<span className="tl">₺</span> )
+            Ödeme Yap ({price}
+            <span className="tl">TL</span>)
           </button>
         </div>
         <div className="paymentForm-form-right">

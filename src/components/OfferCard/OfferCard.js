@@ -4,41 +4,61 @@ import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
 import { TickEmpty } from "../../icons";
-import { useState, useEffect } from "react";
-function Offer({ item, user_id, sec = true }) {
-  // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  const [teklif, setTeklif] = useState();
-  const [yukleniyor, setYukleniyor] = useState(false);
-
+import { useState } from "react";
+import moment from "moment";
+function Offer({ project, item, user_id, selected = true }) {
+  const success = () =>
+    toast.success("Başarıyla Seçildi!", {
+      position: "bottom-center",
+    });
+  const err = () =>
+    toast.error("Teklif Seçerken Hata Oluştu!", {
+      position: "bottom-center",
+    });
+  const [formValue, setformValue] = useState({
+    projectId: item.projectId,
+    offerId: item.offerId,
+    price: item.price,
+    status: 0,
+    createdAt: moment().format("yyyy-MM-DDTHH:mm").toString(),
+    updatedAt: moment().format("yyyy-MM-DDTHH:mm").toString(),
+  });
   const updatePost = async (e) => {
-    console.log(e.target.id);
+    e.preventDefault();
+    axios
+      .post("https://localhost:5001/api/Orders", formValue)
+      .then((response) => {
+        setTimeout(function () {
+          window.location.reload();
+        }, 500);
+      });
     axios
       .get(`https://localhost:5001/api/Offers/GetOfferDetails/${e.target.id}`)
       .then((response) => {
-        setTeklif(response.data);
-        console.log("DDDD", response.data);
-        setYukleniyor(true);
-        console.log("TEKLIF", response.data);
-        var yeni = response.data;
-        console.log("YENI", yeni);
-        yeni.selected = true;
-        axios
-          .put(`https://localhost:5001/api/Offers/${e.target.id}`, yeni)
-          .then((response) => {
-            setTimeout(function () {
-              window.location.reload();
-            }, 1000);
-            console.log(response.status);
-          });
+        var tempOffer = response.data;
+        var tempProject = project;
+        tempProject.status = false;
+        tempOffer.selected = true;
+        axios.put(
+          `https://localhost:5001/api/Offers/${e.target.id}`,
+          tempOffer
+        );
+        axios.put(
+          `https://localhost:5001/api/Projects/${response.data.projectId}`,
+          tempProject
+        );
+        success();
+      })
+      .catch(function (error) {
+        err();
       });
   };
-  console.log(item.selected === true ? console.log("bitti") : "");
   const loggedIn = JSON.parse(localStorage.getItem("user"));
   return (
     <>
-      {!sec === true ? (
+      {!selected === true ? (
         <>
-          <div className="faruk">SEÇİLDİ!</div>
+          <div className="selectedOffer">SEÇİLDİ!</div>
           <div style={{ opacity: ".5" }}>
             <div className="offer-header">
               <img
@@ -59,7 +79,7 @@ function Offer({ item, user_id, sec = true }) {
               </div>
             </div>
             <div className="offer-detail">{item.details}</div>
-            {sec && user_id === loggedIn.userId ? (
+            {selected && user_id === loggedIn.userId ? (
               <div
                 onClick={updatePost}
                 id={item.offerId}
@@ -93,7 +113,7 @@ function Offer({ item, user_id, sec = true }) {
             </div>
           </div>
           <div className="offer-detail">{item.details}</div>
-          {sec && user_id === loggedIn.userId ? (
+          {selected && user_id === loggedIn.userId ? (
             <div
               onClick={updatePost}
               id={item.offerId}
@@ -106,12 +126,6 @@ function Offer({ item, user_id, sec = true }) {
           )}
         </>
       )}
-
-      {/* {!sec && (
-        <>
-          <h2>Teklif Seçildi.</h2>
-        </>
-      )} */}
       <Toaster
         position="bottom-center"
         toastOptions={{

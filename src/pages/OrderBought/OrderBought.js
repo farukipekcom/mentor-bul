@@ -4,8 +4,6 @@ import {
   ProfileMenuCard,
   OrderStatusCard,
   OrderDetails,
-  OrderProcess,
-  Reviewed,
   PaymentForm,
   CommentCardOrder,
   CommentCardForm,
@@ -14,60 +12,50 @@ import { slide as Menu } from "react-burger-menu";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 function OrderBought() {
+  const success = () =>
+    toast.success("Başarıyla Güncellendi!", {
+      position: "bottom-center",
+    });
   let { slug } = useParams();
   const [order, setOrder] = useState();
   const [project, setProject] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const [asama2, setAsama2] = useState(0);
+  const [isLoading2, setIsLoading2] = useState(false);
+  const [comment, setComment] = useState();
   useEffect(() => {
-    const fetchItems = async () => {
+    const fetchOrder = async () => {
       const result = await axios(
         `https://localhost:5001/api/Orders/GetOrderDetails/${slug}`
       );
       setOrder(result.data);
       setProject(result.data.project);
-      console.log("TAMAMI", result.data);
       setIsLoading(true);
-      setAsama2(1);
     };
-    const fetchItemss = async () => {
+    const fetchComments = async () => {
       const result = await axios(
-        "https://localhost:5001/api/Orders/GetOrderDetails/1"
+        `https://localhost:5001/api/Comments/GetCommentDetails/${order.projectId}`
       );
-      setSiparis(result.data);
-      console.log("GELEN DATA!!!!!", result.data);
-      setYukleniyor(true);
+      setComment(result.data);
+      setIsLoading2(true);
     };
-    const fetchItemsss = async () => {
-      const result = await axios(
-        "https://localhost:5001/api/Comments/GetCommentDetails/1"
-      );
-      setYorum(result.data);
-      console.log("GELEN DATA!!!!!", result.data);
-      setYukleniyorr(true);
-    };
-    fetchItemsss();
-    fetchItemss();
-    fetchItems();
-  }, []);
-  // --------------------------------------------------------------------------------------------------------------------------------------------
-  const [siparis, setSiparis] = useState();
-  const [yorum, setYorum] = useState();
-  const [yukleniyor, setYukleniyor] = useState(false);
-  const [yukleniyorr, setYukleniyorr] = useState(false);
+    fetchOrder();
+    isLoading && fetchComments();
+  }, [isLoading]);
   useEffect(() => {}, []);
-  console.log("ETIKET", yukleniyor && siparis);
-  var yeni = yukleniyor && siparis;
-  function updatePost(e) {
-    yeni.status = e.target.id;
-    console.log("YENI", yeni);
-    console.log("BASILDI");
-    axios.put("https://localhost:5001/api/Orders/1", yeni).then((response) => {
-      console.log(response.status);
-    });
-  }
-  yukleniyorr && console.log(yorum);
+  var updatedData = isLoading && order;
+  const updatePost = (e) => {
+    updatedData.status = e.target.id;
+    axios
+      .put(`https://localhost:5001/api/Orders/${slug}`, updatedData)
+      .then((response) => {
+        success();
+        setTimeout(function () {
+          window.location.reload();
+        }, 500);
+      });
+  };
   const loggedIn = JSON.parse(localStorage.getItem("user"));
   return (
     <div className="main">
@@ -91,95 +79,106 @@ function OrderBought() {
               updatedDate={order.updatedAt}
             />
           )}
-          {/* ---------------- */}
-          {isLoading && order.status === 0 ? (
-            <>
-              <h3>
-                siparis basariyla olusturuldu. farukipekcoma haber verildi.
-                hazir oldugunda odeme adimina gececeksin
-              </h3>
-            </>
-          ) : (
-            ""
+          {isLoading && order.status === 0 && (
+            <div className="orderStatusStage">
+              <div className="orderStatusStage-heading">Sipariş Durumu</div>
+              <div className="orderStatusStage-text">
+                Sipariş başarıyla oluşturuldu.
+                <b> {order.offer.user.username}</b> tarafından onay bekleniyor!
+              </div>
+            </div>
           )}
-          {isLoading && order.status === 1 ? (
+          {isLoading && order.status === 1 && (
             <>
-              <h3>faruk hazir. odemeyi yapip sureci baslat.</h3>
-              <PaymentForm updatePost={updatePost} />
+              <div className="orderStatusStage">
+                <div className="orderStatusStage-heading">Sipariş Durumu</div>
+                <div className="orderStatusStage-text">
+                  <b>{order.offer.user.username}</b> hazır! <br />
+                  Şimdi ödemeyi yapıp süreci başlat.
+                </div>
+              </div>
+              <PaymentForm price={order.offer.price} updatePost={updatePost} />
             </>
-          ) : (
-            ""
           )}
-          {isLoading && order.status === 2 ? (
-            <>
-              <h3>
-                calisma suresi basladi, artik calisiyorum. burada bitirdim
-                butonu olacak.
-              </h3>
-              <button id="3" onClick={updatePost}>
-                teslim et
-              </button>
-            </>
-          ) : (
-            ""
+          {isLoading && order.status === 2 && (
+            <div className="orderStatusStage">
+              <div className="orderStatusStage-heading">Sipariş Durumu</div>
+              <div className="orderStatusStage-text">
+                <b>{order.offer.user.username}</b> şu an proje üzerinde
+                çalışıyor!
+              </div>
+            </div>
           )}
-          {isLoading && order.status === 3 ? (
-            <>
-              <h3>is tamamlandi. simdi kontrol ediyorum.</h3>
-              <button id="4" onClick={updatePost}>
-                guzel olmus. onayladim.
-              </button>
-            </>
-          ) : (
-            ""
+          {isLoading && order.status === 3 && (
+            <div className="orderStatusStage">
+              <div className="orderStatusStage-heading">Sipariş Durumu</div>
+              <div className="orderStatusStage-text">
+                Teslim edilen projeyi kontrol et ve her şey güzelse onayla!
+              </div>
+              <div className="orderStatusStage-container">
+                <button
+                  id="4"
+                  onClick={updatePost}
+                  className="orderStatusStage-confirmation"
+                >
+                  Onayla
+                </button>
+                <button
+                  id="10"
+                  onClick={updatePost}
+                  className="orderStatusStage-revision"
+                >
+                  Revize iste
+                </button>
+              </div>
+            </div>
           )}
           {isLoading &&
-          yukleniyorr &&
-          !(
-            yorum[0]?.userId === loggedIn.userId ||
-            yorum[1]?.userId === loggedIn.userId
-          ) ? (
-            <>
-              <h3>yorum vakti</h3>
+            isLoading2 &&
+            order.status > 3 &&
+            !(
+              comment[0]?.userId === loggedIn.userId ||
+              comment[1]?.userId === loggedIn.userId
+            ) && (
               <CommentCardForm
+                slug={slug}
                 id={5}
                 user_id={loggedIn.userId}
                 project_id={order.project.projectId}
                 owner_id={order.offer.userId}
               />
-            </>
-          ) : (
-            ""
-          )}
+            )}
           {isLoading &&
-          yukleniyorr &&
-          (yorum[0]?.userId || yorum[1]?.userId) ? (
-            <>
+            isLoading2 &&
+            (comment[0]?.userId || comment[1]?.userId) && (
               <CommentCardOrder
                 user_id={order.offer.user.userId}
                 username={order.offer.user.username}
               />
-            </>
-          ) : (
-            ""
-          )}
-          {/* ---------------- */}
-          {isLoading && order.status === 15 ? (
+            )}
+          {isLoading && (
             <OrderDetails
               project={project}
               order={order}
               price={order.price}
               orderDate={order.createdAt}
             />
-          ) : (
-            ""
           )}
-          {/* <Reviewed /> */}
-          <span className="orderProcessHeading">Sipariş Süreci</span>
-          <OrderProcess type="1" />
         </div>
       </div>
       <Footer />
+      <Toaster
+        position="bottom-center"
+        toastOptions={{
+          success: {
+            duration: 3000,
+            theme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+        }}
+      />
     </div>
   );
 }

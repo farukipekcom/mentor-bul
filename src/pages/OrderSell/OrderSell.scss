@@ -40,3 +40,43 @@
     color: #fff;
   }
 }
+
+.orderStatusStage {
+  background-color: #fff;
+  box-shadow: $boxshadow;
+  border-radius: $radius;
+  width: 100%;
+  @extend %flexvertical;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 24px;
+  position: relative;
+  border: 2px solid black;
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+  &-heading {
+    @extend %category;
+  }
+  &-text {
+    @extend %text;
+  }
+  &-confirmation {
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 24px;
+    @extend %icontext;
+  }
+  &-revision {
+    background-color: rgb(192, 22, 22);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 24px;
+    @extend %icontext;
+  }
+  &-container {
+    display: flex;
+    gap: 16px;
+  }
+}

@@ -6,33 +6,9 @@ import toast, { Toaster } from "react-hot-toast";
 import { useState, useEffect } from "react";
 import moment from "moment";
 import { Rating } from "react-simple-star-rating";
-function CommentCardForm({ project_id, user_id, owner_id, id }) {
-  console.log("IIID", id);
-  useEffect(() => {
-    const fetchItemss = async () => {
-      const result = await axios(
-        "https://localhost:5001/api/Orders/GetOrderDetails/1"
-      );
-      setSiparis(result.data);
-      console.log("GELEN DATA!!!!!", result.data);
-      setYukleniyor(true);
-    };
-    fetchItemss();
-  }, []);
-  const [siparis, setSiparis] = useState();
-  const [yukleniyor, setYukleniyor] = useState(false);
-  console.log("ETIKET", yukleniyor && siparis);
-  var yeni = yukleniyor && siparis;
-  const updatePost = (e) => {
-    yeni.status = id;
-    console.log("YENI", yeni);
-    console.log("BASILDI");
-    axios.put("https://localhost:5001/api/Orders/1", yeni).then((response) => {
-      console.log(response.status);
-    });
-  };
-  console.log("!!!!!!", user_id);
-  console.log("!!!!!!project_id", project_id);
+function CommentCardForm({ project_id, user_id, owner_id, id, slug }) {
+  const [order, setOrder] = useState();
+  const [loading, setLoading] = useState(false);
   const [rating1, setRating1] = useState();
   const [rating2, setRating2] = useState();
   const [rating3, setRating3] = useState();
@@ -44,6 +20,36 @@ function CommentCardForm({ project_id, user_id, owner_id, id }) {
     toast.error("Hata Oluştu!", {
       position: "bottom-center",
     });
+  useEffect(() => {
+    const fetchOrder = async () => {
+      const result = await axios(
+        `https://localhost:5001/api/Orders/GetOrderDetails/${slug}`
+      );
+      setOrder(result.data);
+      setLoading(true);
+    };
+    fetchOrder();
+  }, []);
+  var tempOrder = loading && order;
+  const updatePost = () => {
+    tempOrder.status = id;
+    axios.put(`https://localhost:5001/api/Orders/${slug}`, tempOrder);
+  };
+  const temizle = () => {
+    setformValue({
+      commentText: "",
+      commentDate: moment().format("yyyy-MM-DDTHH:mm").toString(),
+      commentRate: "",
+      quality: "",
+      timing: "",
+      communication: "",
+      userId: "",
+      projectId: "",
+    });
+    setRating1(0);
+    setRating2(0);
+    setRating3(0);
+  };
   const [formValue, setformValue] = useState({
     commentText: "",
     commentDate: moment().format("yyyy-MM-DDTHH:mm").toString(),
@@ -83,26 +89,14 @@ function CommentCardForm({ project_id, user_id, owner_id, id }) {
       .post("https://localhost:5001/api/Comments", formValue)
       .then((response) => {
         basarili();
+        setTimeout(function () {
+          window.location.reload();
+        }, 500);
         temizle();
       })
       .catch(function (error) {
         hatali();
       });
-  };
-  const temizle = () => {
-    setformValue({
-      commentText: "",
-      commentDate: moment().format("yyyy-MM-DDTHH:mm").toString(),
-      commentRate: "",
-      quality: "",
-      timing: "",
-      communication: "",
-      userId: "",
-      projectId: "",
-    });
-    setRating1(0);
-    setRating2(0);
-    setRating3(0);
   };
   return (
     <form onSubmit={handleSubmit} className="leaveReview">
