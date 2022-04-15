@@ -13,7 +13,6 @@ function OfferProjects() {
         `https://localhost:5001/api/Offers/GetUserOffer/1`
       );
       setOffer(result.data);
-      console.log("TAMAMI", result.data);
       setIsLoading(true);
     };
     fetchItems();
@@ -35,8 +34,8 @@ function OfferProjects() {
           <span className="heading">Teklif Verdiğim Hizmetler</span>
           <div className="list">
             {isLoading &&
-              offer.map((item) => (
-                <ProjectOfferCard item={item} value="Mentee" />
+              offer.map((item, index) => (
+                <ProjectOfferCard key={index} item={item} value="Mentee" />
               ))}
           </div>
         </div>

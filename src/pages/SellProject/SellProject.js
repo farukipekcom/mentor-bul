@@ -35,8 +35,8 @@ function SellProject() {
           <span className="heading">Mentee’lere vermiş olduğum hizmetler</span>
           <div className="list">
             {isLoading ? (
-              order.map((item) => (
-                <ProjectSummaryCard item={item} value="Mentee" />
+              order.map((item, index) => (
+                <ProjectSummaryCard key={index} item={item} value="Mentee" />
               ))
             ) : (
               <Loading />

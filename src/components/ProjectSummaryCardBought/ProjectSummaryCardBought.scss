@@ -1,38 +1,52 @@
 @import "../../sass/main.scss";
-.projectSummaryCard {
+.projectSummaryCards {
   @extend %flexvertical;
   align-items: flex-start;
+  justify-content: space-between;
   background-color: #fff;
   border-radius: $radius;
   box-shadow: $boxshadow;
   padding: 24px;
   width: 100%;
-  margin-top: 24px;
   position: relative;
-  @include mq("tablet") {
-    width: calc(50% - 15px);
-  }
-  @include mq("desktop") {
-    width: calc(100%);
-  }
-  // 992 - 1280
-  @media (min-width: 1080px) and (max-width: 1280px) {
-    width: calc(50% - 15px);
-  }
-  @include mq("large") {
-    flex-direction: row;
+  gap: 16px;
+  &-top {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-  }
-
-  &-profile {
-    @extend %flex;
-    &-photo {
-      width: 42px;
-      height: 42px;
-      border-radius: $radius;
+    justify-content: space-between;
+    @include mq("tablet") {
+      flex-direction: row;
+      align-items: center;
+    }
+    &-left {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 350px;
+      max-width: 350px;
+      &-project {
+        display: flex;
+        flex-direction: column;
+        &-heading {
+          @extend %subtext1;
+          color: $gray;
+        }
+        &-title {
+          @extend %category;
+        }
+      }
+    }
+    &-date {
+      @extend %flex;
+      min-width: 150px;
+      max-width: 150px;
+      margin-top: 12px;
+      @include mq("tablet") {
+        margin-top: 0px;
+      }
     }
     &-info {
-      margin-left: 12px;
       @extend %flexvertical;
       align-items: flex-start;
       &-title {
@@ -43,77 +57,100 @@
         @extend %buttontext;
       }
     }
-  }
-  &-date {
-    @extend %flex;
-    margin-left: 12px;
-    margin-top: 24px;
-    @include mq("desktop") {
+    &-price {
+      @extend %title;
+      min-width: 120px;
+      max-width: 120px;
+      margin-top: 12px;
+      @include mq("tablet") {
+        margin-top: 0px;
+      }
     }
-    @include mq("large") {
-      margin-left: unset;
-      margin-top: unset;
-    }
-    .confirmationdate {
-      margin-left: 42px;
-    }
-    .orderdate {
-      margin-left: 42px;
-    }
-  }
-  &-info {
-    @extend %flexvertical;
-    margin-left: 12px;
-    align-items: flex-start;
-    &-title {
-      @extend %subtext1;
-      color: $gray;
-    }
-    &-text {
-      @extend %buttontext;
+
+    &-arrow {
+      transition: margin-left 0.5s;
+      cursor: pointer;
+      border: 2px solid #000;
+      padding: 4px;
+      min-height: 36px;
+      max-height: 36px;
+      min-width: 36px;
+      max-width: 36px;
+      @extend %flexcenter;
+      border-radius: $radius;
+      transition: 0.5s right;
+      display: none;
+      @include mq("tablet") {
+        display: flex;
+      }
     }
   }
-  &-status {
-    background-color: $secondary_soft;
-    color: $secondary;
-    padding: 4px 24px;
-    @extend %subtext2;
-    @extend %flexcenter;
-    border-radius: $radius_small;
-    cursor: pointer;
-    height: 40px;
-    margin-left: 52px;
-    margin-top: 12px;
-    @include mq("desktop") {
+  &-bottom {
+    display: flex;
+    flex-direction: column;
+    @include mq("tablet") {
+      flex-direction: row;
     }
-    @include mq("large") {
-      margin-left: 42px;
-      margin-top: unset;
+    justify-content: space-between;
+    width: 100%;
+    &-profile {
+      @extend %flex;
+      &-photo {
+        width: 42px;
+        height: 42px;
+        border-radius: $radius;
+      }
+      &-info {
+        @extend %flexvertical;
+        align-items: flex-start;
+        margin-left: 12px;
+        &-title {
+          @extend %subtext1;
+          color: $gray;
+        }
+        &-text {
+          @extend %buttontext;
+        }
+      }
     }
-  }
-  &-price {
-    @extend %title;
-    margin-left: 52px;
-    margin-top: 12px;
-    @include mq("desktop") {
+    &-status {
+      background-color: $secondary_soft;
+      color: $secondary;
+      padding: 4px 24px;
+      @extend %subtext2;
+      @extend %flexcenter;
+      border-radius: $radius_small;
+      cursor: pointer;
+      height: 40px;
+      margin-top: 12px;
+      @include mq("desktop") {
+      }
+      @include mq("large") {
+        margin-top: unset;
+      }
     }
-    @include mq("large") {
-      margin-top: unset;
-      margin-left: 42px;
+    &-statusv2 {
+      &-green {
+        @extend %flexcenter;
+        background-color: $secondary;
+        color: #fff;
+        @extend %category;
+        height: 36px;
+        padding: 4px 16px;
+        border-radius: $radius;
+      }
+      &-orange {
+        background-color: rgb(244, 87, 34);
+        @extend %flexcenter;
+        color: #fff;
+        @extend %category;
+        height: 36px;
+        padding: 4px 16px;
+        border-radius: $radius;
+      }
     }
   }
 
-  &-arrow {
-    transition: margin-left 0.5s;
-    cursor: pointer;
-    border: 2px solid #000;
-    padding: 4px;
-    height: 36px;
-    width: 36px;
-    @extend %flexcenter;
-    border-radius: $radius;
-    transition: 0.5s right;
-  }
   border: 2px solid transparent;
   transition: 0.5s border;
   &:hover {

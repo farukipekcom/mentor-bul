@@ -39,7 +39,8 @@ function OrderSell() {
     };
     fetchOrder();
     isLoading && fetchComments();
-  }, [isLoading, order.projectId, slug]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading]);
   const loggedIn = JSON.parse(localStorage.getItem("user"));
   var updatedData = isLoading && order;
   const updatePost = (e) => {

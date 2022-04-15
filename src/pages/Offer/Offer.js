@@ -30,7 +30,8 @@ function Offer() {
       project.offers
         .filter((key) => key.selected === true)
         .map((item) => setSelectedOffer(true));
-  }, [isLoading, project.offers, username]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading]);
   const averageBid =
     isLoading &&
     project.offers.reduce((acc, item) => acc + item.price, 0) /

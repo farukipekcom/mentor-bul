@@ -39,8 +39,12 @@ function BoughtProject() {
           <span className="heading">Mentör’lerden almış olduğum hizmetler</span>
           <div className="list">
             {isLoading ? (
-              order.map((item) => (
-                <ProjectSummaryCardBought item={item} value="Mentee" />
+              order.map((item, index) => (
+                <ProjectSummaryCardBought
+                  key={index}
+                  item={item}
+                  value="Mentör"
+                />
               ))
             ) : (
               <Loading />
