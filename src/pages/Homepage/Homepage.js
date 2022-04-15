@@ -17,7 +17,14 @@ function Homepage({ e }) {
   const [isLoading2, setIsLoading2] = useState(false);
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios("https://localhost:5001/api/projects");
+      const result = await axios(
+        "https://localhost:5001/api/Projects/GetAllProjects",
+        {
+          params: {
+            count: 4,
+          },
+        }
+      );
       setProject(result.data);
       setIsLoading(true);
     };
@@ -25,7 +32,11 @@ function Homepage({ e }) {
   }, []);
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios("https://localhost:5001/api/users");
+      const result = await axios("https://localhost:5001/api/users", {
+        params: {
+          count: 4,
+        },
+      });
       setUser(result.data);
       setIsLoading2(true);
     };

@@ -12,6 +12,7 @@
   }
   &-list {
     @extend %flexvertical;
+    flex-wrap: wrap;
     @include mq("tablet") {
       flex-direction: row;
     }
@@ -24,6 +25,15 @@
     gap: 12px;
     .projectSquareCard {
       border: 1px solid $bordergray;
+    }
+    .projectSquareCard {
+      width: calc(50% - 6px);
+    }
+    .projectSquareCard:nth-child(2n-1):last-child {
+      width: 100%;
+      a {
+        width: 100%;
+      }
     }
   }
 }

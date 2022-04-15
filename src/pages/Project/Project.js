@@ -32,7 +32,8 @@ function Project() {
     };
     fetchItems();
     isLoading && fetchItemss();
-  }, [isLoading, project.userId, slug]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       {isLoading ? (
