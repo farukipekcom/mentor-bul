@@ -42,7 +42,7 @@ function OrderBought() {
     };
     fetchOrder();
     isLoading && fetchComments();
-  }, [isLoading]);
+  }, [isLoading, order.projectId, slug]);
   useEffect(() => {}, []);
   var updatedData = isLoading && order;
   const updatePost = (e) => {

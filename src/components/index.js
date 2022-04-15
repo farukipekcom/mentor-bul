@@ -49,7 +49,6 @@ import MessagesContent from "./MessagesContent/MessagesContent";
 import ProjectOfferCard from "./ProjectOfferCard/ProjectOfferCard";
 import OrderStatusCard from "./OrderStatusCard/OrderStatusCard";
 import OrderDetails from "./OrderDetails/OrderDetails";
-import OrderProcess from "./OrderProcess/OrderProcess";
 import Reviewed from "./Reviewed/Reviewed";
 import CommentCardForm from "./CommentCardForm/CommentCardForm";
 import RequestCategoryItemCard from "./RequestCategoryItemCard/RequestCategoryItemCard";
@@ -109,7 +108,6 @@ export {
   ProjectOfferCard,
   OrderStatusCard,
   OrderDetails,
-  OrderProcess,
   Reviewed,
   CommentCardForm,
   CommentCardOrder,

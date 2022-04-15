@@ -1,10 +1,8 @@
 import "./ProjectOfferCard.scss";
-import { profilePhoto } from "../../images";
 import { ArrowRight } from "../../icons";
 import Moment from "react-moment";
 import "moment/locale/tr";
 function ProjectOfferCard({ value, item }) {
-  const loggedIn = JSON.parse(localStorage.getItem("user"));
   console.log(item);
   return (
     <a href={`project/${item.project.slug}`} className="ProjectOfferCard">

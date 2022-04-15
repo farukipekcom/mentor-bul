@@ -38,7 +38,7 @@ function Profile() {
           return accumulator + item.commentRate;
         }, 0) / comment.length
       );
-  }, [isLoading]);
+  }, [comment, isLoading]);
   var son = Math.round(total * 2) / 2;
   const loggedIn = JSON.parse(localStorage.getItem("user"));
   return (

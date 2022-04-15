@@ -87,11 +87,6 @@
         @extend %icontext;
         color: $gray;
         margin-top: 2px;
-
-        svg {
-          color: $orange;
-          margin-top: -3px;
-        }
         &-count {
           line-height: 1.5;
           margin-left: 4px;

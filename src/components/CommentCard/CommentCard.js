@@ -6,9 +6,9 @@ import "moment/locale/tr";
 import { Rating } from "react-simple-star-rating";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { CommentCardForm } from "../";
 function CommentCard({ user_id, username }) {
   const [rating, setRating] = useState(0);
+  const [tags, setTags] = useState();
   const [comment, setComment] = useState();
   const [count, setCount] = useState();
   const [timing, setTiming] = useState();
@@ -16,8 +16,9 @@ function CommentCard({ user_id, username }) {
   const [communication, setCommunication] = useState();
   const [total, setTotal] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoading2, setIsLoading2] = useState(false);
   useEffect(() => {
-    const fetchItems = async () => {
+    const fetchComments = async () => {
       const result = await axios(
         `https://localhost:5001/api/Comments/GetCommentList/${user_id}`
       );
@@ -25,13 +26,13 @@ function CommentCard({ user_id, username }) {
       setCount(result.data.length);
       setIsLoading(true);
     };
-    fetchItems();
-  }, []);
-  const handleRating = (rate) => {
-    setRating(rate / 20);
-  };
-
-  useEffect(() => {
+    const fetchTags = async () => {
+      const result = await axios("https://localhost:5001/api/tags");
+      setTags(result.data);
+      setIsLoading2(true);
+    };
+    fetchComments();
+    fetchTags();
     var totalQuality =
       isLoading &&
       comment.reduce(function (accumulator, item) {
@@ -53,7 +54,10 @@ function CommentCard({ user_id, username }) {
     setTotal(
       Number(isLoading && (quality + timing + communication) / 3).toFixed(2)
     );
-  }, [isLoading, total]);
+  }, [comment, communication, count, isLoading, quality, timing, user_id]);
+  const handleRating = (rate) => {
+    setRating(rate / 20);
+  };
   return (
     <div className="commentCard">
       {isLoading ? (
@@ -163,15 +167,29 @@ function CommentCard({ user_id, username }) {
           comment.map((item, index) => (
             <div className="commentCard-list-item" key={index}>
               <div className="commentCard-list-item-left">
-                <img src={item.user.profilePhoto} alt="" />
-                <div className="commentCard-list-item-left-profile">
-                  <div className="commentCard-list-item-left-profile-name">
-                    {item.user.firstName} {item.user.lastName}
-                  </div>
-                  <div className="commentCard-list-item-left-profile-location">
-                    {item.user.city}, {item.user.country}
+                <div className="commentCard-list-item-left-container">
+                  <img src={item.user.profilePhoto} alt="" />
+                  <div className="commentCard-list-item-left-profile">
+                    <div className="commentCard-list-item-left-profile-name">
+                      {item.user.firstName} {item.user.lastName}
+                    </div>
+                    <div className="commentCard-list-item-left-profile-location">
+                      {item.user.city}, {item.user.country}
+                    </div>
                   </div>
                 </div>
+                <a
+                  href={`../project/${item.project.slug}`}
+                  className="commentCard-list-item-right-category-name"
+                >
+                  <div className="commentCard-list-item-right-category">
+                    <span className="commentCard-list-item-right-category-heading">
+                      Proje Adı:
+                    </span>
+
+                    <span>{item.project.title}</span>
+                  </div>
+                </a>
               </div>
               <div className="commentCard-list-item-right">
                 <div className="commentCard-list-item-right-info">
@@ -196,14 +214,33 @@ function CommentCard({ user_id, username }) {
                 <div className="commentCard-list-item-right-text">
                   {item.commentText}
                 </div>
-                {/* <div className="commentCard-list-item-right-category">
-                  E-Ticaret
-                </div> */}
+                <div className="commentCard-list-item-right-tags">
+                  {isLoading &&
+                    comment.map((item) =>
+                      item.project.tagsId.split(",").map(
+                        (items, index) =>
+                          isLoading2 &&
+                          tags
+                            .filter(
+                              (itemss) => itemss.tagId === parseInt(items)
+                            )
+                            .map((tag) => {
+                              return (
+                                <div
+                                  className="commentCard-list-item-right-tags-item"
+                                  key={index}
+                                >
+                                  <a href={`../tags/${tag.slug}`}>{tag.name}</a>
+                                </div>
+                              );
+                            })
+                      )
+                    )}
+                </div>
               </div>
             </div>
           ))}
       </div>
-      {/* <CommentCardForm project_id={project_id} /> */}
     </div>
   );
 }

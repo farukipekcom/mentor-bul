@@ -11,7 +11,7 @@ function PaymentForm({ updatedData, price, id }) {
     toast.success("Ödeme Başarılı!", {
       position: "bottom-center",
     });
-  const [formValue, setformValue] = useState({
+  const [formValue] = useState({
     orderId: id,
     date: moment().format("yyyy-MM-DDTHH:mm").toString(),
     status: 1,

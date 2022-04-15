@@ -2,37 +2,23 @@ import "./Login.scss";
 import { Google } from "../../icons";
 import { loginBackgroundItem } from "../../images";
 import { FormInputTextCard } from "../../components/";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import slug from "slug";
-import moment from "moment";
 import { useNavigate } from "react-router-dom";
 function Login() {
   const history = useNavigate();
-  const basarili = () =>
-    toast.success("Başarıyla Eklendi!", {
-      position: "bottom-center",
-    });
-  const hatali = () =>
-    toast.error("Hata Oluştu!", {
-      position: "bottom-center",
-    });
-  const [user, setUser] = useState(false);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [isLoading, setIsLoading] = useState(false);
-  // useEffect(() => {
-  //   const fetchItems = async () => {
-  //     const result = await axios(
-  //       `https://localhost:5001/api/Users/GetUserKullanici?email=${email}&password=${password}`
-  //     );
-  //     setUser(result.data);
-  //     console.log("RESULT", result.data);
-  //     setIsLoading(true);
-  //   };
-  //   fetchItems();
-  // }, []);
+  const success = () =>
+    toast.success("Giriş Başarılı!", {
+      position: "bottom-center",
+    });
+  const err = () =>
+    toast.error("Girdiğiniz bilgiler yanlış!", {
+      position: "bottom-center",
+    });
+
   const handleChangeEmail = (e) => {
     e.preventDefault();
     setEmail(e.target.value);
@@ -45,21 +31,17 @@ function Login() {
     e.preventDefault();
     axios
       .get(
-        `https://localhost:5001/api/Users/GetUserKullanici?email=${email}&password=${password}`
+        `https://localhost:5001/api/Users/GetUser?email=${email}&password=${password}`
       )
       .then((response) => {
-        basarili();
-        localStorage.setItem("email", email);
-        localStorage.setItem("password", password);
-        localStorage.setItem("username", response.data.username);
         localStorage.setItem("user", JSON.stringify(response.data));
+        success();
         history("/");
       })
       .catch(function (error) {
-        hatali();
+        err();
       });
   };
-
   return (
     <div className="login">
       <div className="login-left">
@@ -95,6 +77,7 @@ function Login() {
             <div className="login-left-input login-left-password">
               <span className="login-left-input-heading">Şifre</span>
               <FormInputTextCard
+                type="password"
                 placeholder="En az 8 karakter"
                 name="password"
                 value={password}
@@ -119,7 +102,7 @@ function Login() {
             <div className="login-left-signup">
               Henüz kayıt olmadın mı? <a href="/signup">Yeni Hesap Oluştur</a>
             </div>
-            <div className="login-left-footer">Mentörbul © 2021</div>
+            <div className="login-left-footer">Mentörbul © 2022</div>
           </div>
         </form>
       </div>

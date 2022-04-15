@@ -1,4 +1,3 @@
-import { profilePhoto } from "../../images";
 import "./WelcomeCard.scss";
 
 function WelcomeCard() {

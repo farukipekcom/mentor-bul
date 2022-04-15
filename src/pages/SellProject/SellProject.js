@@ -14,11 +14,10 @@ function SellProject() {
         `https://localhost:5001/api/Orders/GetOrderList/${loggedIn.userId}`
       );
       setOrder(result.data);
-      console.log("SXX", result.data);
       setIsLoading(true);
     };
     fetchItems();
-  }, []);
+  }, [loggedIn.userId]);
   return (
     <div className="main">
       <Header />

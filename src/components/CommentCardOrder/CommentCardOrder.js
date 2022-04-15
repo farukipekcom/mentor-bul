@@ -1,12 +1,10 @@
 import "./CommentCardOrder.scss";
 import { Reliability, Communication, Timing, Star } from "../../icons";
 import { Loading } from "..";
-import Moment from "react-moment";
 import "moment/locale/tr";
 import { Rating } from "react-simple-star-rating";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { CommentCardForm } from "..";
 function CommentCardOrder({ user_id, username }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState();
@@ -26,7 +24,7 @@ function CommentCardOrder({ user_id, username }) {
       setIsLoading(true);
     };
     fetchItems();
-  }, []);
+  }, [user_id]);
   const handleRating = (rate) => {
     setRating(rate / 20);
   };
@@ -53,7 +51,7 @@ function CommentCardOrder({ user_id, username }) {
     setTotal(
       Number(isLoading && (quality + timing + communication) / 3).toFixed(2)
     );
-  }, [isLoading, total]);
+  }, [comment, communication, count, isLoading, quality, timing]);
   return (
     <div className="commentCard">
       {isLoading ? (

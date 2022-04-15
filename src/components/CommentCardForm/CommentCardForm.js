@@ -29,7 +29,7 @@ function CommentCardForm({ project_id, user_id, owner_id, id, slug }) {
       setLoading(true);
     };
     fetchOrder();
-  }, []);
+  }, [slug]);
   var tempOrder = loading && order;
   const updatePost = () => {
     tempOrder.status = id;

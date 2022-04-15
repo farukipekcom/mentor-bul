@@ -3,7 +3,6 @@ import { ArrowRight } from "../../icons";
 import Moment from "react-moment";
 import "moment/locale/tr";
 function ProjectSummaryCardBought({ item, value }) {
-  console.log(item);
   return (
     <a href={`/OrderBought/${item.orderId}`} className="projectSummaryCard">
       <div className="projectSummaryCard-profile">

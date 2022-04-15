@@ -2,17 +2,16 @@ import "./Signup.scss";
 import { Google } from "../../icons";
 import { signupBackgroundItem } from "../../images";
 import { FormInputTextCard } from "../../components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import slug from "slug";
 import moment from "moment";
 function Signup() {
-  const basarili = () =>
+  const success = () =>
     toast.success("Başarıyla Eklendi!", {
       position: "bottom-center",
     });
-  const hatali = () =>
+  const err = () =>
     toast.error("Hata Oluştu!", {
       position: "bottom-center",
     });
@@ -26,13 +25,8 @@ function Signup() {
     firstName: "",
     lastName: "",
     email: "",
-    username: 2,
+    username: "",
     password: "",
-    about: "",
-    profilePhoto: "",
-    phoneNumber: "",
-    city: "",
-    country: "",
     createdAt: moment().format("yyyy-MM-DDTHH:mm").toString(),
     updatedAt: moment().format("yyyy-MM-DDTHH:mm").toString(),
   });
@@ -47,10 +41,10 @@ function Signup() {
     axios
       .post("https://localhost:5001/api/Users", formValue)
       .then((response) => {
-        basarili();
+        success();
       })
       .catch(function (error) {
-        hatali();
+        err();
       });
   };
   return (
@@ -123,6 +117,7 @@ function Signup() {
             <div className="login-left-input login-left-password">
               <span className="login-left-input-heading">Şifre *</span>
               <FormInputTextCard
+                type="password"
                 placeholder="En az 8 karakter"
                 name="password"
                 value={formValue.password}
@@ -145,7 +140,7 @@ function Signup() {
             <div className="login-left-signup">
               Hesabın var mı? <a href="/login">Giriş Yap</a>
             </div>
-            <div className="login-left-footer">Mentörbul © 2021</div>
+            <div className="login-left-footer">Mentörbul © 2022</div>
           </div>
         </form>
       </div>

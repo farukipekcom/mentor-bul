@@ -1,23 +1,17 @@
 import "./Header.scss";
-import { profilePhoto } from "../../../images";
 import { ArrowBottom, Message, Plus, Search, Profile } from "../../../icons";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 function Header() {
   const loggedIn = JSON.parse(localStorage.getItem("user"));
-
   let navigate = useNavigate();
   const [active, setActive] = useState();
   const [project, setProject] = useState([]);
   const [text, setText] = useState("");
-  const [suggestList, setSuggestList] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
-  const [suggestId, setSuggestId] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [yaz, setYaz] = useState();
-  const degistir = () => {
+  const changeActive = () => {
     setActive(!active);
   };
   const handlesubmit = async (e) => {
@@ -31,7 +25,6 @@ function Header() {
     const loadProject = async () => {
       const response = await axios.get("https://localhost:5001/api/Projects");
       setProject(response.data);
-      setIsLoading(true);
     };
     loadProject();
   }, []);
@@ -48,8 +41,6 @@ function Header() {
     setText(text);
   };
   const onSuggestHandler = (text, slug) => {
-    setSuggestId((prevState) => [...prevState]);
-    setSuggestList((prevState) => [...prevState, [text]]);
     setText("");
     setSuggestions();
     navigate(`../../project/${slug}`);
@@ -60,7 +51,6 @@ function Header() {
         <a href="/">MENTÖRBUL</a>
       </div>
       <div className="header-search">
-        {/* <a href="/search"> */}
         <form onSubmit={handlesubmit}>
           <input
             type="text"
@@ -84,7 +74,6 @@ function Header() {
             <Search />
           </button>
         </form>
-        {/* </a> */}
       </div>
       <div className="header-right">
         <a href="/messages">
@@ -121,10 +110,10 @@ function Header() {
         </div>
       </div>
       <div className="mobile-search">
-        <button onClick={degistir}>
+        <button onClick={changeActive}>
           <Search />
         </button>
-        {active ? (
+        {active && (
           <div className="mobile-search-box">
             <Search />
             <input
@@ -133,8 +122,6 @@ function Header() {
               placeholder="Arama Yapınız.."
             />
           </div>
-        ) : (
-          ""
         )}
       </div>
       <div className="mobile-profile">

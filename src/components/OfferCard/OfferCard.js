@@ -15,7 +15,7 @@ function Offer({ project, item, user_id, selected = true }) {
     toast.error("Teklif Seçerken Hata Oluştu!", {
       position: "bottom-center",
     });
-  const [formValue, setformValue] = useState({
+  const [formValue] = useState({
     projectId: item.projectId,
     offerId: item.offerId,
     price: item.price,

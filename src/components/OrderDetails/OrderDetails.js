@@ -1,5 +1,4 @@
 import "./OrderDetails.scss";
-import { user1 } from "../../images";
 import Moment from "react-moment";
 import "moment/locale/tr";
 function OrderDetails({ project, order, price, orderDate }) {

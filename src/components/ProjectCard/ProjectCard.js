@@ -4,13 +4,13 @@ import moment from "moment";
 import { useState, useEffect } from "react";
 import axios from "axios";
 function ProjectCard({ project }) {
-  var birinci = new Date(Date.now());
-  var result1 = birinci.getTime();
-  var ikinci = new Date(project.dueDate);
-  var result2 = ikinci.getTime();
-  const startDate = moment(result1);
-  const timeEnd = moment(result2);
-  const diff = timeEnd.diff(startDate);
+  var now = new Date(Date.now());
+  var nowDate = now.getTime();
+  var due = new Date(project.dueDate);
+  var dueDate = due.getTime();
+  const startDate = moment(nowDate);
+  const endDate = moment(dueDate);
+  const diff = endDate.diff(startDate);
   const diffDuration = moment.duration(diff);
   const [tags, setTags] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -22,19 +22,28 @@ function ProjectCard({ project }) {
     };
     fetchItems();
   }, []);
-
   const deneme = project.tagsId.split(",");
   return (
     <>
       <div className="projectCard">
         <div className="projectCard-heading">
-          <div className="projectCard-heading-left">İNTERNET REKLAMCILIĞI</div>
+          <div className="projectCard-heading-left">
+            <a href={`/category/${project.category.slug}`}>
+              {project.category.name}
+            </a>
+            {" > "}
+            <a
+              href={`/category/${project.category.slug}/${project.subCategory.slug}`}
+            >
+              {project.subCategory.name}
+            </a>
+          </div>
           <div className="projectCard-heading-right">
             <div className="projectCard-heading-right-icon">
               <TimeFilled />
             </div>
             <div className="projectCard-heading-right-details">
-              Teklif{" "}
+              Teklif
               <span className="date">
                 {diffDuration.months() > 0
                   ? diffDuration.months() + " ay "
@@ -46,7 +55,7 @@ function ProjectCard({ project }) {
                 {diffDuration.months() === 0 && diffDuration.days() === 0
                   ? diffDuration.minutes() + " dakika"
                   : ""}
-              </span>{" "}
+              </span>
               sonra sona eriyor
             </div>
           </div>
@@ -54,7 +63,6 @@ function ProjectCard({ project }) {
         <div className="projectCard-title">{project.title}</div>
         <div className="projectCard-seperator"></div>
         <div className="projectCard-details">{project.description}</div>
-
         {project.fileName ? (
           <>
             <div className="projectCard-gallery">

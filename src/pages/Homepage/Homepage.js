@@ -11,7 +11,6 @@ import { slide as Menu2 } from "react-burger-menu";
 import axios from "axios";
 import { useState, useEffect } from "react";
 function Homepage({ e }) {
-  console.log(e);
   const [project, setProject] = useState();
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(false);

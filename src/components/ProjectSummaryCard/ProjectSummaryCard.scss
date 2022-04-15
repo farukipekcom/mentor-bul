@@ -103,32 +103,6 @@
     }
   }
 
-  &-arrow {
-    margin-left: auto;
-    transition: margin-left 0.5s;
-    cursor: pointer;
-    border: 2px solid #000;
-    padding: 4px;
-    height: 36px;
-    width: 36px;
-    @extend %flexcenter;
-    border-radius: $radius;
-    position: absolute;
-    right: 30px;
-    transition: 0.5s right;
-  }
-  border: 2px solid transparent;
-  transition: 0.5s border;
-  &:hover {
-    .projectSummaryCard-arrow {
-      transition: 0.5s right;
-      position: absolute;
-      right: 16px;
-    }
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    border: 2px solid #000;
-    transition: 0.5s border;
-  }
   &-ratingcontrol {
     background-color: $red_soft;
     color: $red;

@@ -8,6 +8,7 @@ import moment from "moment";
 import { Closev2 } from "../../icons";
 import { FormInputTextCard } from "..";
 function AddProjectPart1() {
+  const loggedIn = JSON.parse(localStorage.getItem("user"));
   const basarili = () =>
     toast.success("Başarıyla Eklendi!", {
       position: "bottom-center",
@@ -20,7 +21,7 @@ function AddProjectPart1() {
     title: "",
     categoryId: "",
     subCategoryId: "",
-    userId: 2,
+    userId: loggedIn.userId,
     description: "",
     type: "",
     slug: "",
@@ -107,6 +108,7 @@ function AddProjectPart1() {
   };
   const onChangeType = (event) => {
     setSelectedType(event.target.value);
+    console.log(event.target.value);
     setformValue({
       ...formValue,
       [event.target.name]: event.target.value,
@@ -207,6 +209,7 @@ function AddProjectPart1() {
     formValue.tagsId = suggestId.toString();
     loginFormData.append("tagsId", formValue.tagsId);
     loginFormData.append("fileName", formValue.fileName);
+    console.log("FORMVALUE", formValue);
     axios
       .post("https://localhost:5001/api/Projects", formValue)
       .then((response) => {
@@ -215,6 +218,7 @@ function AddProjectPart1() {
       })
       .catch(function (error) {
         hatali();
+        console.log(error);
         setCategoryIdFind("");
       });
     temizle();
@@ -382,9 +386,9 @@ function AddProjectPart1() {
                     value={selectedType}
                     onChange={onChangeType}
                   >
-                    <option value="Görüntülü Görüşme">Görüntülü Görüşme</option>
-                    <option value="Dosya Teslim">Dosya Teslim</option>
-                    <option value="Chat">Chat</option>
+                    <option value="1">Görüntülü Görüşme</option>
+                    <option value="2">Dosya Teslim</option>
+                    <option value="3">Chat</option>
                   </select>
                   <ArrowBottom />
                 </div>

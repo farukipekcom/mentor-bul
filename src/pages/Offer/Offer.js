@@ -30,7 +30,7 @@ function Offer() {
       project.offers
         .filter((key) => key.selected === true)
         .map((item) => setSelectedOffer(true));
-  }, [username, isLoading]);
+  }, [isLoading, project.offers, username]);
   const averageBid =
     isLoading &&
     project.offers.reduce((acc, item) => acc + item.price, 0) /

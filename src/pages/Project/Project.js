@@ -12,48 +12,27 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 // import SimilarProject from "../../components/SimilarProject/SimilarProject";
 function Project() {
-  let { username } = useParams();
+  let { slug } = useParams();
   const [project, setProject] = useState();
-  const [user, setUser] = useState();
   const [comment, setComment] = useState();
-  const [count, setCount] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const [isLoading2, setIsLoading2] = useState(false);
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(
-        `https://localhost:5001/api/Projects/GetProjectDetails/${username}`
+        `https://localhost:5001/api/Projects/GetProjectDetails/${slug}`
       );
       setProject(result.data);
-      setUser(result.data.userId);
       setIsLoading(true);
     };
-    fetchItems();
-  }, [username]);
-
-  useEffect(() => {
     const fetchItemss = async () => {
       const result = await axios(
-        `https://localhost:5001/api/Comments/GetCommentList/${user}`
+        `https://localhost:5001/api/Comments/GetCommentList/${project.userId}`
       );
       setComment(result.data);
-      setCount(result.data.length);
-      setIsLoading2(true);
     };
-    fetchItemss();
-  }, [isLoading]);
-
-  // useEffect(() => {
-  //   const fetchItems = async () => {
-  //     const result = await axios(
-  //       `https://localhost:5001/api/Comments/GetCommentList/${project.userId}`
-  //     );
-  //     setComment(result.data);
-  //     setCount(result.data.length);
-  //     setIsLoading2(true);
-  //   };
-  //   fetchItems();
-  // }, [project]);
+    fetchItems();
+    isLoading && fetchItemss();
+  }, [isLoading, project.userId, slug]);
   return (
     <>
       {isLoading ? (

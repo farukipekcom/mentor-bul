@@ -4,8 +4,6 @@ import { Star } from "../../icons";
 import Moment from "react-moment";
 import "moment/locale/tr";
 import { Rating } from "react-simple-star-rating";
-import { useState } from "react";
-
 function ProjectProfileCard({ comment, profile }) {
   var totalQuality =
     comment &&
@@ -21,9 +19,7 @@ function ProjectProfileCard({ comment, profile }) {
         className="projectProfileCard-photo"
       />
       <span className="projectProfileCard-username">{profile.username}</span>
-      <span className="projectProfileCard-location">
-        {profile.city}, {profile.country}
-      </span>
+
       <div className="projectProfileCard-buttons">
         <div className="projectProfileCard-buttons-message">Mesaj Gönder</div>
         <a
@@ -33,7 +29,6 @@ function ProjectProfileCard({ comment, profile }) {
           Profil
         </a>
       </div>
-
       <div className="projectProfileCard-summary">
         <div className="projectProfileCard-summary-item">
           <div className="projectProfileCard-summary-item-icon">
@@ -71,7 +66,7 @@ function ProjectProfileCard({ comment, profile }) {
             <Moment format="DD MMMM YYYY" locale="tr">
               {profile.createdAt}
             </Moment>
-            <span style={{ marginLeft: "2px" }}> tarihinden beri üye</span>
+            <span style={{ marginLeft: "2px" }}> tarihinden beri üye.</span>
           </div>
         </div>
       </div>

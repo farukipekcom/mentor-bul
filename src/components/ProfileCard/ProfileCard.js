@@ -1,8 +1,6 @@
 import "./ProfileCard.scss";
 import { Star } from "../../icons";
-import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
-import { useParams } from "react-router-dom";
 function ProfileCard({
   username,
   profilePhoto,

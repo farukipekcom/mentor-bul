@@ -39,7 +39,7 @@ function OrderSell() {
     };
     fetchOrder();
     isLoading && fetchComments();
-  }, [isLoading]);
+  }, [isLoading, order.projectId, slug]);
   const loggedIn = JSON.parse(localStorage.getItem("user"));
   var updatedData = isLoading && order;
   const updatePost = (e) => {
