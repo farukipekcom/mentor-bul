@@ -54,7 +54,7 @@ function CommentCard({ user_id, username }) {
     setTotal(
       Number(isLoading && (quality + timing + communication) / 3).toFixed(2)
     );
-  }, [comment, communication, count, isLoading, quality, timing, user_id]);
+  }, [isLoading, isLoading2, quality]);
   const handleRating = (rate) => {
     setRating(rate / 20);
   };
@@ -216,25 +216,19 @@ function CommentCard({ user_id, username }) {
                 </div>
                 <div className="commentCard-list-item-right-tags">
                   {isLoading &&
-                    comment.map((item) =>
-                      item.project.tagsId.split(",").map(
-                        (items, index) =>
-                          isLoading2 &&
-                          tags
-                            .filter(
-                              (itemss) => itemss.tagId === parseInt(items)
-                            )
-                            .map((tag) => {
-                              return (
-                                <div
-                                  className="commentCard-list-item-right-tags-item"
-                                  key={index}
-                                >
-                                  <a href={`../tags/${tag.slug}`}>{tag.name}</a>
-                                </div>
-                              );
-                            })
-                      )
+                    item.project.tagsId.split(",").map(
+                      (items) =>
+                        isLoading2 &&
+                        tags
+                          .filter((itemss) => itemss.tagId === parseInt(items))
+                          .map((tag) => (
+                            <div
+                              className="commentCard-list-item-right-tags-item"
+                              key={index}
+                            >
+                              <a href={`../tags/${tag.slug}`}>{tag.name}</a>
+                            </div>
+                          ))
                     )}
                 </div>
               </div>
