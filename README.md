@@ -1,8 +1,11 @@
 <h1 align="center">Welcome to MentorBul 👋</h1>
 
-There are both mentees and mentors involved in this project. Users can simultaneously post ads and apply to existing ones, making it a cooperative platform. The demo currently lacks a backend. While the existing backend is currently non-functional, I may fix it one day.
+There are both mentees and mentors involved in this project. Users can simultaneously post ads and apply to existing ones, making it a cooperative platform. The demo currently lacks a backend. While the existing backend is currently non-functional, I may fix it one day. 
 
-## ⭐️ [Demo](https://mentor-bul-farukipekcom.vercel.app/)
+The language of the project is Turkish.
+
+### ⭐️ [Demo](https://mentor-bul-farukipekcom.vercel.app/)
+### 📌 [Figma Design File](https://www.figma.com/design/l7g63VduYuTFgklxZDHJO3/MentorBul?node-id=0-1&t=BXA0GlAr9w70qrWN-1)
 
 | Page               | URL                                                                  |
 | ------------------ | -------------------------------------------------------------------- |
